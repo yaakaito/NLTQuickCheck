@@ -1,0 +1,436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5678D31741CC48F5B93C4F35 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CACABB68EAAE45D38A8F3AF4 /* libPods.a */; };
+		B2C517B2F09E427380ECDC75 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CACABB68EAAE45D38A8F3AF4 /* libPods.a */; };
+		B941926D1565760D0074A059 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B941926C1565760D0074A059 /* Foundation.framework */; };
+		B94192731565760D0074A059 /* NLTQuickCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = B94192721565760D0074A059 /* NLTQuickCheck.m */; };
+		B941927B1565760D0074A059 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B941927A1565760D0074A059 /* SenTestingKit.framework */; };
+		B941927D1565760D0074A059 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B941927C1565760D0074A059 /* UIKit.framework */; };
+		B941927E1565760D0074A059 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B941926C1565760D0074A059 /* Foundation.framework */; };
+		B94192871565760D0074A059 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B94192851565760D0074A059 /* InfoPlist.strings */; };
+		B94192A115657FD60074A059 /* SampleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B94192A015657FD60074A059 /* SampleSpec.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B941927F1565760D0074A059 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B94192601565760C0074A059 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B94192681565760D0074A059;
+			remoteInfo = NLTQuickCheck;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B94192691565760D0074A059 /* libNLTQuickCheck.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNLTQuickCheck.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B941926C1565760D0074A059 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B94192701565760D0074A059 /* NLTQuickCheck-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NLTQuickCheck-Prefix.pch"; sourceTree = "<group>"; };
+		B94192711565760D0074A059 /* NLTQuickCheck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NLTQuickCheck.h; sourceTree = "<group>"; };
+		B94192721565760D0074A059 /* NLTQuickCheck.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NLTQuickCheck.m; sourceTree = "<group>"; };
+		B94192791565760D0074A059 /* NLTQuickCheckTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NLTQuickCheckTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B941927A1565760D0074A059 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		B941927C1565760D0074A059 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		B94192841565760D0074A059 /* NLTQuickCheckTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NLTQuickCheckTests-Info.plist"; sourceTree = "<group>"; };
+		B94192861565760D0074A059 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B94192A015657FD60074A059 /* SampleSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleSpec.m; sourceTree = "<group>"; };
+		CACABB68EAAE45D38A8F3AF4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB5749ADAD414AF0B31ABA9A /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B94192661565760D0074A059 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B941926D1565760D0074A059 /* Foundation.framework in Frameworks */,
+				B2C517B2F09E427380ECDC75 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B94192751565760D0074A059 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B941927B1565760D0074A059 /* SenTestingKit.framework in Frameworks */,
+				B941927D1565760D0074A059 /* UIKit.framework in Frameworks */,
+				B941927E1565760D0074A059 /* Foundation.framework in Frameworks */,
+				5678D31741CC48F5B93C4F35 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B941925E1565760C0074A059 = {
+			isa = PBXGroup;
+			children = (
+				B941926E1565760D0074A059 /* NLTQuickCheck */,
+				B94192821565760D0074A059 /* NLTQuickCheckTests */,
+				B941926B1565760D0074A059 /* Frameworks */,
+				B941926A1565760D0074A059 /* Products */,
+				EB5749ADAD414AF0B31ABA9A /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		B941926A1565760D0074A059 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B94192691565760D0074A059 /* libNLTQuickCheck.a */,
+				B94192791565760D0074A059 /* NLTQuickCheckTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B941926B1565760D0074A059 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B941926C1565760D0074A059 /* Foundation.framework */,
+				B941927A1565760D0074A059 /* SenTestingKit.framework */,
+				B941927C1565760D0074A059 /* UIKit.framework */,
+				CACABB68EAAE45D38A8F3AF4 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B941926E1565760D0074A059 /* NLTQuickCheck */ = {
+			isa = PBXGroup;
+			children = (
+				B94192711565760D0074A059 /* NLTQuickCheck.h */,
+				B94192721565760D0074A059 /* NLTQuickCheck.m */,
+				B941926F1565760D0074A059 /* Supporting Files */,
+			);
+			path = NLTQuickCheck;
+			sourceTree = "<group>";
+		};
+		B941926F1565760D0074A059 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B94192701565760D0074A059 /* NLTQuickCheck-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B94192821565760D0074A059 /* NLTQuickCheckTests */ = {
+			isa = PBXGroup;
+			children = (
+				B94192831565760D0074A059 /* Supporting Files */,
+				B94192A015657FD60074A059 /* SampleSpec.m */,
+			);
+			path = NLTQuickCheckTests;
+			sourceTree = "<group>";
+		};
+		B94192831565760D0074A059 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B94192841565760D0074A059 /* NLTQuickCheckTests-Info.plist */,
+				B94192851565760D0074A059 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B94192671565760D0074A059 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B94192681565760D0074A059 /* NLTQuickCheck */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B941928D1565760D0074A059 /* Build configuration list for PBXNativeTarget "NLTQuickCheck" */;
+			buildPhases = (
+				B94192651565760D0074A059 /* Sources */,
+				B94192661565760D0074A059 /* Frameworks */,
+				B94192671565760D0074A059 /* Headers */,
+				201881DD971442648FF6D19D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NLTQuickCheck;
+			productName = NLTQuickCheck;
+			productReference = B94192691565760D0074A059 /* libNLTQuickCheck.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B94192781565760D0074A059 /* NLTQuickCheckTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B94192901565760D0074A059 /* Build configuration list for PBXNativeTarget "NLTQuickCheckTests" */;
+			buildPhases = (
+				B94192741565760D0074A059 /* Sources */,
+				B94192751565760D0074A059 /* Frameworks */,
+				B94192761565760D0074A059 /* Resources */,
+				B94192771565760D0074A059 /* ShellScript */,
+				201881DD971442648FF6D19D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B94192801565760D0074A059 /* PBXTargetDependency */,
+			);
+			name = NLTQuickCheckTests;
+			productName = NLTQuickCheckTests;
+			productReference = B94192791565760D0074A059 /* NLTQuickCheckTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B94192601565760C0074A059 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = B94192631565760C0074A059 /* Build configuration list for PBXProject "NLTQuickCheck" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B941925E1565760C0074A059;
+			productRefGroup = B941926A1565760D0074A059 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B94192681565760D0074A059 /* NLTQuickCheck */,
+				B94192781565760D0074A059 /* NLTQuickCheckTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B94192761565760D0074A059 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B94192871565760D0074A059 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		201881DD971442648FF6D19D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		B94192771565760D0074A059 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B94192651565760D0074A059 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B94192731565760D0074A059 /* NLTQuickCheck.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B94192741565760D0074A059 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B94192A115657FD60074A059 /* SampleSpec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B94192801565760D0074A059 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B94192681565760D0074A059 /* NLTQuickCheck */;
+			targetProxy = B941927F1565760D0074A059 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B94192851565760D0074A059 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B94192861565760D0074A059 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B941928B1565760D0074A059 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B941928C1565760D0074A059 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B941928E1565760D0074A059 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB5749ADAD414AF0B31ABA9A /* Pods.xcconfig */;
+			buildSettings = {
+				DSTROOT = /tmp/NLTQuickCheck.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NLTQuickCheck/NLTQuickCheck-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B941928F1565760D0074A059 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB5749ADAD414AF0B31ABA9A /* Pods.xcconfig */;
+			buildSettings = {
+				DSTROOT = /tmp/NLTQuickCheck.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NLTQuickCheck/NLTQuickCheck-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B94192911565760D0074A059 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB5749ADAD414AF0B31ABA9A /* Pods.xcconfig */;
+			buildSettings = {
+				DSTROOT = /tmp/xcodeproj.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NLTQuickCheck/NLTQuickCheck-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "NLTQuickCheckTests/NLTQuickCheckTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		B94192921565760D0074A059 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB5749ADAD414AF0B31ABA9A /* Pods.xcconfig */;
+			buildSettings = {
+				DSTROOT = /tmp/xcodeproj.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NLTQuickCheck/NLTQuickCheck-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "NLTQuickCheckTests/NLTQuickCheckTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B94192631565760C0074A059 /* Build configuration list for PBXProject "NLTQuickCheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B941928B1565760D0074A059 /* Debug */,
+				B941928C1565760D0074A059 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B941928D1565760D0074A059 /* Build configuration list for PBXNativeTarget "NLTQuickCheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B941928E1565760D0074A059 /* Debug */,
+				B941928F1565760D0074A059 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B94192901565760D0074A059 /* Build configuration list for PBXNativeTarget "NLTQuickCheckTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B94192911565760D0074A059 /* Debug */,
+				B94192921565760D0074A059 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B94192601565760C0074A059 /* Project object */;
+}

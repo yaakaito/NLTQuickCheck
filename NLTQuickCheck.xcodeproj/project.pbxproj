@@ -15,7 +15,10 @@
 		B941927D1565760D0074A059 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B941927C1565760D0074A059 /* UIKit.framework */; };
 		B941927E1565760D0074A059 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B941926C1565760D0074A059 /* Foundation.framework */; };
 		B94192871565760D0074A059 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B94192851565760D0074A059 /* InfoPlist.strings */; };
-		B94192A115657FD60074A059 /* SampleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B94192A015657FD60074A059 /* SampleSpec.m */; };
+		B94192B8156AAC5F0074A059 /* NLTQStandradGenSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B94192B7156AAC5F0074A059 /* NLTQStandradGenSpec.m */; };
+		B94192BB156AAD370074A059 /* NLTQStandardGen.h in Headers */ = {isa = PBXBuildFile; fileRef = B94192B9156AAD370074A059 /* NLTQStandardGen.h */; };
+		B94192BC156AAD370074A059 /* NLTQStandardGen.m in Sources */ = {isa = PBXBuildFile; fileRef = B94192BA156AAD370074A059 /* NLTQStandardGen.m */; };
+		B94192BD156AAD370074A059 /* NLTQStandardGen.m in Sources */ = {isa = PBXBuildFile; fileRef = B94192BA156AAD370074A059 /* NLTQStandardGen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,9 @@
 		B941927C1565760D0074A059 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		B94192841565760D0074A059 /* NLTQuickCheckTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NLTQuickCheckTests-Info.plist"; sourceTree = "<group>"; };
 		B94192861565760D0074A059 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B94192A015657FD60074A059 /* SampleSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleSpec.m; sourceTree = "<group>"; };
+		B94192B7156AAC5F0074A059 /* NLTQStandradGenSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQStandradGenSpec.m; sourceTree = "<group>"; };
+		B94192B9156AAD370074A059 /* NLTQStandardGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLTQStandardGen.h; sourceTree = "<group>"; };
+		B94192BA156AAD370074A059 /* NLTQStandardGen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQStandardGen.m; sourceTree = "<group>"; };
 		CACABB68EAAE45D38A8F3AF4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB5749ADAD414AF0B31ABA9A /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -105,6 +110,8 @@
 				B94192711565760D0074A059 /* NLTQuickCheck.h */,
 				B94192721565760D0074A059 /* NLTQuickCheck.m */,
 				B941926F1565760D0074A059 /* Supporting Files */,
+				B94192B9156AAD370074A059 /* NLTQStandardGen.h */,
+				B94192BA156AAD370074A059 /* NLTQStandardGen.m */,
 			);
 			path = NLTQuickCheck;
 			sourceTree = "<group>";
@@ -121,7 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				B94192831565760D0074A059 /* Supporting Files */,
-				B94192A015657FD60074A059 /* SampleSpec.m */,
+				B94192B7156AAC5F0074A059 /* NLTQStandradGenSpec.m */,
 			);
 			path = NLTQuickCheckTests;
 			sourceTree = "<group>";
@@ -142,6 +149,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B94192BB156AAD370074A059 /* NLTQStandardGen.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B94192731565760D0074A059 /* NLTQuickCheck.m in Sources */,
+				B94192BC156AAD370074A059 /* NLTQStandardGen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +275,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B94192A115657FD60074A059 /* SampleSpec.m in Sources */,
+				B94192B8156AAC5F0074A059 /* NLTQStandradGenSpec.m in Sources */,
+				B94192BD156AAD370074A059 /* NLTQStandardGen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

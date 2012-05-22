@@ -19,6 +19,10 @@
 		B94192BB156AAD370074A059 /* NLTQStandardGen.h in Headers */ = {isa = PBXBuildFile; fileRef = B94192B9156AAD370074A059 /* NLTQStandardGen.h */; };
 		B94192BC156AAD370074A059 /* NLTQStandardGen.m in Sources */ = {isa = PBXBuildFile; fileRef = B94192BA156AAD370074A059 /* NLTQStandardGen.m */; };
 		B94192BD156AAD370074A059 /* NLTQStandardGen.m in Sources */ = {isa = PBXBuildFile; fileRef = B94192BA156AAD370074A059 /* NLTQStandardGen.m */; };
+		B94192D4156C05900074A059 /* NLTQGenSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B94192D2156C05900074A059 /* NLTQGenSpec.m */; };
+		B94192D7156C05AB0074A059 /* NLTQGen.h in Headers */ = {isa = PBXBuildFile; fileRef = B94192D5156C05AB0074A059 /* NLTQGen.h */; };
+		B94192D8156C05AB0074A059 /* NLTQGen.m in Sources */ = {isa = PBXBuildFile; fileRef = B94192D6156C05AB0074A059 /* NLTQGen.m */; };
+		B94192D9156C05AB0074A059 /* NLTQGen.m in Sources */ = {isa = PBXBuildFile; fileRef = B94192D6156C05AB0074A059 /* NLTQGen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,9 @@
 		B94192B7156AAC5F0074A059 /* NLTQStandradGenSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQStandradGenSpec.m; sourceTree = "<group>"; };
 		B94192B9156AAD370074A059 /* NLTQStandardGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLTQStandardGen.h; sourceTree = "<group>"; };
 		B94192BA156AAD370074A059 /* NLTQStandardGen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQStandardGen.m; sourceTree = "<group>"; };
+		B94192D2156C05900074A059 /* NLTQGenSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQGenSpec.m; sourceTree = "<group>"; };
+		B94192D5156C05AB0074A059 /* NLTQGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLTQGen.h; sourceTree = "<group>"; };
+		B94192D6156C05AB0074A059 /* NLTQGen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQGen.m; sourceTree = "<group>"; };
 		CACABB68EAAE45D38A8F3AF4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB5749ADAD414AF0B31ABA9A /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -112,6 +119,8 @@
 				B941926F1565760D0074A059 /* Supporting Files */,
 				B94192B9156AAD370074A059 /* NLTQStandardGen.h */,
 				B94192BA156AAD370074A059 /* NLTQStandardGen.m */,
+				B94192D5156C05AB0074A059 /* NLTQGen.h */,
+				B94192D6156C05AB0074A059 /* NLTQGen.m */,
 			);
 			path = NLTQuickCheck;
 			sourceTree = "<group>";
@@ -129,6 +138,7 @@
 			children = (
 				B94192831565760D0074A059 /* Supporting Files */,
 				B94192B7156AAC5F0074A059 /* NLTQStandradGenSpec.m */,
+				B94192D2156C05900074A059 /* NLTQGenSpec.m */,
 			);
 			path = NLTQuickCheckTests;
 			sourceTree = "<group>";
@@ -150,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B94192BB156AAD370074A059 /* NLTQStandardGen.h in Headers */,
+				B94192D7156C05AB0074A059 /* NLTQGen.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +279,7 @@
 			files = (
 				B94192731565760D0074A059 /* NLTQuickCheck.m in Sources */,
 				B94192BC156AAD370074A059 /* NLTQStandardGen.m in Sources */,
+				B94192D8156C05AB0074A059 /* NLTQGen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +289,8 @@
 			files = (
 				B94192B8156AAC5F0074A059 /* NLTQStandradGenSpec.m in Sources */,
 				B94192BD156AAD370074A059 /* NLTQStandardGen.m in Sources */,
+				B94192D4156C05900074A059 /* NLTQGenSpec.m in Sources */,
+				B94192D9156C05AB0074A059 /* NLTQGen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

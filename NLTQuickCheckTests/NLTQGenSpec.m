@@ -27,6 +27,22 @@ describe(@"Gen(erator)", ^{
             [[[gen valueWithProgress:0.2] should] equal:@"string"];
         });
     });
+    
+    context(@"create with rebound generater and return progress", ^{
+        beforeEach(^{
+            gen = [NLTQGen genWithGenerateBlock:^id(double progress) {
+                return [NSNumber numberWithDouble:progress];
+            }];
+        });
+        
+        it(@"at progress 0.0 , the value is 0.0 NSNumber object", ^{
+            [[theValue([[gen valueWithProgress:0.0] doubleValue]) should] equal:theValue(0.0)];
+        });
+        
+        it(@"at progress 0.5 , the value is 0.5 NSNumber object", ^{
+            [[theValue([[gen valueWithProgress:0.5] doubleValue]) should] equal:theValue(0.5)];
+        });
+    });
 });
 
 SPEC_END

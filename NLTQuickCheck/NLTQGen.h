@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NLTQStandardGen.h"
 
 #define kNLTQGenDefaultMiniumSedd   (0)
 #define kNLTQGenDefaultMaxiumSeed   (1000)
 
-typedef id(^__generateBlock)(double progress);
+typedef id(^__generateBlock)(double progress, int random);
 
 @interface NLTQGen : NSObject
 + (id)genWithGenerateBlock:(__generateBlock)block;
@@ -20,8 +19,9 @@ typedef id(^__generateBlock)(double progress);
 - (id)valueWithProgress:(double)progress;
 
 // Combinators
-+ (NSInteger)chooseWithLow:(NSInteger)low high:(NSInteger)high;
-+ (id)objectAtRandomIndexFromArray:(NSArray*)array;
++ (id)chooseGenWithLow:(NSInteger)low high:(NSInteger)high;
++ (id)elementsGenWithArray:(NSArray*)array;
+
 /*
  -- ランダムに値を生成できる2つの値の組から、その範囲内のジェネレーターを作る
  choose :: Random a => (a, a) -> Gen a

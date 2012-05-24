@@ -44,7 +44,7 @@ describe(@"Gen(erator)", ^{
                 });
                 
                 it(@"has 11 numbers", ^{
-                    [[[array should] have:11] count];
+                    [[theValue([array count]) should] equal:theValue(11)];
                 });
                 
                 it(@"first object 20", ^{
@@ -54,6 +54,7 @@ describe(@"Gen(erator)", ^{
                 it(@"lastest object 30", ^{
                     [[theValue([[array lastObject] intValue]) should] equal:theValue(30)];
                 });
+
             });
         }); 
 

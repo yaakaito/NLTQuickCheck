@@ -23,6 +23,8 @@
 		B94192D7156C05AB0074A059 /* NLTQGen.h in Headers */ = {isa = PBXBuildFile; fileRef = B94192D5156C05AB0074A059 /* NLTQGen.h */; };
 		B94192D8156C05AB0074A059 /* NLTQGen.m in Sources */ = {isa = PBXBuildFile; fileRef = B94192D6156C05AB0074A059 /* NLTQGen.m */; };
 		B94192D9156C05AB0074A059 /* NLTQGen.m in Sources */ = {isa = PBXBuildFile; fileRef = B94192D6156C05AB0074A059 /* NLTQGen.m */; };
+		B94192E6156E95630074A059 /* NLTQGenCombinatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B94192E5156E95630074A059 /* NLTQGenCombinatorSpec.m */; };
+		B94192E7156E95630074A059 /* NLTQGenCombinatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B94192E5156E95630074A059 /* NLTQGenCombinatorSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,7 @@
 		B94192D2156C05900074A059 /* NLTQGenSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQGenSpec.m; sourceTree = "<group>"; };
 		B94192D5156C05AB0074A059 /* NLTQGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLTQGen.h; sourceTree = "<group>"; };
 		B94192D6156C05AB0074A059 /* NLTQGen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQGen.m; sourceTree = "<group>"; };
+		B94192E5156E95630074A059 /* NLTQGenCombinatorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQGenCombinatorSpec.m; sourceTree = "<group>"; };
 		CACABB68EAAE45D38A8F3AF4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB5749ADAD414AF0B31ABA9A /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -139,6 +142,7 @@
 				B94192831565760D0074A059 /* Supporting Files */,
 				B94192B7156AAC5F0074A059 /* NLTQStandradGenSpec.m */,
 				B94192D2156C05900074A059 /* NLTQGenSpec.m */,
+				B94192E5156E95630074A059 /* NLTQGenCombinatorSpec.m */,
 			);
 			path = NLTQuickCheckTests;
 			sourceTree = "<group>";
@@ -280,6 +284,7 @@
 				B94192731565760D0074A059 /* NLTQuickCheck.m in Sources */,
 				B94192BC156AAD370074A059 /* NLTQStandardGen.m in Sources */,
 				B94192D8156C05AB0074A059 /* NLTQGen.m in Sources */,
+				B94192E6156E95630074A059 /* NLTQGenCombinatorSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +296,7 @@
 				B94192BD156AAD370074A059 /* NLTQStandardGen.m in Sources */,
 				B94192D4156C05900074A059 /* NLTQGenSpec.m in Sources */,
 				B94192D9156C05AB0074A059 /* NLTQGen.m in Sources */,
+				B94192E7156E95630074A059 /* NLTQGenCombinatorSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

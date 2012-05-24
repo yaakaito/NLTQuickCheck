@@ -18,6 +18,10 @@ typedef id(^__generateBlock)(double progress);
 + (id)genWithGenerateBlock:(__generateBlock)block;
 + (id)genWithGenerateBlock:(__generateBlock)block miniumSeed:(NSInteger)minimumSeed maximumSeed:(NSInteger)maxiumSeed;
 - (id)valueWithProgress:(double)progress;
+
+// Combinators
++ (NSInteger)chooseWithLow:(NSInteger)low High:(NSInteger)high;
++ (id)objectAtRandomIndexFromArray:(NSArray*)array;
 /*
  -- ランダムに値を生成できる2つの値の組から、その範囲内のジェネレーターを作る
  choose :: Random a => (a, a) -> Gen a

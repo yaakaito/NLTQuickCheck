@@ -31,4 +31,16 @@
     
     return _block(progress);
 }
+
++ (NSInteger)chooseWithLow:(NSInteger)low High:(NSInteger)high {
+    
+    return [[NLTQStandardGen standardGenWithMinimumSeed:low
+                                            maximumSeed:high] currentGeneratedValue];
+}
+
++ (id)objectAtRandomIndexFromArray:(NSArray *)array {
+    
+    NSUInteger index = (NSUInteger)[self chooseWithLow:0 High:[array count]-1];
+    return [array objectAtIndex:index];
+}
 @end

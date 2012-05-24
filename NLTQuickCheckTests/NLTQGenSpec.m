@@ -14,7 +14,7 @@ describe(@"Gen(erator)", ^{
     __block NLTQGen *gen;
     context(@"create with fixation generater and return 'string'", ^{
         beforeEach(^{
-            gen = [NLTQGen genWithGenerateBlock:^id(double progress) {
+            gen = [NLTQGen genWithGenerateBlock:^id(double progress, int random) {
                 return @"string";
             }];
         });
@@ -30,7 +30,7 @@ describe(@"Gen(erator)", ^{
     
     context(@"create with rebound generater and return progress", ^{
         beforeEach(^{
-            gen = [NLTQGen genWithGenerateBlock:^id(double progress) {
+            gen = [NLTQGen genWithGenerateBlock:^id(double progress, int random) {
                 return [NSNumber numberWithDouble:progress];
             }];
         });

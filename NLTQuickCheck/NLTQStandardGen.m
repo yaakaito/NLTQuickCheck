@@ -19,6 +19,18 @@
 @synthesize maximumSeed = _maximumSeed;
 @synthesize currentGeneratedValue = _currentGeneratedValue;
 
+- (id)initWithMinimumSeed:(NSInteger)minimumSeed
+              maximumSeed:(NSInteger)maximumSeed {
+    
+    self = [super init];
+    if(self) {
+        _minimumSeed = minimumSeed;
+        _maximumSeed = maximumSeed;
+        _currentGeneratedValue = [self randomIntegerWithMinimum:minimumSeed maximum:maximumSeed];
+    }
+    return self;
+}
+
 + (id)standardGenWithMinimumSeed:(NSInteger)minimumSeed
                      maximumSeed:(NSInteger)maximumSeed {
 
@@ -33,18 +45,6 @@
     });
     return minimum + (NSInteger)(rand()*(maximum-minimum+1.0)/(1.0+RAND_MAX));
     
-}
-
-- (id)initWithMinimumSeed:(NSInteger)minimumSeed
-              maximumSeed:(NSInteger)maximumSeed {
-    
-    self = [super init];
-    if(self) {
-        _minimumSeed = minimumSeed;
-        _maximumSeed = maximumSeed;
-        _currentGeneratedValue = [self randomIntegerWithMinimum:minimumSeed maximum:maximumSeed];
-    }
-    return self;
 }
 
 - (id)generateNext {

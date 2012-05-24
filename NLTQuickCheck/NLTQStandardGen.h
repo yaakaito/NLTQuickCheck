@@ -17,8 +17,5 @@
 + (id)standardGenWithMinimumSeed:(NSInteger)minimumSeed
                      maximumSeed:(NSInteger)maximumSeed;
 
-- (id)initWithMinimumSeed:(NSInteger)minimumSeed 
-              maximumSeed:(NSInteger)maximumSeed;
-
 - (id)generateNext;
 @end

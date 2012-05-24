@@ -14,7 +14,7 @@ describe(@"Gen(erator)", ^{
     context(@"class method ``chooseWithLow:high:`` ", ^{
         
         it(@"low 10 and high 20, value in 10 ~ 20", ^{
-            NSInteger r = [NLTQGen chooseWithLow:10 High:20];
+            NSInteger r = [NLTQGen chooseWithLow:10 high:20];
             [[theValue(r) should] beGreaterThanOrEqualTo:theValue(10)];
             [[theValue(r) should] beLessThanOrEqualTo:theValue(20)];
         });

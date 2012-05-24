@@ -20,7 +20,7 @@ typedef id(^__generateBlock)(double progress);
 - (id)valueWithProgress:(double)progress;
 
 // Combinators
-+ (NSInteger)chooseWithLow:(NSInteger)low High:(NSInteger)high;
++ (NSInteger)chooseWithLow:(NSInteger)low high:(NSInteger)high;
 + (id)objectAtRandomIndexFromArray:(NSArray*)array;
 /*
  -- ランダムに値を生成できる2つの値の組から、その範囲内のジェネレーターを作る

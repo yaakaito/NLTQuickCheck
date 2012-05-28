@@ -67,11 +67,25 @@ describe(@"Gen(erator)", ^{
 
             it(@"at progress 0.1 value in 1 ~ 3", ^{
                 NSNumber *v = [gen valueWithProgress:0.1];
-                [[theValue([v intValue]) should] beGreaterThanOrEqualTo:theValue(1)];
-                [[theValue([v intValue]) should] beLessThanOrEqualTo:theValue(3)];
+                [[theValue([v intValue]) should] beGreaterThanOrEqualTo:theValue(0)];
+                [[theValue([v intValue]) should] beLessThanOrEqualTo:theValue(1000)];
             });
         });
     });
+    
+    context(@"class method ``randomGen``", ^{
+        context(@"call with none arguments", ^{
+            __block NLTQGen *gen;
+            beforeEach(^{
+                gen = [NLTQGen randomGen];
+            });
+            
+            it(@"none resized random gen, return default value 0 ~ 1000", ^{
+
+            });
+        });
+    });
+
 });
 
 SPEC_END

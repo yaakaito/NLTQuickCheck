@@ -17,14 +17,15 @@ typedef id(^__generateBlock)(double progress, int random);
 + (id)genWithGenerateBlock:(__generateBlock)block;
 + (id)genWithGenerateBlock:(__generateBlock)block miniumSeed:(NSInteger)minimumSeed maximumSeed:(NSInteger)maxiumSeed;
 - (id)valueWithProgress:(double)progress;
+- (void)resizeWithMinimumSeed:(NSInteger)minimumSeed maximumSeed:(NSInteger)maximumSeed;
 
 // Combinators
 + (id)chooseGenWithLow:(NSInteger)low high:(NSInteger)high;
 + (id)elementsGenWithArray:(NSArray*)array;
++ (id)randomGen;
+
 
 /*
- -- ランダムに値を生成できる2つの値の組から、その範囲内のジェネレーターを作る
- choose :: Random a => (a, a) -> Gen a
  
  -- 外部入力やリソースから読み込んだジェネレーターを、テストに利用できるようにする
  promote :: Monad m => m (Gen a) -> Gen (m a)
@@ -40,9 +41,6 @@ typedef id(^__generateBlock)(double progress, int random);
  
  -- [(比率, ジェネレーター)] のリストから、偏りがあるようにジェネレーターを選ぶ
  frequency :: [(Int, Gen a)] -> Gen a
- 
- -- リストの中から一個
- elements :: [a] -> Gen a
  
  -- 無限リストからジェネレーターを作る
  growingElements :: [a] -> Gen a

@@ -53,6 +53,12 @@
     return _block(progress, _standardGen.currentGeneratedValue);
 }
 
+- (void)resizeWithMinimumSeed:(NSInteger)minimumSeed maximumSeed:(NSInteger)maximumSeed {
+    
+    _standardGen = [NLTQStandardGen standardGenWithMinimumSeed:minimumSeed
+                                                   maximumSeed:maximumSeed];
+}
+
 + (NSArray*)numbersArrayWithLow:(NSInteger)low high:(NSInteger)high {
     NSMutableArray *array = [NSMutableArray array];
     for (NSInteger i = low; i < high + 1; i++) {
@@ -76,4 +82,11 @@
                           maximumSeed:[array count] - 1];
 }
 
++ (id)randomGen {
+    
+    return [self genWithGenerateBlock:^id(double progress, int random) {
+        return [NSNumber numberWithInt:random];
+    }];
+    
+}
 @end

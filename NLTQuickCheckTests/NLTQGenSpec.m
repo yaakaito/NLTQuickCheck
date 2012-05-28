@@ -43,6 +43,22 @@ describe(@"Gen(erator)", ^{
             [[theValue([[gen valueWithProgress:0.5] doubleValue]) should] equal:theValue(0.5)];
         });
     });
+    
+    context(@"`resizeWithMinimumSeed:maximumSeed`", ^{
+        context(@"when create with choose low 0 and high 30", ^{
+            __block NLTQGen *gen;
+            beforeEach(^{
+                gen = [NLTQGen randomGen];
+            });
+            
+            it(@"resized low 40 and high 100 , value in 40 ~ 100", ^{
+                [gen resizeWithMinimumSeed:40 maximumSeed:100];
+                NSNumber *v = [gen valueWithProgress:0.1];
+                [[theValue([v intValue]) should] beGreaterThanOrEqualTo:theValue(40)];
+                [[theValue([v intValue]) should] beLessThanOrEqualTo:theValue(100)];
+            });
+        });
+    });
 });
 
 SPEC_END

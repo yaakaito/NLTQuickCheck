@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-#define kNLTQGenDefaultMiniumSedd   (0)
+#define kNLTQGenDefaultMiniumSeed   (0)
 #define kNLTQGenDefaultMaxiumSeed   (1000)
 
 typedef id(^__generateBlock)(double progress, int random);
 
 @interface NLTQGen : NSObject
 + (id)genWithGenerateBlock:(__generateBlock)block;
-+ (id)genWithGenerateBlock:(__generateBlock)block miniumSeed:(NSInteger)minimumSeed maximumSeed:(NSInteger)maxiumSeed;
++ (id)genWithGenerateBlock:(__generateBlock)block miniumSeed:(NSInteger)minimumSeed maximumSeed:(NSInteger)maximumSeed;
 - (id)valueWithProgress:(double)progress;
 - (void)resizeWithMinimumSeed:(NSInteger)minimumSeed maximumSeed:(NSInteger)maximumSeed;
 

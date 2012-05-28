@@ -21,19 +21,19 @@
     self = [super init];
     if(self) {
         _block = block;
-        _standardGen = [NLTQStandardGen standardGenWithMinimumSeed:kNLTQGenDefaultMiniumSedd
+        _standardGen = [NLTQStandardGen standardGenWithMinimumSeed:kNLTQGenDefaultMiniumSeed
                                                        maximumSeed:kNLTQGenDefaultMaxiumSeed];
     }
     return self;
 }
 
-- (id)initWithGenerateBlock:(__generateBlock)block miniumSeed:(NSInteger)minimumSeed maximumSeed:(NSInteger)maxiumSeed {
+- (id)initWithGenerateBlock:(__generateBlock)block miniumSeed:(NSInteger)minimumSeed maximumSeed:(NSInteger)maximumSeed {
 
     self = [super init];
     if(self) {
         _block = block;
         _standardGen = [NLTQStandardGen standardGenWithMinimumSeed:minimumSeed
-                                                       maximumSeed:maxiumSeed];
+                                                       maximumSeed:maximumSeed];
     }
     return self;
 }

@@ -38,15 +38,15 @@ describe(@"Standard Gen(erator)", ^{
             gen = [NLTQStandardGen standardGenWithMinimumSeed:20 maximumSeed:30];
         });
         
-        it(@"minimum is 20", ^{
+        it(@"when minimum is 20", ^{
             [[theValue(gen.minimumSeed) should] equal:theValue(20)];
         });
         
-        it(@"maximum is 30", ^{
+        it(@"when maximum is 30", ^{
             [[theValue(gen.maximumSeed) should] equal:theValue(30)];
         });
         
-        it(@"current generated value in 20~30", ^{
+        it(@"when current generated value in 20~30", ^{
             [[theValue(gen.currentGeneratedValue) should] beBetween:theValue(20) and:theValue(30)];
         });
     });

@@ -58,7 +58,55 @@ describe(@"Gen(erator)", ^{
                 [[theValue([v intValue]) should] beLessThanOrEqualTo:theValue(100)];
             });
         });
+        
     });
+    
+    context(@"`bindingGen`", ^{
+        context(@"when binding not return NSNumber object", ^{
+            __block NLTQGen *bindingGen;
+            __block NLTQGen *gen;
+            beforeAll(^{
+                bindingGen = [NLTQGen genWithGenerateBlock:^id(double progress, int random) {
+                    return [NSString stringWithFormat:@"hoge"];
+                }];
+            });
+            
+            it(@"when raise exception", ^{
+                gen = [NLTQGen genWithGenerateBlock:^id(double progress, int random) {
+                    return [NSNumber numberWithInt:random];
+                }];
+                [[theBlock(^{
+                    [gen bindingGen:bindingGen];
+                }) should] raise];
+            });
+        });
+        
+        context(@"binding return (NSNumber*)((int)progress*100) gen", ^{
+            __block NLTQGen *bindingGen;
+            __block NLTQGen *gen;
+            beforeAll(^{
+                bindingGen = [NLTQGen genWithGenerateBlock:^id(double progress, int random) {
+                    return [NSNumber numberWithInt:(int)(progress * 100)];
+                }];
+            });
+        
+            it(@"when retrun binding gens value * 10", ^{
+                gen = [NLTQGen genWithGenerateBlock:^id(double progress, int random) {
+                    return [NSNumber numberWithInt:random*10];
+                }];
+                __unsafe_unretained id gen_ = gen;
+                [[theBlock(^{
+                    [gen_ bindingGen:bindingGen];
+                }) shouldNot] raise];
+                
+                int v = [[gen valueWithProgress:0.1] intValue];
+                [[theValue(v) should] equal:theValue(100)];
+            });
+        });
+        
+
+    });
+
 });
 
 SPEC_END

@@ -13,6 +13,7 @@
     
     NLTQStandardGen *_standardGen;
     __generateBlock _block;
+    NLTQGen *_bindingGen;
     
 }
 
@@ -50,13 +51,23 @@
 
 - (id)valueWithProgress:(double)progress {
     
-    return _block(progress, _standardGen.currentGeneratedValue);
+    int random = _standardGen.currentGeneratedValue;
+    if(_bindingGen) {
+        random = [[_bindingGen valueWithProgress:progress] intValue];
+    }
+    return _block(progress, random);
 }
 
 - (void)resizeWithMinimumSeed:(NSInteger)minimumSeed maximumSeed:(NSInteger)maximumSeed {
     
     _standardGen = [NLTQStandardGen standardGenWithMinimumSeed:minimumSeed
                                                    maximumSeed:maximumSeed];
+}
+
+- (void)bindingGen:(NLTQGen *)gen {
+    
+    NSAssert([[gen valueWithProgress:0] isKindOfClass:[NSNumber class]], @"this bind gen not return NSNumber object");
+    _bindingGen = gen;
 }
 
 + (NSArray*)numbersArrayWithLow:(NSInteger)low high:(NSInteger)high {

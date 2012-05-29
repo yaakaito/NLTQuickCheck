@@ -18,6 +18,7 @@ typedef id(^__generateBlock)(double progress, int random);
 + (id)genWithGenerateBlock:(__generateBlock)block miniumSeed:(NSInteger)minimumSeed maximumSeed:(NSInteger)maximumSeed;
 - (id)valueWithProgress:(double)progress;
 - (void)resizeWithMinimumSeed:(NSInteger)minimumSeed maximumSeed:(NSInteger)maximumSeed;
+- (void)bindingGen:(NLTQGen*)gen;
 
 // Combinators
 + (id)chooseGenWithLow:(NSInteger)low high:(NSInteger)high;

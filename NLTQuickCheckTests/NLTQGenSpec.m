@@ -12,57 +12,54 @@ SPEC_BEGIN(NLTQGenSpec)
 
 describe(@"Gen(erator)", ^{
     __block NLTQGen *gen;
-    context(@"create with fixation generater and return 'string'", ^{
+    context(@"genWithGenerateBlock and return 'string'", ^{
         beforeEach(^{
             gen = [NLTQGen genWithGenerateBlock:^id(double progress, int random) {
                 return @"string";
             }];
         });
         
-        it(@"at progress 0.1 , the value is 'string'(fixed)", ^{
-            [[[gen valueWithProgress:0.1] should] equal:@"string"];
-        });
-        
-        it(@"at progress 0.2 , the value is 'string'(fixed)", ^{
-            [[[gen valueWithProgress:0.2] should] equal:@"string"];
+        it(@"when, value is fixed string", ^{
+            for(double p = 0.0; p < 1.0; p += 0.01) {
+                NSString *v = [gen valueWithProgress:p];
+                [[v should] equal:@"string"];
+            }
         });
     });
     
-    context(@"create with rebound generater and return progress", ^{
+    context(@"genWithGenerateBlock and return progress", ^{
         beforeEach(^{
             gen = [NLTQGen genWithGenerateBlock:^id(double progress, int random) {
                 return [NSNumber numberWithDouble:progress];
             }];
         });
         
-        it(@"at progress 0.0 , the value is 0.0 NSNumber object", ^{
-            [[theValue([[gen valueWithProgress:0.0] doubleValue]) should] equal:theValue(0.0)];
-        });
-        
-        it(@"at progress 0.5 , the value is 0.5 NSNumber object", ^{
-            [[theValue([[gen valueWithProgress:0.5] doubleValue]) should] equal:theValue(0.5)];
+        it(@"when, value equal progress", ^{
+            for(double p = 0.0; p < 1.0; p += 0.01) {
+                NSNumber *v = [gen valueWithProgress:p];
+                [[theValue([v doubleValue]) should] equal:theValue(p)];
+            }
         });
     });
     
-    context(@"`resizeWithMinimumSeed:maximumSeed`", ^{
-        context(@"when create with choose low 0 and high 30", ^{
-            __block NLTQGen *gen;
-            beforeEach(^{
-                gen = [NLTQGen randomGen];
-            });
-            
-            it(@"resized low 40 and high 100 , value in 40 ~ 100", ^{
-                [gen resizeWithMinimumSeed:40 maximumSeed:100];
-                NSNumber *v = [gen valueWithProgress:0.1];
-                [[theValue([v intValue]) should] beGreaterThanOrEqualTo:theValue(40)];
-                [[theValue([v intValue]) should] beLessThanOrEqualTo:theValue(100)];
-            });
+    context(@"resizeWithMinimumSeed:maximumSeed and low 40, high 100", ^{
+        __block NLTQGen *gen;
+        beforeEach(^{
+            gen = [NLTQGen randomGen];
+            [gen resizeWithMinimumSeed:40 maximumSeed:100];
+        });
+        
+        it(@"when, value in 40 ~ 100", ^{
+            for(double p = 0.0; p < 1.0; p += 0.01) {
+                NSNumber *v = [gen valueWithProgress:p];
+                [[theValue([v doubleValue]) should] beBetween:theValue(40) and:theValue(100)];
+            }
         });
         
     });
     
     context(@"`bindingGen`", ^{
-        context(@"when binding not return NSNumber object", ^{
+        context(@"and binding not return NSNumber object generator", ^{
             __block NLTQGen *bindingGen;
             __block NLTQGen *gen;
             beforeAll(^{
@@ -81,7 +78,7 @@ describe(@"Gen(erator)", ^{
             });
         });
         
-        context(@"binding return (NSNumber*)((int)progress*100) gen", ^{
+        context(@"and binding return (NSNumber*)((int)progress*100) generator", ^{
             __block NLTQGen *bindingGen;
             __block NLTQGen *gen;
             beforeAll(^{

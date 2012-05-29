@@ -9,7 +9,7 @@
 #import "NLTQGen.h"
 
 @interface NLTQGen(Privates)
-+ (NSArray*)numbersArrayWithLow:(NSInteger)low high:(NSInteger)high;
++ (NSArray*)numbersArrayWithLow:(int)low high:(int)high;
 @end
 
 SPEC_BEGIN(NLTQGenCombinatorSpec)

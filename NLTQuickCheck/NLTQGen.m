@@ -28,7 +28,7 @@
     return self;
 }
 
-- (id)initWithGenerateBlock:(__generateBlock)block miniumSeed:(NSInteger)minimumSeed maximumSeed:(NSInteger)maximumSeed {
+- (id)initWithGenerateBlock:(__generateBlock)block miniumSeed:(int)minimumSeed maximumSeed:(int)maximumSeed {
 
     self = [super init];
     if(self) {
@@ -44,7 +44,7 @@
     return [[self alloc] initWithGenerateBlock:block];
 }
 
-+ (id)genWithGenerateBlock:(__generateBlock)block miniumSeed:(NSInteger)minimumSeed maximumSeed:(NSInteger)maxiumSeed {
++ (id)genWithGenerateBlock:(__generateBlock)block miniumSeed:(int)minimumSeed maximumSeed:(int)maxiumSeed {
     
     return [[self alloc] initWithGenerateBlock:block miniumSeed:minimumSeed maximumSeed:maxiumSeed];
 }
@@ -58,7 +58,7 @@
     return _block(progress, random);
 }
 
-- (void)resizeWithMinimumSeed:(NSInteger)minimumSeed maximumSeed:(NSInteger)maximumSeed {
+- (void)resizeWithMinimumSeed:(int)minimumSeed maximumSeed:(int)maximumSeed {
     
     _standardGen = [NLTQStandardGen standardGenWithMinimumSeed:minimumSeed
                                                    maximumSeed:maximumSeed];
@@ -70,15 +70,15 @@
     _bindingGen = gen;
 }
 
-+ (NSArray*)numbersArrayWithLow:(NSInteger)low high:(NSInteger)high {
++ (NSArray*)numbersArrayWithLow:(int)low high:(int)high {
     NSMutableArray *array = [NSMutableArray array];
-    for (NSInteger i = low; i < high + 1; i++) {
+    for (int i = low; i < high + 1; i++) {
         [array addObject:[NSNumber numberWithInt:i]];
     }
     return (NSArray*)array;
 }
 
-+ (id)chooseGenWithLow:(NSInteger)low high:(NSInteger)high {
++ (id)chooseGenWithLow:(int)low high:(int)high {
 
     return [self elementsGenWithArray:[self numbersArrayWithLow:low
                                                            high:high]];

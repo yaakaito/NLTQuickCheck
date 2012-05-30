@@ -6,26 +6,44 @@
 //
 
 #import "Kiwi.h"
+#import "NLTQTestCase.h"
+
+@interface SelectorTestCase : NSObject
+- (BOOL)propReturnYES;
+@end
+
+@implementation SelectorTestCase
+- (BOOL)propReturnYES {
+    return YES;
+}
+@end
 
 SPEC_BEGIN(NLTQSelectorTestCaseSpec)
 
-describe(@"Example", ^{
-    __block NSString *string;
-    context(@"New", ^{
+describe(@"selector test case", ^{
+    __block NLTQTestCase *testCase;
+    context(@"with prop return fixed YES and none arbitraries", ^{
+        
         beforeEach(^{
-            string = @"example";
+            testCase = [NLTQTestCase selectorTestCaseWithSelector:@selector(propReturnYES) arbitraries:nil];
+        });
+
+        it(@"when NLTQTestCase object", ^{
+            [[testCase should] beKindOfClass:[NLTQTestCase class]];
         });
         
-        context(@"append 'exsample'", ^{
-            beforeEach(^{
-                string = [string stringByAppendingString:@"example"];
-            });
-            
-            it(@"length = 14", ^{
-                [[theValue([string length]) should] equal:theValue(15)];
-            });
+        it(@"when check fully success", ^{
+            for(int i = 0; i < 100; i ++) {
+                NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
+                [[theValue([report successs]) should] beYes];
+                [[theValue([report needsRetry]) should] beNo];
+                [[theValue([report retryCounter]) should] beZero];
+                [[theValue([report isException]) should] beNo];
+            }
         });
+       
     });
+    
 });
 
 SPEC_END

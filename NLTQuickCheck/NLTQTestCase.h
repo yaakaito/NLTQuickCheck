@@ -12,5 +12,5 @@
 @interface NLTQTestCase : NSObject
 
 + (id)selectorTestCaseWithSelector:(SEL)selector arbitraries:(NSArray*)array;
-- (BOOL)checkWithTestCount:(int)testCount report:(NLTQReport**)report retry:(BOOL*)retry error:(NSError**)error;
+- (NLTQReport*)checkWithTestCount:(int)testCount testLength:(int)testLength;
 @end

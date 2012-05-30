@@ -29,6 +29,21 @@
 		B976DA99157537690076149C /* NSNumber+BoolArbitrary.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DA97157537690076149C /* NSNumber+BoolArbitrary.m */; };
 		B976DA9A157537690076149C /* NSNumber+BoolArbitrary.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DA97157537690076149C /* NSNumber+BoolArbitrary.m */; };
 		B976DA9C157537DF0076149C /* NLTQArbitrariesSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DA9B157537DF0076149C /* NLTQArbitrariesSpec.m */; };
+		B976DAA5157543C90076149C /* NLTQTestable.h in Headers */ = {isa = PBXBuildFile; fileRef = B976DAA3157543C80076149C /* NLTQTestable.h */; };
+		B976DAA6157543C90076149C /* NLTQTestable.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DAA4157543C80076149C /* NLTQTestable.m */; };
+		B976DAA7157543C90076149C /* NLTQTestable.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DAA4157543C80076149C /* NLTQTestable.m */; };
+		B976DAAA157543D70076149C /* NLTQTestRunner.h in Headers */ = {isa = PBXBuildFile; fileRef = B976DAA8157543D50076149C /* NLTQTestRunner.h */; };
+		B976DAAB157543D70076149C /* NLTQTestRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DAA9157543D50076149C /* NLTQTestRunner.m */; };
+		B976DAAC157543D70076149C /* NLTQTestRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DAA9157543D50076149C /* NLTQTestRunner.m */; };
+		B976DAAF157543ED0076149C /* NLTQTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = B976DAAD157543EC0076149C /* NLTQTestCase.h */; };
+		B976DAB0157543ED0076149C /* NLTQTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DAAE157543EC0076149C /* NLTQTestCase.m */; };
+		B976DAB1157543ED0076149C /* NLTQTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DAAE157543EC0076149C /* NLTQTestCase.m */; };
+		B976DAB41575441D0076149C /* NLTQReport.h in Headers */ = {isa = PBXBuildFile; fileRef = B976DAB21575441C0076149C /* NLTQReport.h */; };
+		B976DAB51575441D0076149C /* NLTQReport.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DAB31575441C0076149C /* NLTQReport.m */; };
+		B976DAB61575441D0076149C /* NLTQReport.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DAB31575441C0076149C /* NLTQReport.m */; };
+		B976DAB915754E9D0076149C /* NLTQReportFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = B976DAB715754E9B0076149C /* NLTQReportFormatter.h */; };
+		B976DABA15754E9D0076149C /* NLTQReportFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DAB815754E9C0076149C /* NLTQReportFormatter.m */; };
+		B976DABB15754E9D0076149C /* NLTQReportFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DAB815754E9C0076149C /* NLTQReportFormatter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +78,16 @@
 		B976DA97157537690076149C /* NSNumber+BoolArbitrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+BoolArbitrary.m"; path = "Arbitraries/NSNumber+BoolArbitrary.m"; sourceTree = "<group>"; };
 		B976DA9B157537DF0076149C /* NLTQArbitrariesSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQArbitrariesSpec.m; sourceTree = "<group>"; };
 		B976DA9D157537F90076149C /* NLTQArbitrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NLTQArbitrary.h; sourceTree = "<group>"; };
+		B976DAA3157543C80076149C /* NLTQTestable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLTQTestable.h; sourceTree = "<group>"; };
+		B976DAA4157543C80076149C /* NLTQTestable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQTestable.m; sourceTree = "<group>"; };
+		B976DAA8157543D50076149C /* NLTQTestRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLTQTestRunner.h; sourceTree = "<group>"; };
+		B976DAA9157543D50076149C /* NLTQTestRunner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQTestRunner.m; sourceTree = "<group>"; };
+		B976DAAD157543EC0076149C /* NLTQTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLTQTestCase.h; sourceTree = "<group>"; };
+		B976DAAE157543EC0076149C /* NLTQTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQTestCase.m; sourceTree = "<group>"; };
+		B976DAB21575441C0076149C /* NLTQReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLTQReport.h; sourceTree = "<group>"; };
+		B976DAB31575441C0076149C /* NLTQReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQReport.m; sourceTree = "<group>"; };
+		B976DAB715754E9B0076149C /* NLTQReportFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLTQReportFormatter.h; sourceTree = "<group>"; };
+		B976DAB815754E9C0076149C /* NLTQReportFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQReportFormatter.m; sourceTree = "<group>"; };
 		CACABB68EAAE45D38A8F3AF4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB5749ADAD414AF0B31ABA9A /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -134,6 +159,16 @@
 				B94192D5156C05AB0074A059 /* NLTQGen.h */,
 				B94192D6156C05AB0074A059 /* NLTQGen.m */,
 				B976DA9D157537F90076149C /* NLTQArbitrary.h */,
+				B976DAA3157543C80076149C /* NLTQTestable.h */,
+				B976DAA4157543C80076149C /* NLTQTestable.m */,
+				B976DAA8157543D50076149C /* NLTQTestRunner.h */,
+				B976DAA9157543D50076149C /* NLTQTestRunner.m */,
+				B976DAAD157543EC0076149C /* NLTQTestCase.h */,
+				B976DAAE157543EC0076149C /* NLTQTestCase.m */,
+				B976DAB21575441C0076149C /* NLTQReport.h */,
+				B976DAB31575441C0076149C /* NLTQReport.m */,
+				B976DAB715754E9B0076149C /* NLTQReportFormatter.h */,
+				B976DAB815754E9C0076149C /* NLTQReportFormatter.m */,
 			);
 			path = NLTQuickCheck;
 			sourceTree = "<group>";
@@ -186,6 +221,11 @@
 				B94192BB156AAD370074A059 /* NLTQStandardGen.h in Headers */,
 				B94192D7156C05AB0074A059 /* NLTQGen.h in Headers */,
 				B976DA98157537690076149C /* NSNumber+BoolArbitrary.h in Headers */,
+				B976DAA5157543C90076149C /* NLTQTestable.h in Headers */,
+				B976DAAA157543D70076149C /* NLTQTestRunner.h in Headers */,
+				B976DAAF157543ED0076149C /* NLTQTestCase.h in Headers */,
+				B976DAB41575441D0076149C /* NLTQReport.h in Headers */,
+				B976DAB915754E9D0076149C /* NLTQReportFormatter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +347,11 @@
 				B94192D8156C05AB0074A059 /* NLTQGen.m in Sources */,
 				B94192E6156E95630074A059 /* NLTQGenCombinatorSpec.m in Sources */,
 				B976DA99157537690076149C /* NSNumber+BoolArbitrary.m in Sources */,
+				B976DAA6157543C90076149C /* NLTQTestable.m in Sources */,
+				B976DAAB157543D70076149C /* NLTQTestRunner.m in Sources */,
+				B976DAB0157543ED0076149C /* NLTQTestCase.m in Sources */,
+				B976DAB51575441D0076149C /* NLTQReport.m in Sources */,
+				B976DABA15754E9D0076149C /* NLTQReportFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +366,11 @@
 				B94192E7156E95630074A059 /* NLTQGenCombinatorSpec.m in Sources */,
 				B976DA9A157537690076149C /* NSNumber+BoolArbitrary.m in Sources */,
 				B976DA9C157537DF0076149C /* NLTQArbitrariesSpec.m in Sources */,
+				B976DAA7157543C90076149C /* NLTQTestable.m in Sources */,
+				B976DAAC157543D70076149C /* NLTQTestRunner.m in Sources */,
+				B976DAB1157543ED0076149C /* NLTQTestCase.m in Sources */,
+				B976DAB61575441D0076149C /* NLTQReport.m in Sources */,
+				B976DABB15754E9D0076149C /* NLTQReportFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -219,8 +219,8 @@
 				B94192B7156AAC5F0074A059 /* NLTQStandradGenSpec.m */,
 				B94192D2156C05900074A059 /* NLTQGenSpec.m */,
 				B94192E5156E95630074A059 /* NLTQGenCombinatorSpec.m */,
-				B976DA9B157537DF0076149C /* NLTQArbitrariesSpec.m */,
 				B976DAC61575D59E0076149C /* NLTQBlocksTestCaseSpec.m */,
+				B976DA9B157537DF0076149C /* NLTQArbitrariesSpec.m */,
 			);
 			name = Specs;
 			sourceTree = "<group>";

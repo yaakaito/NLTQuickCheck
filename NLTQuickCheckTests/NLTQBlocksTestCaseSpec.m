@@ -1,5 +1,5 @@
 //
-//  NLTQuickCheck - NLTQTestCaseSpec.m
+//  NLTQuickCheck - NLTQBlocksTestCaseSpec.m
 //  Copyright 2012年 __MyCompanyName__. All rights reserved.
 //
 //  Created by: KAZUMA Ukyo
@@ -7,7 +7,7 @@
 
 #import "Kiwi.h"
 
-SPEC_BEGIN(NLTQTestCaseSpec)
+SPEC_BEGIN(NLTQBlocksTestCaseSpec)
 
 describe(@"Example", ^{
     __block NSString *string;

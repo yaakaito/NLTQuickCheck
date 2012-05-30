@@ -28,13 +28,8 @@
     
     int retryCounter = 0;
     for (int i = 0; i < 100; i++) {
-        NLTQReport *report;
-        BOOL retry;
-        NSError *error;
-        BOOL result = [_testCase checkWithTestCount:i
-                                             report:&report
-                                              retry:&retry
-                                              error:&error];
+/*
+        NLTQReport
         if(retry) {
             retryCounter++;
             if(retryCounter > 3) {
@@ -51,6 +46,7 @@
     
     if(reports) {
         *reports = [NSArray array];
+ */
     }
 }
 @end

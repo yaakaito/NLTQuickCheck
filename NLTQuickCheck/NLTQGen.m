@@ -93,6 +93,21 @@
                           maximumSeed:[array count] - 1];
 }
 
++ (id)elementsGenWithObjects:(id)objects, ... {
+    
+    NSMutableArray *objects_ = [NSMutableArray array];
+    va_list arguments;
+    va_start(arguments, objects);
+    id value = objects;
+    while (value) {
+        [objects_ addObject:value];
+        value = va_arg(arguments, typeof(id));
+    }
+    va_end(arguments);
+    
+    return [self elementsGenWithArray:objects_];
+}
+
 + (id)randomGen {
     
     return [self genWithGenerateBlock:^id(double progress, int random) {

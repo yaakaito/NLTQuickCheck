@@ -23,6 +23,7 @@ typedef id(^__generateBlock)(double progress, int random);
 // Combinators
 + (id)chooseGenWithLow:(int)low high:(int)high;
 + (id)elementsGenWithArray:(NSArray*)array;
++ (id)elementsGenWithObjects:(id)objects, ... NS_REQUIRES_NIL_TERMINATION; 
 + (id)randomGen;
 
 

@@ -67,6 +67,7 @@ describe(@"blocks test case", ^{
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
             }
+            [[theValue(counter) should] equal:theValue(100)];
         });
     });
     
@@ -91,6 +92,7 @@ describe(@"blocks test case", ^{
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
             }
+            [[theValue(counter) should] equal:theValue(100)];
         });
     });
     
@@ -115,6 +117,7 @@ describe(@"blocks test case", ^{
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
             }
+            [[theValue(counter) should] equal:theValue(100)];
         });
     });  
     
@@ -139,6 +142,7 @@ describe(@"blocks test case", ^{
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
             }
+            [[theValue(counter) should] equal:theValue(100)];
         });
     });  
     
@@ -163,6 +167,7 @@ describe(@"blocks test case", ^{
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
             }
+            [[theValue(counter) should] equal:theValue(100)];
         });
     });  
     
@@ -187,6 +192,7 @@ describe(@"blocks test case", ^{
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
             }
+            [[theValue(counter) should] equal:theValue(100)];
         });
     });  
     
@@ -211,6 +217,7 @@ describe(@"blocks test case", ^{
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
             }
+            [[theValue(counter) should] equal:theValue(100)];
         });
     });  
     
@@ -235,6 +242,7 @@ describe(@"blocks test case", ^{
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
             }
+            [[theValue(counter) should] equal:theValue(100)];
         });
     });   
 });

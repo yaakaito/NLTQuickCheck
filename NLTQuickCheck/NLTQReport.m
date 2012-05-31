@@ -10,4 +10,8 @@
 
 @implementation NLTQReport
 
+@synthesize successs;
+@synthesize needsRetry;
+@synthesize retryCounter;
+@synthesize isException;
 @end

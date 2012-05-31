@@ -19,6 +19,8 @@ typedef BOOL(^__testCasePropertyBlockArguments6)(id argA, id argB, id argC, id a
 typedef BOOL(^__testCasePropertyBlockArguments7)(id argA, id argB, id argC, id argD, id argE, id argF, id argG);
 typedef BOOL(^__testCasePropertyBlockArguments8)(id argA, id argB, id argC, id argD, id argE, id argF, id argG, id argH);
 
+typedef BOOL(^__testCasePropertyExecuteBlock)(NSArray *args);
+
 @interface NLTQTestCase : NSObject
 
 + (id)selectorTestCaseWithSelector:(SEL)selector arbitraries:(NSArray*)array;

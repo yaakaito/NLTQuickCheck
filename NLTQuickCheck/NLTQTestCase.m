@@ -61,4 +61,51 @@
     } arbitraries:nil];
 }
 
++ (id)blocksTestCaseWithBlocksArguments1:(__testCasePropertyBlockArguments1)block arbitraries:(NSArray *)array {
+    return [[self alloc] initWithExcecuteBlock:^BOOL(NSArray *args) {
+        return block([args objectAtIndex:0]);
+    } arbitraries:array];
+}
+
++ (id)blocksTestCaseWithBlocksArguments2:(__testCasePropertyBlockArguments2)block arbitraries:(NSArray *)array {
+    return [[self alloc] initWithExcecuteBlock:^BOOL(NSArray *args) {
+        return block([args objectAtIndex:0], [args objectAtIndex:1]);
+    } arbitraries:array];
+}
+
++ (id)blocksTestCaseWithBlocksArguments3:(__testCasePropertyBlockArguments3)block arbitraries:(NSArray *)array {
+    return [[self alloc] initWithExcecuteBlock:^BOOL(NSArray *args) {
+        return block([args objectAtIndex:0], [args objectAtIndex:1], [args objectAtIndex:2]);
+    } arbitraries:array];
+}
+
++ (id)blocksTestCaseWithBlocksArguments4:(__testCasePropertyBlockArguments4)block arbitraries:(NSArray *)array {
+    return [[self alloc] initWithExcecuteBlock:^BOOL(NSArray *args) {
+        return block([args objectAtIndex:0], [args objectAtIndex:1], [args objectAtIndex:2], [args objectAtIndex:3]);
+    } arbitraries:array];
+}
+
++ (id)blocksTestCaseWithBlocksArguments5:(__testCasePropertyBlockArguments5)block arbitraries:(NSArray *)array {
+    return [[self alloc] initWithExcecuteBlock:^BOOL(NSArray *args) {
+        return block([args objectAtIndex:0], [args objectAtIndex:1], [args objectAtIndex:2], [args objectAtIndex:3], [args objectAtIndex:4]);
+    } arbitraries:array];
+}
+
++ (id)blocksTestCaseWithBlocksArguments6:(__testCasePropertyBlockArguments6)block arbitraries:(NSArray *)array {
+    return [[self alloc] initWithExcecuteBlock:^BOOL(NSArray *args) {
+        return block([args objectAtIndex:0], [args objectAtIndex:1], [args objectAtIndex:2], [args objectAtIndex:3], [args objectAtIndex:4], [args objectAtIndex:5]);
+    } arbitraries:array];
+}
+
++ (id)blocksTestCaseWithBlocksArguments7:(__testCasePropertyBlockArguments7)block arbitraries:(NSArray *)array {
+    return [[self alloc] initWithExcecuteBlock:^BOOL(NSArray *args) {
+        return block([args objectAtIndex:0], [args objectAtIndex:1], [args objectAtIndex:2], [args objectAtIndex:3], [args objectAtIndex:4], [args objectAtIndex:5], [args objectAtIndex:6]);
+    } arbitraries:array];
+}
+
++ (id)blocksTestCaseWithBlocksArguments8:(__testCasePropertyBlockArguments8)block arbitraries:(NSArray *)array {
+    return [[self alloc] initWithExcecuteBlock:^BOOL(NSArray *args) {
+        return block([args objectAtIndex:0], [args objectAtIndex:1], [args objectAtIndex:2], [args objectAtIndex:3], [args objectAtIndex:4], [args objectAtIndex:5], [args objectAtIndex:6], [args objectAtIndex:7]);
+    } arbitraries:array];
+}
 @end

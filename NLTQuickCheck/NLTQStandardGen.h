@@ -10,12 +10,12 @@
 
 @interface NLTQStandardGen : NSObject
 
-@property(nonatomic, readonly) NSInteger minimumSeed;
-@property(nonatomic, readonly) NSInteger maximumSeed;
-@property(nonatomic, readonly) NSInteger currentGeneratedValue;
+@property(nonatomic, readonly) int minimumSeed;
+@property(nonatomic, readonly) int maximumSeed;
+@property(nonatomic, readonly) int currentGeneratedValue;
 
-+ (id)standardGenWithMinimumSeed:(NSInteger)minimumSeed
-                     maximumSeed:(NSInteger)maximumSeed;
++ (id)standardGenWithMinimumSeed:(int)minimumSeed
+                     maximumSeed:(int)maximumSeed;
 
 - (id)generateNext;
 @end

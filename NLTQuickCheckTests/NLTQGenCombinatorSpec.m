@@ -9,80 +9,95 @@
 #import "NLTQGen.h"
 
 @interface NLTQGen(Privates)
-+ (NSArray*)numbersArrayWithLow:(NSInteger)low high:(NSInteger)high;
++ (NSArray*)numbersArrayWithLow:(int)low high:(int)high;
 @end
 
 SPEC_BEGIN(NLTQGenCombinatorSpec)
 
-describe(@"Gen(erator)", ^{
-    context(@"class method ``chooseGenWithLow:High`` ", ^{
+describe(@"Gen(erator) Combinator", ^{
+
+    context(@"chooseGenWithLow:high:", ^{
         
-        context(@"call with low 10 and high 20", ^{
-            __block NLTQGen *gen;
+        context(@"support method numbersArrayWithLow:high", ^{
             
-            beforeEach(^{
-                gen = [NLTQGen chooseGenWithLow:10 high:20];
-            });
-            
-            it(@"at progress 0.1, value in 10 - 20", ^{
-                NSNumber *v = [gen valueWithProgress:0.1];
-                [[theValue([v intValue]) should] beGreaterThanOrEqualTo:theValue(10)];
-                [[theValue([v intValue]) should] beLessThanOrEqualTo:theValue(20)];
-            });
-        });
-    });
-    
-    context(@"class method ``elementsGenWithArray:`` ", ^{
-        
-        context(@"support method ``numbersArrayWithLow:high`` ", ^{
-           
-            context(@"when call low 20 and high 30", ^{
+            context(@"with low 20 and high 30", ^{
                 __block NSArray *array;
                 
                 beforeEach(^{
                     array = [NLTQGen numbersArrayWithLow:20 high:30];
                 });
                 
-                it(@"has 11 numbers", ^{
+                it(@"when has 11 numbers", ^{
                     [[theValue([array count]) should] equal:theValue(11)];
                 });
                 
-                it(@"first object 20", ^{
+                it(@"when first object 20", ^{
                     [[theValue([[array objectAtIndex:0] intValue]) should] equal:theValue(20)];
                 });
                 
-                it(@"lastest object 30", ^{
+                it(@"when lastest object 30", ^{
                     [[theValue([[array lastObject] intValue]) should] equal:theValue(30)];
                 });
-
+                
             });
         }); 
-
-        context(@"call with [1,2,3]", ^{
+        
+        context(@"with low 10 and high 20", ^{
             __block NLTQGen *gen;
-            
             beforeEach(^{
-                gen = [NLTQGen elementsGenWithArray:[NSArray arrayWithObjects:[NSNumber numberWithInt:1],[NSNumber numberWithInt:2],[NSNumber numberWithInt:2], nil]];
+                gen = [NLTQGen chooseGenWithLow:10 high:20];
             });
-
-            it(@"at progress 0.1 value in 1 ~ 3", ^{
-                NSNumber *v = [gen valueWithProgress:0.1];
-                [[theValue([v intValue]) should] beGreaterThanOrEqualTo:theValue(0)];
-                [[theValue([v intValue]) should] beLessThanOrEqualTo:theValue(1000)];
+            
+            it(@"when value in 10 - 20", ^{
+                for(double p = 0.0; p < 1.0; p += 0.01) {
+                    NSNumber *v = [gen valueWithProgress:p];
+                    [[theValue([v doubleValue]) should] beBetween:theValue(10) and:theValue(20)];
+                }
             });
         });
     });
     
-    context(@"class method ``randomGen``", ^{
-        context(@"call with none arguments", ^{
-            __block NLTQGen *gen;
-            beforeEach(^{
-                gen = [NLTQGen randomGen];
-            });
-            
-            it(@"none resized random gen, return default value 0 ~ 1000", ^{
+    context(@"elementsGenWithArray: with [1,2,3]", ^{
 
-            });
+        __block NLTQGen *gen;
+        beforeEach(^{
+            gen = [NLTQGen elementsGenWithArray:[NSArray arrayWithObjects:[NSNumber numberWithInt:1],[NSNumber numberWithInt:2],[NSNumber numberWithInt:2], nil]];
+        });
+        
+        it(@"when value in 1 ~ 3", ^{
+            for(double p = 0.0; p < 1.0; p += 0.01) {
+                NSNumber *v = [gen valueWithProgress:p];
+                [[theValue([v intValue]) should] beBetween:theValue(1) and:theValue(3)];
+            }
+        });
+    });
+    
+    context(@"elementsGenWithObjects: with [1,2,3]", ^{
+        
+        __block NLTQGen *gen;
+        beforeEach(^{
+            gen = [NLTQGen elementsGenWithObjects:[NSNumber numberWithInt:1],[NSNumber numberWithInt:2],[NSNumber numberWithInt:2], nil];
+        });
+        
+        it(@"when value in 1 ~ 3", ^{
+            for(double p = 0.0; p < 1.0; p += 0.01) {
+                NSNumber *v = [gen valueWithProgress:p];
+                [[theValue([v intValue]) should] beBetween:theValue(1) and:theValue(3)];
+            }
+        });
+    });
+    
+    context(@"randomGen with default", ^{
+        __block NLTQGen *gen;
+        beforeEach(^{
+            gen = [NLTQGen randomGen];
+        });
+        
+        it(@"when value 0 ~ 1000", ^{
+            for(double p = 0.0; p < 1.0; p += 0.01) {
+                NSNumber *v = [gen valueWithProgress:p];
+                [[theValue([v intValue]) should] beBetween:theValue(0) and:theValue(1000)];
+            }
         });
     });
 

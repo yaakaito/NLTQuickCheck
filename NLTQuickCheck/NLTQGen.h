@@ -17,13 +17,15 @@ typedef id(^__generateBlock)(double progress, int random);
 
 @interface NLTQGen : NSObject
 + (id)genWithGenerateBlock:(__generateBlock)block;
-+ (id)genWithGenerateBlock:(__generateBlock)block miniumSeed:(NSInteger)minimumSeed maximumSeed:(NSInteger)maximumSeed;
++ (id)genWithGenerateBlock:(__generateBlock)block miniumSeed:(int)minimumSeed maximumSeed:(int)maximumSeed;
 - (id)valueWithProgress:(double)progress;
-- (void)resizeWithMinimumSeed:(NSInteger)minimumSeed maximumSeed:(NSInteger)maximumSeed;
+- (void)resizeWithMinimumSeed:(int)minimumSeed maximumSeed:(int)maximumSeed;
+- (void)bindingGen:(NLTQGen*)gen;
 
 // Combinators
-+ (id)chooseGenWithLow:(NSInteger)low high:(NSInteger)high;
++ (id)chooseGenWithLow:(int)low high:(int)high;
 + (id)elementsGenWithArray:(NSArray*)array;
++ (id)elementsGenWithObjects:(id)objects, ... NS_REQUIRES_NIL_TERMINATION; 
 + (id)randomGen;
 
 

@@ -14,7 +14,7 @@ describe(@"Report", ^{
     __block NLTQReport *report;
     context(@"properties", ^{
         beforeEach(^{
-            report = [NLTQReport reportWithSuccess:YES needsRetry:YES retryCounter:10 isException:YES];
+            report = [NLTQReport reportWithSuccess:YES needsRetry:YES retryCounter:10 isException:YES arguments:[NSArray array]];
         });
     
         it(@"when should has success", ^{
@@ -31,6 +31,10 @@ describe(@"Report", ^{
         
         it(@"when should has isException", ^{
             [[theValue(report.isException) should] beYes];
+        });
+        
+        it(@"when should has arguments", ^{
+            [[report.arguments should] beKindOfClass:[NSArray class]];
         });
     });
 });

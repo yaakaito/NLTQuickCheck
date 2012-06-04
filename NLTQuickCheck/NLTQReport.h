@@ -14,6 +14,11 @@
 @property(nonatomic, readonly) BOOL needsRetry;
 @property(nonatomic, readonly) int retryCounter;
 @property(nonatomic, readonly) BOOL isException;
+@property(nonatomic, strong, readonly) NSArray *arguments;
 
-+ (id)reportWithSuccess:(BOOL)success needsRetry:(BOOL)needsRetry retryCounter:(int)retryCounter isException:(BOOL)isException;
++ (id)reportWithSuccess:(BOOL)success
+             needsRetry:(BOOL)needsRetry
+           retryCounter:(int)retryCounter
+            isException:(BOOL)isException
+              arguments:(NSArray*)arguments;
 @end

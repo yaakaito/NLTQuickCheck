@@ -36,7 +36,7 @@ describe(@"blocks test case", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
-                [[theValue([report successs]) should] beYes];
+                [[theValue([report success]) should] beYes];
                 [[theValue([report needsRetry]) should] beNo];
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
@@ -62,7 +62,7 @@ describe(@"blocks test case", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
-                [[theValue([report successs]) should] beYes];
+                [[theValue([report success]) should] beYes];
                 [[theValue([report needsRetry]) should] beNo];
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
@@ -87,7 +87,7 @@ describe(@"blocks test case", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
-                [[theValue([report successs]) should] beYes];
+                [[theValue([report success]) should] beYes];
                 [[theValue([report needsRetry]) should] beNo];
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
@@ -112,7 +112,7 @@ describe(@"blocks test case", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
-                [[theValue([report successs]) should] beYes];
+                [[theValue([report success]) should] beYes];
                 [[theValue([report needsRetry]) should] beNo];
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
@@ -137,7 +137,7 @@ describe(@"blocks test case", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
-                [[theValue([report successs]) should] beYes];
+                [[theValue([report success]) should] beYes];
                 [[theValue([report needsRetry]) should] beNo];
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
@@ -162,7 +162,7 @@ describe(@"blocks test case", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
-                [[theValue([report successs]) should] beYes];
+                [[theValue([report success]) should] beYes];
                 [[theValue([report needsRetry]) should] beNo];
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
@@ -187,7 +187,7 @@ describe(@"blocks test case", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
-                [[theValue([report successs]) should] beYes];
+                [[theValue([report success]) should] beYes];
                 [[theValue([report needsRetry]) should] beNo];
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
@@ -212,7 +212,7 @@ describe(@"blocks test case", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
-                [[theValue([report successs]) should] beYes];
+                [[theValue([report success]) should] beYes];
                 [[theValue([report needsRetry]) should] beNo];
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
@@ -237,7 +237,7 @@ describe(@"blocks test case", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
-                [[theValue([report successs]) should] beYes];
+                [[theValue([report success]) should] beYes];
                 [[theValue([report needsRetry]) should] beNo];
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];

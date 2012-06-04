@@ -10,9 +10,10 @@
 
 @interface NLTQReport : NSObject
 
-@property(nonatomic) BOOL successs;
+@property(nonatomic, readonly) BOOL success;
 @property(nonatomic, readonly) BOOL needsRetry;
 @property(nonatomic, readonly) int retryCounter;
 @property(nonatomic, readonly) BOOL isException;
 
++ (id)reportWithSuccess:(BOOL)success needsRetry:(BOOL)needsRetry retryCounter:(int)retryCounter isException:(BOOL)isException;
 @end

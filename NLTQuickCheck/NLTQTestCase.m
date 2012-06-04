@@ -39,16 +39,21 @@
     if(!arguments) {
         arguments = [self gensRealize:progress];
     }
+    
     @try {
         success = _block(arguments);
     }
     @catch (NSException *exception) {
         isException = YES;
+        needsRetry = YES;
     }
-    if(retryCounter > 0) {
-        retryCounter++;
+    
+    if(!success) {
         if(retryCounter < 3){
             needsRetry = YES;
+        }
+        else {
+            needsRetry = NO;
         }
     }
     

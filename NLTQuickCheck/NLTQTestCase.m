@@ -23,21 +23,24 @@
     return self;
 }
 
-- (NLTQReport *)checkWithTestCount:(int)testCount testLength:(int)testLength {
-    
-    NLTQReport *report = [[NLTQReport alloc] init];
-    
+- (NSArray *)gensRealize:(double)progress {
     NSMutableArray *args = [NSMutableArray array];
-    double progress = testCount / testLength;
     for (NSUInteger i = 0; i < [_arbitraries count]; i++) {
         NLTQGen *gen = [_arbitraries objectAtIndex:i];
         [args addObject:[gen valueWithProgress:progress]];
     }
+    return args;
+}
+- (NLTQReport *)checkWithTestCount:(int)testCount testLength:(int)testLength {
+    
+    NLTQReport *report = [[NLTQReport alloc] init];
+    
+    double progress = testCount / testLength;
     
     BOOL success, isException, needsRetry;
     int retryCounter;
     @try {
-        report.successs = success = _block(args);
+        report.successs = success = _block([self gensRealize:progress]);
         if(!success) {
             if(++retryCounter < 3) {
                 needsRetry = YES;
@@ -52,7 +55,7 @@
 }
 
 + (id)selectorTestCaseWithSelector:(SEL)selector arbitraries:(NSArray *)array {
-    
+    return nil;
 }
 
 + (id)blocksTestCaseWithBlocksArguments0:(__testCasePropertyBlockArguments0)block {

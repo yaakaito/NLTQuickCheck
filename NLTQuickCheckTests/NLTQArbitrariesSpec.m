@@ -33,7 +33,7 @@ describe(@"bool arbitrary", ^{
                 v = [n intValue];
                 r = v == YES || v == NO;
             });
-            [[theValue(r) should] beTrue];
+            [[theValue(r) should] beYes];
         }
     });
 });

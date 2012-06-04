@@ -30,7 +30,7 @@
     for (int i = 0; i < 100; i++) {
         NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
         STAssertTrue([report isKindOfClass:[NLTQReport class]], @"return `NLTQReport object`.");
-        STAssertTrue([report successs], @"fixed success");
+        STAssertTrue([report success], @"fixed success");
         STAssertFalse([report needsRetry], @"fixed not needs retry");
         STAssertEquals(0, [report retryCounter], @"fixed retry count 0");
         STAssertFalse([report isException], @"fixed none exception");

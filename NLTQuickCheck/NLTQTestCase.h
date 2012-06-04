@@ -33,5 +33,7 @@ typedef BOOL(^__testCasePropertyExecuteBlock)(NSArray *args);
 + (id)blocksTestCaseWithBlocksArguments6:(__testCasePropertyBlockArguments6)block arbitraries:(NSArray*)array;
 + (id)blocksTestCaseWithBlocksArguments7:(__testCasePropertyBlockArguments7)block arbitraries:(NSArray*)array;
 + (id)blocksTestCaseWithBlocksArguments8:(__testCasePropertyBlockArguments8)block arbitraries:(NSArray*)array;
+
 - (NLTQReport*)checkWithTestCount:(int)testCount testLength:(int)testLength;
+- (NLTQReport*)checkWithTestCount:(int)testCount testLength:(int)testLength retryCounter:(int)retryCounter arguments:(NSArray*)arguments;
 @end

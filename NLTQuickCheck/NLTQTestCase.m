@@ -31,27 +31,33 @@
     }
     return args;
 }
-- (NLTQReport *)checkWithTestCount:(int)testCount testLength:(int)testLength {
-    
-    NLTQReport *report = [[NLTQReport alloc] init];
+
+- (NLTQReport *)checkWithTestCount:(int)testCount testLength:(int)testLength retryCounter:(int)retryCounter arguments:(NSArray *)arguments {
     
     double progress = testCount / testLength;
-    
-    BOOL success, isException, needsRetry;
-    int retryCounter;
+    BOOL success = NO, needsRetry = NO, isException = NO;
+    if(!arguments) {
+        arguments = [self gensRealize:progress];
+    }
     @try {
-        report.successs = success = _block([self gensRealize:progress]);
-        if(!success) {
-            if(++retryCounter < 3) {
-                needsRetry = YES;
-            }
-        }
+        success = _block(arguments);
     }
     @catch (NSException *exception) {
         isException = YES;
     }
+    if(retryCounter > 0) {
+        retryCounter++;
+        if(retryCounter < 3){
+            needsRetry = YES;
+        }
+    }
     
-    return report;
+    return [NLTQReport reportWithSuccess:success needsRetry:needsRetry retryCounter:retryCounter isException:isException arguments:nil];
+}
+
+- (NLTQReport *)checkWithTestCount:(int)testCount testLength:(int)testLength {
+    
+    return [self checkWithTestCount:testCount testLength:testLength retryCounter:0 arguments:nil];
 }
 
 + (id)selectorTestCaseWithSelector:(SEL)selector arbitraries:(NSArray *)array {

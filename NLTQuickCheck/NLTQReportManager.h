@@ -10,6 +10,11 @@
 #import "NLTQReport.h"
 
 @interface NLTQReportManager : NSObject
+
+@property(nonatomic,strong,readonly) NSMutableArray *successReports;
+@property(nonatomic,strong,readonly) NSMutableArray *failureReports;
+@property(nonatomic,strong,readonly) NSMutableArray *exceptionReports;
+
 + (id)reportManager;
 - (void)clear;
 - (void)addReport:(NLTQReport*)report;

@@ -48,6 +48,7 @@
 		B976DACA15766D550076149C /* NLTQSelectorTestCaseTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DAC915766D550076149C /* NLTQSelectorTestCaseTest.m */; };
 		B9C07809157CC78F00C27314 /* NLTQTestCaseSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C07808157CC78F00C27314 /* NLTQTestCaseSpec.m */; };
 		B9C0780C157CFD2900C27314 /* NLTQReportSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C0780B157CFD2900C27314 /* NLTQReportSpec.m */; };
+		B9C0780E157DAACD00C27314 /* NLTQTestRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C0780D157DAACC00C27314 /* NLTQTestRunnerSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		B976DAC915766D550076149C /* NLTQSelectorTestCaseTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQSelectorTestCaseTest.m; sourceTree = "<group>"; };
 		B9C07808157CC78F00C27314 /* NLTQTestCaseSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQTestCaseSpec.m; sourceTree = "<group>"; };
 		B9C0780B157CFD2900C27314 /* NLTQReportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQReportSpec.m; sourceTree = "<group>"; };
+		B9C0780D157DAACC00C27314 /* NLTQTestRunnerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQTestRunnerSpec.m; sourceTree = "<group>"; };
 		CACABB68EAAE45D38A8F3AF4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB5749ADAD414AF0B31ABA9A /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -227,6 +229,7 @@
 				B976DAC61575D59E0076149C /* NLTQBlocksTestCaseSpec.m */,
 				B976DA9B157537DF0076149C /* NLTQArbitrariesSpec.m */,
 				B9C0780B157CFD2900C27314 /* NLTQReportSpec.m */,
+				B9C0780D157DAACC00C27314 /* NLTQTestRunnerSpec.m */,
 			);
 			name = Specs;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				B976DACA15766D550076149C /* NLTQSelectorTestCaseTest.m in Sources */,
 				B9C07809157CC78F00C27314 /* NLTQTestCaseSpec.m in Sources */,
 				B9C0780C157CFD2900C27314 /* NLTQReportSpec.m in Sources */,
+				B9C0780E157DAACD00C27314 /* NLTQTestRunnerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

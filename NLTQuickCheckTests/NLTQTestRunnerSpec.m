@@ -67,7 +67,7 @@ describe(@"Test Runner", ^{
         __block NLTQTestRunner *testRunner;
         __block int runCounter;
         __block NSMutableArray *failureArgsArray;
-        beforeEach(^{
+        beforeAll(^{
             runCounter = 0;
             failureArgsArray = [NSMutableArray arrayWithCapacity:3];
             NLTQTestCase *testCase = [NLTQTestCase blocksTestCaseWithBlocksArguments2:^BOOL(id argA, id argB) {

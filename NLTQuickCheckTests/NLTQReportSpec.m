@@ -88,6 +88,30 @@ describe(@"Report", ^{
             
         });
         
+        context(@"failure", ^{
+            it(@"when 1 non number object, should equal '✗ Failure : ( object.description )'", ^{
+                report = [NLTQReport reportWithSuccess:NO
+                                            needsRetry:YES
+                                          retryCounter:0
+                                           isException:NO
+                                             arguments:[NSArray arrayWithObjects:[NSString stringWithFormat:@"string"], nil]];
+                [[[report localizedDescription] should] equal:@"✗ Failure : ( string )"];
+            });
+            
+        });
+        
+        context(@"exception", ^{
+            it(@"when 1 non number object, should equal '✷ Exceptions : ( object.description )'", ^{
+                report = [NLTQReport reportWithSuccess:NO
+                                            needsRetry:YES
+                                          retryCounter:0
+                                           isException:NO
+                                             arguments:[NSArray arrayWithObjects:[NSString stringWithFormat:@"string"], nil]];
+                [[[report localizedDescription] should] equal:@"✷ Exceptions : ( string )"];
+            });
+            
+        });
+
     });
 });
 

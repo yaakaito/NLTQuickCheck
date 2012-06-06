@@ -40,9 +40,41 @@ describe(@"Report", ^{
     
     context(@"localizedDescription", ^{
         context(@"success", ^{
-            it(@"when none arguments should equal `✓ Success : ()`", ^{
-                report = [NLTQReport reportWithSuccess:YES needsRetry:NO retryCounter:0 isException:0 arguments:nil];
+            it(@"when none arguments should equal '✓ Success : ()'", ^{
+                report = [NLTQReport reportWithSuccess:YES
+                                            needsRetry:NO
+                                          retryCounter:0
+                                           isException:NO
+                                             arguments:nil];
                 [[[report localizedDescription] should] equal:@"✓ Success : ()"];
+            });
+            
+            it(@"when 2 bool arguments, should equal '✓ Success : ( BOOL , BOOL )'", ^{
+                report = [NLTQReport reportWithSuccess:YES
+                                            needsRetry:NO
+                                          retryCounter:0
+                                           isException:NO
+                                             arguments:[NSArray arrayWithObjects:[NSNumber numberWithBool:YES], [NSNumber numberWithBool:NO], nil]];
+                [[[report localizedDescription] should] equal:@"✓ Success : ( YES , NO )"];
+            });
+
+            it(@"when 3 int arguments, should equal '✓ Success : ( int , int , int )'", ^{
+                report = [NLTQReport reportWithSuccess:YES
+                                            needsRetry:NO 
+                                          retryCounter:0 
+                                           isException:NO
+                                             arguments:[NSArray arrayWithObjects:[NSNumber numberWithInt:10], [NSNumber numberWithInt:20], [NSNumber numberWithInt:30], nil]];
+                [[[report localizedDescription] should] equal:@"✓ Success : ( 10 , 20 , 30 )"];
+            });
+            
+            
+            it(@"when 4 number arguments, should equal '✓ Success : ( number , number , number , number )'", ^{
+                report = [NLTQReport reportWithSuccess:YES
+                                            needsRetry:NO 
+                                          retryCounter:0
+                                           isException:NO
+                                             arguments:[NSArray arrayWithObjects:[NSNumber numberWithDouble:1.1],[NSNumber numberWithDouble:2.2],[NSNumber numberWithDouble:3.3],[NSNumber numberWithDouble:4.4], nil]];
+                [[[report localizedDescription] should] equal:@"✓ Success : ( 1.1 , 2.2 , 3.3 , 4.4 )"];
             });
         });
         

@@ -49,6 +49,15 @@ describe(@"Report", ^{
                 [[[report localizedDescription] should] equal:@"✓ Success : ()"];
             });
             
+            it(@"when 1 non number object, should equal '✓ Success : ( object.description )'", ^{
+                report = [NLTQReport reportWithSuccess:YES
+                                            needsRetry:NO
+                                          retryCounter:0
+                                           isException:NO
+                                             arguments:[NSArray arrayWithObjects:[NSString stringWithFormat:@"string"], nil]];
+                [[[report localizedDescription] should] equal:@"✓ Success : ( string )"];
+            });
+
             it(@"when 2 bool arguments, should equal '✓ Success : ( BOOL , BOOL )'", ^{
                 report = [NLTQReport reportWithSuccess:YES
                                             needsRetry:NO
@@ -76,6 +85,7 @@ describe(@"Report", ^{
                                              arguments:[NSArray arrayWithObjects:[NSNumber numberWithDouble:1.1],[NSNumber numberWithDouble:2.2],[NSNumber numberWithDouble:3.3],[NSNumber numberWithDouble:4.4], nil]];
                 [[[report localizedDescription] should] equal:@"✓ Success : ( 1.1 , 2.2 , 3.3 , 4.4 )"];
             });
+            
         });
         
     });

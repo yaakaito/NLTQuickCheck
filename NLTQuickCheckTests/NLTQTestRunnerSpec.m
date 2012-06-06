@@ -25,7 +25,7 @@ describe(@"Test Runner", ^{
         });
         context(@"and run 100 cases", ^{
             __block NSArray *reports;
-            beforeAll(^{
+            beforeEach(^{
                 [testRunner setTestLength:100];
                 [testRunner runWithVerbose:NO reports:&reports];
             });
@@ -44,7 +44,7 @@ describe(@"Test Runner", ^{
         
         context(@"and run 10 cases", ^{
             __block NSArray *reports;
-            beforeAll(^{
+            beforeEach(^{
                 [testRunner setTestLength:10];
                 [testRunner runWithVerbose:NO reports:&reports];
             });

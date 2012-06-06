@@ -49,7 +49,7 @@
     }
     
     if(!success) {
-        if(retryCounter < 3){
+        if(retryCounter < 2){
             needsRetry = YES;
         }
         else {

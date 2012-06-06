@@ -15,7 +15,7 @@ describe(@"Test Runner", ^{
     context(@"all successful test case", ^{
         __block NLTQTestRunner *testRunner;
         __block int runCounter;
-        beforeAll(^{
+        beforeEach(^{
             runCounter = 0;
             NLTQTestCase *testCase = [NLTQTestCase blocksTestCaseWithBlocksArguments0:^BOOL{
                 runCounter++;
@@ -44,7 +44,7 @@ describe(@"Test Runner", ^{
         
         context(@"and run 10 cases", ^{
             __block NSArray *reports;
-            beforeEach(^{
+            beforeAll(^{
                 [testRunner setTestLength:10];
                 [testRunner runWithVerbose:NO reports:&reports];
             });

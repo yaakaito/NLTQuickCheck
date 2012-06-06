@@ -46,7 +46,7 @@ describe(@"Report", ^{
                                           retryCounter:0
                                            isException:NO
                                              arguments:nil];
-                [[[report localizedDescription] should] equal:@"✓ Success : ()"];
+                [[[report localizedDescription] should] equal:@"✓ Success : ( )"];
             });
             
             it(@"when 1 non number object, should equal '✓ Success : ( object.description )'", ^{

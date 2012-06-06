@@ -19,15 +19,15 @@ describe(@"Standard Gen(erator)", ^{
             gen = [NLTQStandardGen standardGenWithMinimumSeed:10 maximumSeed:20];
         });
         
-        it(@"when minimum is 10", ^{
+        it(@"should minimum is 10", ^{
             [[theValue(gen.minimumSeed) should] equal:theValue(10)];
         });
         
-        it(@"when maximum is 20", ^{
+        it(@"should maximum is 20", ^{
             [[theValue(gen.maximumSeed) should] equal:theValue(20)];
         });
         
-        it(@"when wcurrent generated value in 10~20", ^{
+        it(@"should wcurrent generated value between 10 ~ 20", ^{
             [[theValue(gen.currentGeneratedValue) should] beBetween:theValue(10) and:theValue(20)];
         });
     });
@@ -38,15 +38,15 @@ describe(@"Standard Gen(erator)", ^{
             gen = [NLTQStandardGen standardGenWithMinimumSeed:20 maximumSeed:30];
         });
         
-        it(@"when minimum is 20", ^{
+        it(@"should minimum is 20", ^{
             [[theValue(gen.minimumSeed) should] equal:theValue(20)];
         });
         
-        it(@"when maximum is 30", ^{
+        it(@"should maximum is 30", ^{
             [[theValue(gen.maximumSeed) should] equal:theValue(30)];
         });
         
-        it(@"when current generated value in 20~30", ^{
+        it(@"should current generated value between 20 ~ 30", ^{
             [[theValue(gen.currentGeneratedValue) should] beBetween:theValue(20) and:theValue(30)];
         });
     });

@@ -28,11 +28,11 @@ describe(@"blocks test case", ^{
             }];
         });
         
-        it(@"when NLTQTestCase object", ^{
+        it(@"should be NLTQTestCase object", ^{
             [[testCase should] beKindOfClass:[NLTQTestCase class]];
         });
         
-        it(@"when reports must success", ^{
+        it(@"should all reports success", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
@@ -54,11 +54,11 @@ describe(@"blocks test case", ^{
             } arbitraries:[NSArray arrayWithObjects:gen, nil]];
         });
         
-        it(@"when NLTQTestCase object", ^{
+        it(@"should be NLTQTestCase object", ^{
             [[testCase should] beKindOfClass:[NLTQTestCase class]];
         });
         
-        it(@"when reports must success", ^{
+        it(@"should all reports success", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
@@ -79,11 +79,11 @@ describe(@"blocks test case", ^{
             } arbitraries:[NSArray arrayWithObjects:gen, gen, nil]];
         });
         
-        it(@"when NLTQTestCase object", ^{
+        it(@"should be NLTQTestCase object", ^{
             [[testCase should] beKindOfClass:[NLTQTestCase class]];
         });
         
-        it(@"when reports must success", ^{
+        it(@"should all reports success", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
@@ -104,11 +104,11 @@ describe(@"blocks test case", ^{
             } arbitraries:[NSArray arrayWithObjects:gen, gen, gen, nil]];
         });
         
-        it(@"when NLTQTestCase object", ^{
+        it(@"should be NLTQTestCase object", ^{
             [[testCase should] beKindOfClass:[NLTQTestCase class]];
         });
         
-        it(@"when reports must success", ^{
+        it(@"should all reports success", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
@@ -129,11 +129,11 @@ describe(@"blocks test case", ^{
             } arbitraries:[NSArray arrayWithObjects:gen, gen, gen, gen, nil]];
         });
         
-        it(@"when NLTQTestCase object", ^{
+        it(@"should be NLTQTestCase object", ^{
             [[testCase should] beKindOfClass:[NLTQTestCase class]];
         });
         
-        it(@"when reports must success", ^{
+        it(@"should all reports success", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
@@ -154,11 +154,11 @@ describe(@"blocks test case", ^{
             } arbitraries:[NSArray arrayWithObjects:gen, gen, gen, gen, gen, nil]];
         });
         
-        it(@"when NLTQTestCase object", ^{
+        it(@"should be NLTQTestCase object", ^{
             [[testCase should] beKindOfClass:[NLTQTestCase class]];
         });
         
-        it(@"when reports must success", ^{
+        it(@"should all reports success", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
@@ -179,11 +179,11 @@ describe(@"blocks test case", ^{
             } arbitraries:[NSArray arrayWithObjects:gen, gen, gen, gen, gen, gen, nil]];
         });
         
-        it(@"when NLTQTestCase object", ^{
+        it(@"should be NLTQTestCase object", ^{
             [[testCase should] beKindOfClass:[NLTQTestCase class]];
         });
         
-        it(@"when reports must success", ^{
+        it(@"should all reports success", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
@@ -204,11 +204,11 @@ describe(@"blocks test case", ^{
             } arbitraries:[NSArray arrayWithObjects:gen, gen, gen, gen, gen, gen, gen, nil]];
         });
         
-        it(@"when NLTQTestCase object", ^{
+        it(@"should be NLTQTestCase object", ^{
             [[testCase should] beKindOfClass:[NLTQTestCase class]];
         });
         
-        it(@"when reports must success", ^{
+        it(@"should all reports success", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
@@ -229,11 +229,11 @@ describe(@"blocks test case", ^{
             } arbitraries:[NSArray arrayWithObjects:gen, gen, gen, gen, gen, gen, gen, gen, nil]];
         });
         
-        it(@"when NLTQTestCase object", ^{
+        it(@"should be NLTQTestCase object", ^{
             [[testCase should] beKindOfClass:[NLTQTestCase class]];
         });
         
-        it(@"when reports must success", ^{
+        it(@"should all reports success", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];

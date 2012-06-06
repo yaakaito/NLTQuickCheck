@@ -16,15 +16,15 @@ describe(@"Report Manager", ^{
         reportManager = [NLTQReportManager reportManager];
     });
     
-    it(@"when should has successReports", ^{
+    it(@"should has successReports", ^{
         [[reportManager.successReports should] beKindOfClass:[NSMutableArray class]];
     });
 
-    it(@"when should has failureReports", ^{
+    it(@"should has failureReports", ^{
         [[reportManager.failureReports should] beKindOfClass:[NSMutableArray class]];
     });
 
-    it(@"when should has exceptionReports", ^{
+    it(@"should has exceptionReports", ^{
         [[reportManager.exceptionReports should] beKindOfClass:[NSMutableArray class]];
     });
 
@@ -38,11 +38,11 @@ describe(@"Report Manager", ^{
             [reportManager addReport:report];
         });
         
-        it(@"when should successReports has 1 report object", ^{
+        it(@"should successReports has 1 report object", ^{
             [[theValue([reportManager.successReports count]) should] equal:theValue(1)];
         });
         
-        it(@"when should failureReports and exceptionReports are empty", ^{
+        it(@"should failureReports and exceptionReports are empty", ^{
             [[theValue([reportManager.failureReports count]) should] beZero];
             [[theValue([reportManager.exceptionReports count]) should] beZero];
         });
@@ -58,11 +58,11 @@ describe(@"Report Manager", ^{
             [reportManager addReport:report];
         });
         
-        it(@"when should failureReports has 1 report object", ^{
+        it(@"should failureReports has 1 report object", ^{
             [[theValue([reportManager.failureReports count]) should] equal:theValue(1)];
         });
         
-        it(@"when should successReports and exceptionReports are empty", ^{
+        it(@"should successReports and exceptionReports are empty", ^{
             [[theValue([reportManager.successReports count]) should] beZero];
             [[theValue([reportManager.exceptionReports count]) should] beZero];
         });
@@ -78,11 +78,11 @@ describe(@"Report Manager", ^{
             [reportManager addReport:report];
         });
     
-        it(@"when should exceptionReports has 1 report object", ^{
+        it(@"should exceptionReports has 1 report object", ^{
             [[theValue([reportManager.exceptionReports count]) should] equal:theValue(1)];
         });
     
-        it(@"when should successReports and failureReports are empty", ^{
+        it(@"should successReports and failureReports are empty", ^{
             [[theValue([reportManager.successReports count]) should] beZero];
             [[theValue([reportManager.failureReports count]) should] beZero];
         });

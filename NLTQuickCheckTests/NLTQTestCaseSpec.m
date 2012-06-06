@@ -31,7 +31,7 @@ describe(@"TestCaseSpec", ^{
         
         context(@"support method gensRealize:", ^{
             
-            it(@"when return array [YES]", ^{
+            it(@"should return array [YES]", ^{
                 NSArray *args = [testCase gensRealize:0.0];
                 [[theValue([args count]) should] equal:theValue(1)];
                 NSNumber *argA = [args objectAtIndex:0];
@@ -39,22 +39,22 @@ describe(@"TestCaseSpec", ^{
             });
         });
         
-        it(@"when report success flag = YES", ^{
+        it(@"should report success flag = YES", ^{
             NLTQReport *report = [testCase checkWithTestCount:0 testLength:100];
             [[theValue(report.success) should] beYes];
         });
         
-        it(@"when report needs retry flag = NO", ^{
+        it(@"should report needs retry flag = NO", ^{
             NLTQReport *report = [testCase checkWithTestCount:0 testLength:100];
             [[theValue(report.needsRetry) should] beNo];
         });
         
-        it(@"when report retry counter = 0", ^{
+        it(@"should report retry counter = 0", ^{
             NLTQReport *report = [testCase checkWithTestCount:0 testLength:100];
             [[theValue(report.retryCounter) should] equal:theValue(0)];
         });
         
-        it(@"when report exception flag = NO", ^{
+        it(@"should report exception flag = NO", ^{
             NLTQReport *report = [testCase checkWithTestCount:0 testLength:100];
             [[theValue(report.isException) should] beNo];
         });
@@ -68,22 +68,22 @@ describe(@"TestCaseSpec", ^{
             } arbitraries:[NSArray arrayWithObjects:gen, nil]];
         });
         
-        it(@"when report success flag = NO", ^{
+        it(@"should report success flag = NO", ^{
             NLTQReport *report = [testCase checkWithTestCount:0 testLength:100];
             [[theValue(report.success) should] beNo];
         });
         
-        it(@"when report needs retry flag = YES", ^{
+        it(@"should report needs retry flag = YES", ^{
             NLTQReport *report = [testCase checkWithTestCount:0 testLength:100];
             [[theValue(report.needsRetry) should] beYes];
         });
         
-        it(@"when report retry counter = 0", ^{
+        it(@"should report retry counter = 0", ^{
             NLTQReport *report = [testCase checkWithTestCount:0 testLength:100];
             [[theValue(report.retryCounter) should] equal:theValue(0)];
         });
         
-        it(@"when report exception flag = NO", ^{
+        it(@"should report exception flag = NO", ^{
             NLTQReport *report = [testCase checkWithTestCount:0 testLength:100];
             [[theValue(report.isException) should] beNo];
         });
@@ -97,22 +97,22 @@ describe(@"TestCaseSpec", ^{
             }];
         });
         
-        it(@"when report success flag = NO", ^{
+        it(@"should report success flag = NO", ^{
             NLTQReport *report = [testCase checkWithTestCount:0 testLength:100];
             [[theValue(report.success) should] beNo];
         });
         
-        it(@"when report needs retry flag = NO", ^{
+        it(@"should report needs retry flag = NO", ^{
             NLTQReport *report = [testCase checkWithTestCount:0 testLength:100];
             [[theValue(report.needsRetry) should] beNo];
         });
         
-        it(@"when report retry counter = 0", ^{
+        it(@"should report retry counter = 0", ^{
             NLTQReport *report = [testCase checkWithTestCount:0 testLength:100];
             [[theValue(report.retryCounter) should] equal:theValue(0)];
         });
         
-        it(@"when reports exception flag = YES", ^{
+        it(@"should reports exception flag = YES", ^{
             NLTQReport *report = [testCase checkWithTestCount:0 testLength:100];
             [[theValue(report.isException) should] beYes];
         });

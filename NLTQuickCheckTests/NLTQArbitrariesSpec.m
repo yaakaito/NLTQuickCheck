@@ -17,24 +17,26 @@ describe(@"bool arbitrary", ^{
         gen = [NSNumber boolArbitrary];
     });
     
-    it(@"when NLTQGen object", ^{
+    it(@"should be NLTGen object", ^{
         [[gen should] beKindOfClass:[NLTQGen class]];
     });
     
-    it(@"when value NSNumber object", ^{
+    it(@"should be value is NSNumber object", ^{
         [[[gen valueWithProgress:0] should] beKindOfClass:[NSNumber class]];
     });
 
-    it(@"when value YES or NO", ^{
-        for(double p = 0.0; p < 1.0; p += 0.01) {
-            __block BOOL v, r;
-            theBlock(^{
-                NSNumber *n = [gen valueWithProgress:p];
-                v = [n intValue];
-                r = v == YES || v == NO;
-            });
-            [[theValue(r) should] beYes];
-        }
+    context(@"when run with double 0 ~ 1 progress", ^{
+        it(@"should values YES or NO", ^{
+            for(double p = 0.0; p < 1.0; p += 0.01) {
+                __block BOOL v, r;
+                theBlock(^{
+                    NSNumber *n = [gen valueWithProgress:p];
+                    v = [n intValue];
+                    r = v == YES || v == NO;
+                });
+                [[theValue(r) should] beYes];
+            }
+        });
     });
 });
 

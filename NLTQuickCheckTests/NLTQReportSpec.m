@@ -17,23 +17,23 @@ describe(@"Report", ^{
             report = [NLTQReport reportWithSuccess:YES needsRetry:YES retryCounter:10 isException:YES arguments:[NSArray array]];
         });
     
-        it(@"when should has success", ^{
+        it(@"should has success", ^{
             [[theValue(report.success) should] beYes];
         });
         
-        it(@"when should has needsRetry", ^{
+        it(@"should has needsRetry", ^{
             [[theValue(report.success) should] beYes];
         });
         
-        it(@"when should has retryCounter", ^{
+        it(@"should has retryCounter", ^{
             [[theValue(report.retryCounter) should] equal:theValue(10)];
         });
         
-        it(@"when should has isException", ^{
+        it(@"should has isException", ^{
             [[theValue(report.isException) should] beYes];
         });
         
-        it(@"when should has arguments", ^{
+        it(@"should has arguments", ^{
             [[report.arguments should] beKindOfClass:[NSArray class]];
         });
     });

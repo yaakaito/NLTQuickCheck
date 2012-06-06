@@ -19,7 +19,7 @@ describe(@"Gen(erator)", ^{
             }];
         });
         
-        it(@"when, value is fixed string", ^{
+        it(@"should value is fixed string", ^{
             for(double p = 0.0; p < 1.0; p += 0.01) {
                 NSString *v = [gen valueWithProgress:p];
                 [[v should] equal:@"string"];
@@ -34,7 +34,7 @@ describe(@"Gen(erator)", ^{
             }];
         });
         
-        it(@"when, value equal progress", ^{
+        it(@"should value equal progress", ^{
             for(double p = 0.0; p < 1.0; p += 0.01) {
                 NSNumber *v = [gen valueWithProgress:p];
                 [[theValue([v doubleValue]) should] equal:theValue(p)];
@@ -49,7 +49,7 @@ describe(@"Gen(erator)", ^{
             [gen resizeWithMinimumSeed:40 maximumSeed:100];
         });
         
-        it(@"when, value in 40 ~ 100", ^{
+        it(@"should value between 40 ~ 100", ^{
             for(double p = 0.0; p < 1.0; p += 0.01) {
                 NSNumber *v = [gen valueWithProgress:p];
                 [[theValue([v doubleValue]) should] beBetween:theValue(40) and:theValue(100)];
@@ -68,7 +68,7 @@ describe(@"Gen(erator)", ^{
                 }];
             });
             
-            it(@"when raise exception", ^{
+            it(@"should raise exception", ^{
                 gen = [NLTQGen genWithGenerateBlock:^id(double progress, int random) {
                     return [NSNumber numberWithInt:random];
                 }];
@@ -87,7 +87,7 @@ describe(@"Gen(erator)", ^{
                 }];
             });
         
-            it(@"when retrun binding gens value * 10", ^{
+            it(@"should retrun binding gens value * 10", ^{
                 gen = [NLTQGen genWithGenerateBlock:^id(double progress, int random) {
                     return [NSNumber numberWithInt:random*10];
                 }];

@@ -42,19 +42,17 @@
     
     @try {
         success = _block(arguments);
+        if(!success) {
+            if(retryCounter < 2){
+                needsRetry = YES;
+            }
+            else {
+                needsRetry = NO;
+            }
+        }
     }
     @catch (NSException *exception) {
         isException = YES;
-        needsRetry = YES;
-    }
-    
-    if(!success) {
-        if(retryCounter < 2){
-            needsRetry = YES;
-        }
-        else {
-            needsRetry = NO;
-        }
     }
     
     return [NLTQReport reportWithSuccess:success needsRetry:needsRetry retryCounter:retryCounter isException:isException arguments:nil];

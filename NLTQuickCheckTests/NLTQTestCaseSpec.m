@@ -102,9 +102,9 @@ describe(@"TestCaseSpec", ^{
             [[theValue(report.success) should] beNo];
         });
         
-        it(@"when report needs retry flag = YES", ^{
+        it(@"when report needs retry flag = NO", ^{
             NLTQReport *report = [testCase checkWithTestCount:0 testLength:100];
-            [[theValue(report.needsRetry) should] beYes];
+            [[theValue(report.needsRetry) should] beNo];
         });
         
         it(@"when report retry counter = 0", ^{

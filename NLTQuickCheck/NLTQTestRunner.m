@@ -38,11 +38,17 @@
 
 - (void)runWithVerbose:(BOOL)isVerbose reports:(NSArray *__autoreleasing *)reports {
     
-    int retryCounter = 0;
     NSMutableArray *mutableReports = [NSMutableArray array];
+    NLTQReport *report;
     for (int i = 0; i < self.testLength; i++) {
-        NLTQReport *report = [self.testCase checkWithTestCount:i testLength:self.testLength];
+        if(report && report.needsRetry) {
+            report = [self.testCase checkWithTestCount:i testLength:self.testLength retryCounter:report.retryCounter+1 arguments:report.arguments];
+        }
+        else {
+            report = [self.testCase checkWithTestCount:i testLength:self.testLength];
+        }
         [mutableReports addObject:report];
+
     }
     
     if(reports) {

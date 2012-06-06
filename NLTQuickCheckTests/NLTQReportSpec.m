@@ -103,9 +103,9 @@ describe(@"Report", ^{
         context(@"exception", ^{
             it(@"when 1 non number object, should equal '✷ Exceptions : ( object.description )'", ^{
                 report = [NLTQReport reportWithSuccess:NO
-                                            needsRetry:YES
+                                            needsRetry:NO
                                           retryCounter:0
-                                           isException:NO
+                                           isException:YES
                                              arguments:[NSArray arrayWithObjects:[NSString stringWithFormat:@"string"], nil]];
                 [[[report localizedDescription] should] equal:@"✷ Exceptions : ( string )"];
             });

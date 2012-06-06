@@ -7,6 +7,7 @@
 
 #import "Kiwi.h"
 #import "NLTQTestRunner.h"
+#import "NLTQGen.h"
 
 SPEC_BEGIN(NLTQTestRunnerSpec)
 
@@ -14,7 +15,7 @@ describe(@"Test Runner", ^{
     context(@"all successful test case", ^{
         __block NLTQTestRunner *testRunner;
         __block int runCounter;
-        beforeEach(^{
+        beforeAll(^{
             runCounter = 0;
             NLTQTestCase *testCase = [NLTQTestCase blocksTestCaseWithBlocksArguments0:^BOOL{
                 runCounter++;
@@ -24,7 +25,7 @@ describe(@"Test Runner", ^{
         });
         context(@"and run 100 cases", ^{
             __block NSArray *reports;
-            beforeEach(^{
+            beforeAll(^{
                 [testRunner setTestLength:100];
                 [testRunner runWithVerbose:NO reports:&reports];
             });
@@ -65,21 +66,24 @@ describe(@"Test Runner", ^{
     context(@"failure at 3rd , 4th and 5th test case", ^{
         __block NLTQTestRunner *testRunner;
         __block int runCounter;
+        __block NSMutableArray *failureArgsArray;
         beforeEach(^{
             runCounter = 0;
-            NLTQTestCase *testCase = [NLTQTestCase blocksTestCaseWithBlocksArguments0:^BOOL{
+            failureArgsArray = [NSMutableArray arrayWithCapacity:3];
+            NLTQTestCase *testCase = [NLTQTestCase blocksTestCaseWithBlocksArguments2:^BOOL(id argA, id argB) {
                 runCounter++;
-                if(runCounter == 3 || runCounter == 4 || runCounter == 5) {
+                if(runCounter == 3 || runCounter == 4 || runCounter == 5){
+                    [failureArgsArray addObject:[NSArray arrayWithObjects:argA, argB, nil]];
                     return NO;
                 }
                 return YES;
-            }];
+            } arbitraries:[NSArray arrayWithObjects:[NLTQGen chooseGenWithLow:0 high:10], [NLTQGen chooseGenWithLow:0 high:10], nil]];
             testRunner = [NLTQTestRunner testRunnerWithTestCase:testCase];
         });
         
         context(@"and run 6 cases ", ^{
             __block NSArray *reports;
-            beforeEach(^{
+            beforeAll(^{
                 [testRunner setTestLength:6];
                 [testRunner runWithVerbose:NO reports:&reports];
             });
@@ -116,6 +120,20 @@ describe(@"Test Runner", ^{
                 [[theValue([[reports objectAtIndex:4] needsRetry]) should] beNo];
                 [[theValue([[reports objectAtIndex:4] retryCounter]) should] equal:theValue(2)];
             });
+                
+            it(@"when equals 3rd, 4th and 5th arguments", ^{
+                [[theValue([failureArgsArray count]) should] equal:theValue(3)];
+                NSNumber *argA_3 = [[failureArgsArray objectAtIndex:0] objectAtIndex:0];
+                NSNumber *argB_3 = [[failureArgsArray objectAtIndex:0] objectAtIndex:1];
+                NSNumber *argA_4 = [[failureArgsArray objectAtIndex:1] objectAtIndex:0];
+                NSNumber *argB_4 = [[failureArgsArray objectAtIndex:1] objectAtIndex:1];
+                NSNumber *argA_5 = [[failureArgsArray objectAtIndex:2] objectAtIndex:0];
+                NSNumber *argB_5 = [[failureArgsArray objectAtIndex:2] objectAtIndex:1];
+                [[theValue([argA_3 intValue]) should] equal:theValue([argA_4 intValue])];
+                [[theValue([argA_3 intValue]) should] equal:theValue([argA_5 intValue])];
+                [[theValue([argB_3 intValue]) should] equal:theValue([argB_4 intValue])];
+                [[theValue([argB_3 intValue]) should] equal:theValue([argB_5 intValue])];
+            });
             
             it(@"when should 6th report is success", ^{
                 [[theValue([[reports objectAtIndex:5] success]) should] beYes];
@@ -126,7 +144,7 @@ describe(@"Test Runner", ^{
     context(@"throws exception at 3rd test case", ^{
         __block NLTQTestRunner *testRunner;
         __block int runCounter;
-        beforeEach(^{
+        beforeAll(^{
             runCounter = 0;
             NLTQTestCase *testCase = [NLTQTestCase blocksTestCaseWithBlocksArguments0:^BOOL{
                 runCounter++;
@@ -140,7 +158,7 @@ describe(@"Test Runner", ^{
         
         context(@"and run 4 cases (retry case)", ^{
             __block NSArray *reports;
-            beforeEach(^{
+            beforeAll(^{
                 [testRunner setTestLength:4];
                 [testRunner runWithVerbose:NO reports:&reports];
             });

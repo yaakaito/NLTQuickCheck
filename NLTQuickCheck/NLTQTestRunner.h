@@ -13,4 +13,5 @@
 
 + (id)testRunnerWithTestCase:(NLTQTestCase*)testCase;
 - (void)runWithVerbose:(BOOL)isVerbose reports:(NSArray**)reports;
+- (void)setTestLength:(int)length;
 @end

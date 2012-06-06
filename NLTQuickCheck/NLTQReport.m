@@ -60,11 +60,44 @@
                                arguments:arguments];
 }
 
+- (NSString *)localizeNSNumber:(NSNumber *)arg {
+
+    if(strcmp([arg objCType], @encode(BOOL)) == 0) {
+        if([arg boolValue]) {
+            return @"YES";
+        }
+        else {
+            return @"NO";
+        }
+    }
+    return [arg stringValue];
+}
+
 - (NSString *)localizedDescription {
     
-    
-    @"✓";
-    return nil;
+    NSMutableArray *strings = [NSMutableArray array];
+    if(self.isException) {
+        [strings addObject:@"✷ Exceptions : ("];
+    }
+    else if(!self.success) {
+        [strings addObject:@"✗ Failure : ("];
+    }
+    else {
+        [strings addObject:@"✓ Success : ("];
+    }
+    for (id arg in self.arguments) {
+        if([arg isKindOfClass:[NSNumber class]]) {
+            [strings addObject:[self localizeNSNumber:arg]];
+        }
+        else {
+            [strings addObject:[arg description]];
+        }
+        if([self.arguments lastObject] != arg) {
+            [strings addObject:@","];
+        }
+    }
+    [strings addObject:@")"];
+    return [strings componentsJoinedByString:@" "];
 }
 
 @end

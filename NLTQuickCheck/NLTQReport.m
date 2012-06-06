@@ -60,4 +60,11 @@
                                arguments:arguments];
 }
 
+- (NSString *)localizedDescription {
+    
+    
+    @"✓";
+    return nil;
+}
+
 @end

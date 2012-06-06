@@ -37,6 +37,16 @@ describe(@"Report", ^{
             [[report.arguments should] beKindOfClass:[NSArray class]];
         });
     });
+    
+    context(@"localizedDescription", ^{
+        context(@"success", ^{
+            it(@"when none arguments should equal `✓ Success : ()`", ^{
+                report = [NLTQReport reportWithSuccess:YES needsRetry:NO retryCounter:0 isException:0 arguments:nil];
+                [[[report localizedDescription] should] equal:@"✓ Success : ()"];
+            });
+        });
+        
+    });
 });
 
 SPEC_END

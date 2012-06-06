@@ -21,4 +21,6 @@
            retryCounter:(int)retryCounter
             isException:(BOOL)isException
               arguments:(NSArray*)arguments;
+
+- (NSString*)localizedDescription;
 @end

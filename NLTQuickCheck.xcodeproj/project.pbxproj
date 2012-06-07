@@ -10,7 +10,6 @@
 		5678D31741CC48F5B93C4F35 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CACABB68EAAE45D38A8F3AF4 /* libPods.a */; };
 		B2C517B2F09E427380ECDC75 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CACABB68EAAE45D38A8F3AF4 /* libPods.a */; };
 		B941926D1565760D0074A059 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B941926C1565760D0074A059 /* Foundation.framework */; };
-		B94192731565760D0074A059 /* NLTQuickCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = B94192721565760D0074A059 /* NLTQuickCheck.m */; };
 		B941927B1565760D0074A059 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B941927A1565760D0074A059 /* SenTestingKit.framework */; };
 		B941927D1565760D0074A059 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B941927C1565760D0074A059 /* UIKit.framework */; };
 		B941927E1565760D0074A059 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B941926C1565760D0074A059 /* Foundation.framework */; };
@@ -67,7 +66,6 @@
 		B941926C1565760D0074A059 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B94192701565760D0074A059 /* NLTQuickCheck-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NLTQuickCheck-Prefix.pch"; sourceTree = "<group>"; };
 		B94192711565760D0074A059 /* NLTQuickCheck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NLTQuickCheck.h; sourceTree = "<group>"; };
-		B94192721565760D0074A059 /* NLTQuickCheck.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NLTQuickCheck.m; sourceTree = "<group>"; };
 		B94192791565760D0074A059 /* NLTQuickCheckTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NLTQuickCheckTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B941927A1565760D0074A059 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		B941927C1565760D0074A059 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -164,7 +162,6 @@
 			children = (
 				B976DA94157537330076149C /* Arbitraries */,
 				B94192711565760D0074A059 /* NLTQuickCheck.h */,
-				B94192721565760D0074A059 /* NLTQuickCheck.m */,
 				B941926F1565760D0074A059 /* Supporting Files */,
 				B94192B9156AAD370074A059 /* NLTQStandardGen.h */,
 				B94192BA156AAD370074A059 /* NLTQStandardGen.m */,
@@ -198,6 +195,7 @@
 			children = (
 				B976DACB15766F400076149C /* Specs */,
 				B976DACC15766F580076149C /* xUnit */,
+				B971A3A4158041C1009DE97F /* Example */,
 				B94192831565760D0074A059 /* Supporting Files */,
 			);
 			path = NLTQuickCheckTests;
@@ -210,6 +208,45 @@
 				B94192851565760D0074A059 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B971A3A4158041C1009DE97F /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				B971A3AA158043E3009DE97F /* GHUnit */,
+				B971A3A9158043DB009DE97F /* OCUnit */,
+				B971A3A8158043CF009DE97F /* Cedar */,
+				B971A3A5158041D1009DE97F /* Kiwi */,
+			);
+			name = Example;
+			sourceTree = "<group>";
+		};
+		B971A3A5158041D1009DE97F /* Kiwi */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Kiwi;
+			sourceTree = "<group>";
+		};
+		B971A3A8158043CF009DE97F /* Cedar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Cedar;
+			sourceTree = "<group>";
+		};
+		B971A3A9158043DB009DE97F /* OCUnit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = OCUnit;
+			sourceTree = "<group>";
+		};
+		B971A3AA158043E3009DE97F /* GHUnit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = GHUnit;
 			sourceTree = "<group>";
 		};
 		B976DA94157537330076149C /* Arbitraries */ = {
@@ -376,7 +413,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B94192731565760D0074A059 /* NLTQuickCheck.m in Sources */,
 				B94192BC156AAD370074A059 /* NLTQStandardGen.m in Sources */,
 				B94192D8156C05AB0074A059 /* NLTQGen.m in Sources */,
 				B94192E6156E95630074A059 /* NLTQGenCombinatorSpec.m in Sources */,

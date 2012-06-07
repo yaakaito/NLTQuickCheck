@@ -42,7 +42,7 @@
 
 - (NLTQReport *)checkWithTestCount:(int)testCount testLength:(int)testLength retryCounter:(int)retryCounter arguments:(NSArray *)arguments {
     
-    double progress = testCount / testLength;
+    double progress = (double)testCount / (double)testLength;
     BOOL success = NO, needsRetry = NO, isException = NO;
     if(!arguments) {
         arguments = [self gensRealize:progress];
@@ -63,7 +63,7 @@
         isException = YES;
     }
     
-    return [NLTQReport reportWithSuccess:success needsRetry:needsRetry retryCounter:retryCounter isException:isException arguments:nil];
+    return [NLTQReport reportWithSuccess:success needsRetry:needsRetry retryCounter:retryCounter isException:isException arguments:arguments];
 }
 
 - (NLTQReport *)checkWithTestCount:(int)testCount testLength:(int)testLength {

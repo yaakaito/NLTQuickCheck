@@ -85,7 +85,27 @@ describe(@"Report", ^{
                                              arguments:[NSArray arrayWithObjects:[NSNumber numberWithDouble:1.1],[NSNumber numberWithDouble:2.2],[NSNumber numberWithDouble:3.3],[NSNumber numberWithDouble:4.4], nil]];
                 [[[report localizedDescription] should] equal:@"✓ Success : ( 1.1 , 2.2 , 3.3 , 4.4 )"];
             });
+        
+            // Bug !!!!
+            it(@"when 2 equal number arugments, should equal '✓ Success : ( number , number )'", ^{
+                report = [NLTQReport reportWithSuccess:YES
+                                            needsRetry:NO
+                                          retryCounter:0
+                                           isException:NO
+                                             arguments:[NSArray arrayWithObjects:[NSNumber numberWithInt:0], [NSNumber numberWithInt:0], nil]];
+                [[[report localizedDescription] should] equal:@"✓ Success : ( 0 , 0 )"];
+            });
             
+            // Bug !!!!
+            it(@"when 2 equal number arugments, should equal '✓ Success : ( number , number , number )'", ^{
+                report = [NLTQReport reportWithSuccess:YES
+                                            needsRetry:NO
+                                          retryCounter:0
+                                           isException:NO
+                                             arguments:[NSArray arrayWithObjects:[NSNumber numberWithInt:1],[NSNumber numberWithInt:1],[NSNumber numberWithInt:1], nil]];
+                [[[report localizedDescription] should] equal:@"✓ Success : ( 1 , 1, 1 )"];
+            });
+
         });
         
         context(@"failure", ^{

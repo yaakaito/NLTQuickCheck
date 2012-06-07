@@ -7,7 +7,6 @@
 //
 
 #import "NLTQTestable.h"
-#import "NLTQTestCase.h"
 #import "NLTQTestRunner.h"
 
 @implementation NLTQTestable {

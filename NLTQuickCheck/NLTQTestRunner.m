@@ -49,7 +49,7 @@
         }
         [mutableReports addObject:report];
         if(isVerbose) {
-            NSLog([report localizedDescription]);
+            NSLog(@"%@", [report localizedDescription]);
         }
 
     }

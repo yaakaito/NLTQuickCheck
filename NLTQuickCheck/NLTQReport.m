@@ -85,14 +85,15 @@
     else {
         [strings addObject:@"✓ Success : ("];
     }
-    for (id arg in self.arguments) {
+    for (NSUInteger i = 0; i < [self.arguments count]; i++) {
+        id arg = [self.arguments objectAtIndex:i];
         if([arg isKindOfClass:[NSNumber class]]) {
             [strings addObject:[self localizeNSNumber:arg]];
         }
         else {
             [strings addObject:[arg description]];
         }
-        if([self.arguments lastObject] != arg) {
+        if(i < [self.arguments count]-1) {
             [strings addObject:@","];
         }
     }

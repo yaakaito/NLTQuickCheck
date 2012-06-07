@@ -97,13 +97,23 @@ describe(@"Report", ^{
             });
             
             // Bug !!!!
-            it(@"when 2 equal number arugments, should equal '✓ Success : ( number , number , number )'", ^{
+            it(@"when 3 equal number arugments, should equal '✓ Success : ( number , number , number )'", ^{
                 report = [NLTQReport reportWithSuccess:YES
                                             needsRetry:NO
                                           retryCounter:0
                                            isException:NO
                                              arguments:[NSArray arrayWithObjects:[NSNumber numberWithInt:1],[NSNumber numberWithInt:1],[NSNumber numberWithInt:1], nil]];
-                [[[report localizedDescription] should] equal:@"✓ Success : ( 1 , 1, 1 )"];
+                [[[report localizedDescription] should] equal:@"✓ Success : ( 1 , 1 , 1 )"];
+            });
+            
+            // Bug !!!!
+            it(@"when 2 equal string arugments, should equal '✓ Success : ( object.description , object.description )'", ^{
+                report = [NLTQReport reportWithSuccess:YES
+                                            needsRetry:NO
+                                          retryCounter:0
+                                           isException:NO
+                                             arguments:[NSArray arrayWithObjects:[NSString stringWithFormat:@"string"], [NSString stringWithFormat:@"string"], nil]];
+                [[[report localizedDescription] should] equal:@"✓ Success : ( string , string )"];
             });
 
         });

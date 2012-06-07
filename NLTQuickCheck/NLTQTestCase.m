@@ -9,24 +9,32 @@
 #import "NLTQTestCase.h"
 #import "NLTQGen.h"
 
+@interface NLTQTestCase()
+@property(nonatomic, strong) __testCasePropertyExecuteBlock block;
+@property(nonatomic, strong) NSArray *arbitraries;
+@end
+
 @implementation NLTQTestCase {
     __testCasePropertyExecuteBlock _block;
     NSArray *_arbitraries;
 }
 
+@synthesize block = _block;
+@synthesize arbitraries = _arbitraries;
+
 - (id)initWithExcecuteBlock:(__testCasePropertyExecuteBlock)block arbitraries:(NSArray*)array {
     self = [super init];
     if(self) {
-        _block = block;
-        _arbitraries = array;
+        self.block = block;
+        self.arbitraries = array;
     }
     return self;
 }
 
 - (NSArray *)gensRealize:(double)progress {
     NSMutableArray *args = [NSMutableArray array];
-    for (NSUInteger i = 0; i < [_arbitraries count]; i++) {
-        NLTQGen *gen = [_arbitraries objectAtIndex:i];
+    for (NSUInteger i = 0; i < [self.arbitraries count]; i++) {
+        NLTQGen *gen = [self.arbitraries objectAtIndex:i];
         [args addObject:[gen valueWithProgress:progress]];
     }
     return args;
@@ -41,7 +49,7 @@
     }
     
     @try {
-        success = _block(arguments);
+        success = self.block(arguments);
         if(!success) {
             if(retryCounter < 2){
                 needsRetry = YES;

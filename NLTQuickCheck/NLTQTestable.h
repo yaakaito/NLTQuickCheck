@@ -11,9 +11,8 @@
 
 @interface NLTQTestable : NSObject
 
-+ (id)testableWithName:(NSString*)testName 
-          propSelector:(SEL)selector 
-           arbitraries:(id)arbitraries, ... NS_REQUIRES_NIL_TERMINATION;
++ (id)testableWithProperySelector:(SEL)selector 
+                      arbitraries:(id)arbitraries, ... NS_REQUIRES_NIL_TERMINATION;
 
 + (id)testableWithPropertyBlock:(__testCasePropertyBlockArguments0)block;
 + (id)testableWithPropertyBlockArguments1:(__testCasePropertyBlockArguments1)block arbitrary:(id)arbitrary;

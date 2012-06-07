@@ -51,7 +51,7 @@
 
 - (id)valueWithProgress:(double)progress {
     
-    int random = _standardGen.currentGeneratedValue;
+    int random = _standardGen.currentGeneratedValue; _standardGen = [_standardGen generateNext];
     if(_bindingGen) {
         random = [[_bindingGen valueWithProgress:progress] intValue];
     }

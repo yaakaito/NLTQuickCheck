@@ -23,6 +23,7 @@
     self = [super init];
     if(self) {
         self.runner = [NLTQTestRunner testRunnerWithTestCase:testCase];
+        self.reportManager = [NLTQReportManager reportManager];
     }
     
     return self;

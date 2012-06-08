@@ -15,6 +15,7 @@
                       arbitraries:(id)arbitraries, ... NS_REQUIRES_NIL_TERMINATION;
 
 + (id)testableWithPropertyBlock:(__testCasePropertyBlockArguments0)block;
++ (id)testableWithPropertyBlock:(id)block arbitraries:(id)arbitraries, ... NS_REQUIRES_NIL_TERMINATION;
 + (id)testableWithPropertyBlockArguments1:(__testCasePropertyBlockArguments1)block arbitrary:(id)arbitrary;
 + (id)testableWithPropertyBlockArguments2:(__testCasePropertyBlockArguments2)block arbitraries:(id)arbitraries, ... NS_REQUIRES_NIL_TERMINATION;
 + (id)testableWithPropertyBlockArguments3:(__testCasePropertyBlockArguments3)block arbitraries:(id)arbitraries, ... NS_REQUIRES_NIL_TERMINATION;

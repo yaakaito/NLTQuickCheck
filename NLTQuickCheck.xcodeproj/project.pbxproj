@@ -164,7 +164,6 @@
 			children = (
 				B976DA94157537330076149C /* Arbitraries */,
 				B94192711565760D0074A059 /* NLTQuickCheck.h */,
-				B941926F1565760D0074A059 /* Supporting Files */,
 				B94192B9156AAD370074A059 /* NLTQStandardGen.h */,
 				B94192BA156AAD370074A059 /* NLTQStandardGen.m */,
 				B94192D5156C05AB0074A059 /* NLTQGen.h */,
@@ -180,6 +179,7 @@
 				B976DAB31575441C0076149C /* NLTQReport.m */,
 				B976DABC1575D0390076149C /* NLTQReportManager.h */,
 				B976DABD1575D0390076149C /* NLTQReportManager.m */,
+				B941926F1565760D0074A059 /* Supporting Files */,
 			);
 			path = NLTQuickCheck;
 			sourceTree = "<group>";

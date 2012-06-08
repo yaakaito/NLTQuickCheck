@@ -8,19 +8,21 @@
 
 #import "NLTQTestable.h"
 #import "NLTQTestRunner.h"
+#import "NLTQReportManager.h"
 
-@implementation NLTQTestable {
-    NSString* _testName;
-    NLTQTestRunner *_runner;
-    NSArray *_reports;
-}
+@interface NLTQTestable()
+@property(nonatomic, strong) NLTQTestRunner *runner;
+@property(nonatomic, strong) NLTQReportManager *reportManager;
+@end
 
-- (id)initWithName:(NSString *)testName propSelector:(SEL)selector arbitraries:(NSArray*)arbitraries {
+@implementation NLTQTestable
+@synthesize runner = _runner;
+@synthesize reportManager = _reportManager;
+
+- (id)initWithTestCase:(NLTQTestCase*)testCase {
     self = [super init];
     if(self) {
-        _testName = testName;
-        NLTQTestCase *testCase = [NLTQTestCase selectorTestCaseWithSelector:selector arbitraries:arbitraries];
-        _runner = [NLTQTestRunner testRunnerWithTestCase:testCase];
+        self.runner = [NLTQTestRunner testRunnerWithTestCase:testCase];
     }
     
     return self;
@@ -38,7 +40,8 @@
     }
     va_end(arguments);
     
-    return [[self alloc] initWithName:testName propSelector:selector arbitraries:arbitraries_];
+    NLTQTestCase *testCase = [NLTQTestCase selectorTestCaseWithSelector:selector arbitraries:arbitraries_];
+    return [[self alloc] initWithTestCase:testCase];
 }
 
 - (void)_check:(BOOL)verbose {

@@ -29,7 +29,7 @@
 		B976DA98157537690076149C /* NSNumber+BoolArbitrary.h in Headers */ = {isa = PBXBuildFile; fileRef = B976DA96157537690076149C /* NSNumber+BoolArbitrary.h */; };
 		B976DA99157537690076149C /* NSNumber+BoolArbitrary.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DA97157537690076149C /* NSNumber+BoolArbitrary.m */; };
 		B976DA9A157537690076149C /* NSNumber+BoolArbitrary.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DA97157537690076149C /* NSNumber+BoolArbitrary.m */; };
-		B976DA9C157537DF0076149C /* NLTQArbitrariesSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DA9B157537DF0076149C /* NLTQArbitrariesSpec.m */; };
+		B976DA9C157537DF0076149C /* NLTQBoolArbitrarySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DA9B157537DF0076149C /* NLTQBoolArbitrarySpec.m */; };
 		B976DAA5157543C90076149C /* NLTQTestable.h in Headers */ = {isa = PBXBuildFile; fileRef = B976DAA3157543C80076149C /* NLTQTestable.h */; };
 		B976DAA6157543C90076149C /* NLTQTestable.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DAA4157543C80076149C /* NLTQTestable.m */; };
 		B976DAA7157543C90076149C /* NLTQTestable.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DAA4157543C80076149C /* NLTQTestable.m */; };
@@ -83,7 +83,7 @@
 		B971A3AF15821AB7009DE97F /* NLTQTestableSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQTestableSpec.m; sourceTree = "<group>"; };
 		B976DA96157537690076149C /* NSNumber+BoolArbitrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNumber+BoolArbitrary.h"; path = "Arbitraries/NSNumber+BoolArbitrary.h"; sourceTree = "<group>"; };
 		B976DA97157537690076149C /* NSNumber+BoolArbitrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+BoolArbitrary.m"; path = "Arbitraries/NSNumber+BoolArbitrary.m"; sourceTree = "<group>"; };
-		B976DA9B157537DF0076149C /* NLTQArbitrariesSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQArbitrariesSpec.m; sourceTree = "<group>"; };
+		B976DA9B157537DF0076149C /* NLTQBoolArbitrarySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; path = NLTQBoolArbitrarySpec.m; sourceTree = "<group>"; };
 		B976DA9D157537F90076149C /* NLTQArbitrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NLTQArbitrary.h; sourceTree = "<group>"; };
 		B976DAA3157543C80076149C /* NLTQTestable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLTQTestable.h; sourceTree = "<group>"; };
 		B976DAA4157543C80076149C /* NLTQTestable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQTestable.m; sourceTree = "<group>"; };
@@ -251,6 +251,14 @@
 			name = GHUnit;
 			sourceTree = "<group>";
 		};
+		B971A3B115821B49009DE97F /* Arbitraries */ = {
+			isa = PBXGroup;
+			children = (
+				B976DA9B157537DF0076149C /* NLTQBoolArbitrarySpec.m */,
+			);
+			name = Arbitraries;
+			sourceTree = "<group>";
+		};
 		B976DA94157537330076149C /* Arbitraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,12 +271,12 @@
 		B976DACB15766F400076149C /* Specs */ = {
 			isa = PBXGroup;
 			children = (
+				B971A3B115821B49009DE97F /* Arbitraries */,
 				B94192B7156AAC5F0074A059 /* NLTQStandradGenSpec.m */,
 				B94192D2156C05900074A059 /* NLTQGenSpec.m */,
 				B94192E5156E95630074A059 /* NLTQGenCombinatorSpec.m */,
 				B9C07808157CC78F00C27314 /* NLTQTestCaseSpec.m */,
 				B976DAC61575D59E0076149C /* NLTQBlocksTestCaseSpec.m */,
-				B976DA9B157537DF0076149C /* NLTQArbitrariesSpec.m */,
 				B9C0780B157CFD2900C27314 /* NLTQReportSpec.m */,
 				B9C0780D157DAACC00C27314 /* NLTQTestRunnerSpec.m */,
 				B971A39A157E37A5009DE97F /* NLTQReportManagerSpec.m */,
@@ -438,7 +446,7 @@
 				B94192D9156C05AB0074A059 /* NLTQGen.m in Sources */,
 				B94192E7156E95630074A059 /* NLTQGenCombinatorSpec.m in Sources */,
 				B976DA9A157537690076149C /* NSNumber+BoolArbitrary.m in Sources */,
-				B976DA9C157537DF0076149C /* NLTQArbitrariesSpec.m in Sources */,
+				B976DA9C157537DF0076149C /* NLTQBoolArbitrarySpec.m in Sources */,
 				B976DAA7157543C90076149C /* NLTQTestable.m in Sources */,
 				B976DAAC157543D70076149C /* NLTQTestRunner.m in Sources */,
 				B976DAB1157543ED0076149C /* NLTQTestCase.m in Sources */,

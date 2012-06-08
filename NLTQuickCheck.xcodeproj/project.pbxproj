@@ -275,12 +275,12 @@
 				B94192B7156AAC5F0074A059 /* NLTQStandradGenSpec.m */,
 				B94192D2156C05900074A059 /* NLTQGenSpec.m */,
 				B94192E5156E95630074A059 /* NLTQGenCombinatorSpec.m */,
+				B971A3AF15821AB7009DE97F /* NLTQTestableSpec.m */,
+				B9C0780D157DAACC00C27314 /* NLTQTestRunnerSpec.m */,
 				B9C07808157CC78F00C27314 /* NLTQTestCaseSpec.m */,
 				B976DAC61575D59E0076149C /* NLTQBlocksTestCaseSpec.m */,
 				B9C0780B157CFD2900C27314 /* NLTQReportSpec.m */,
-				B9C0780D157DAACC00C27314 /* NLTQTestRunnerSpec.m */,
 				B971A39A157E37A5009DE97F /* NLTQReportManagerSpec.m */,
-				B971A3AF15821AB7009DE97F /* NLTQTestableSpec.m */,
 			);
 			name = Specs;
 			sourceTree = "<group>";

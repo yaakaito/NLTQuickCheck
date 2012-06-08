@@ -9,7 +9,7 @@
 #import "NLTQArbitrary.h"
 #import "NLTQGen.h"
 
-SPEC_BEGIN(NLTQArbitrariesSpec)
+SPEC_BEGIN(NLTQBoolArbitrarySpec)
 
 describe(@"bool arbitrary", ^{
     __block NLTQGen *gen;

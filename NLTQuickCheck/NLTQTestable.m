@@ -29,6 +29,15 @@
     return self;
 }
 
+- (id)initWithTestCase:(NLTQTestCase*)testCase testLength:(int)length {
+
+    self = [self initWithTestCase:testCase];
+    if(self) {
+        [self.runner setTestLength:length];
+    }
+    return self;
+}
+
 + (id)testableWithPropertySelector:(SEL)selector arbitraries:(id)arbitraries, ... {
 
     NSMutableArray *arbitraries_ = [NSMutableArray array];
@@ -49,7 +58,7 @@
 + (id)testableWithPropertyBlock:(__testCasePropertyBlockArguments0)block {
     
     NLTQTestCase *testCase = [NLTQTestCase blocksTestCaseWithBlocksArguments0:block];
-    return [[self alloc] initWithTestCase:testCase];
+    return [[self alloc] initWithTestCase:testCase testLength:1];
 }
 
 + (id)testableWithPropertyBlockArguments1:(__testCasePropertyBlockArguments1)block arbitrary:(id)arbitrary {

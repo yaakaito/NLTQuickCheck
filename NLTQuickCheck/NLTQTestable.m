@@ -174,8 +174,7 @@
 
 - (void)_check:(BOOL)verbose {
     
-    NSArray *reports;
-    [_runner runWithVerbose:verbose reports:&reports];
+     NSArray *reports = [_runner runWithVerbose:verbose];
 }
 
 - (void)check {

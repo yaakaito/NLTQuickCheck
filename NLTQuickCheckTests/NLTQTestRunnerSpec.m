@@ -27,7 +27,7 @@ describe(@"Test Runner", ^{
             __block NSArray *reports;
             beforeEach(^{
                 [testRunner setTestLength:100];
-                [testRunner runWithVerbose:NO reports:&reports];
+                reports = [testRunner runWithVerbose:NO];
             });
             
             it(@"should 100 executed", ^{
@@ -46,7 +46,7 @@ describe(@"Test Runner", ^{
             __block NSArray *reports;
             beforeEach(^{
                 [testRunner setTestLength:10];
-                [testRunner runWithVerbose:NO reports:&reports];
+                reports = [testRunner runWithVerbose:NO];
             });
             
             it(@"should 10 executed", ^{
@@ -85,7 +85,7 @@ describe(@"Test Runner", ^{
             __block NSArray *reports;
             beforeAll(^{
                 [testRunner setTestLength:6];
-                [testRunner runWithVerbose:NO reports:&reports];
+                reports = [testRunner runWithVerbose:NO];
             });
             
             it(@"should 6 executed", ^{
@@ -160,7 +160,7 @@ describe(@"Test Runner", ^{
             __block NSArray *reports;
             beforeAll(^{
                 [testRunner setTestLength:4];
-                [testRunner runWithVerbose:NO reports:&reports];
+                reports = [testRunner runWithVerbose:NO];
             });
             
             it(@"should 4 executed", ^{

@@ -8,6 +8,7 @@
 
 #import "NLTQTestCase.h"
 #import "NLTQGen.h"
+#import <objc/objc-runtime.h>
 
 @interface NLTQTestCase()
 @property(nonatomic, strong) __testCasePropertyExecuteBlock block;
@@ -71,8 +72,21 @@
     return [self checkWithTestCount:testCount testLength:testLength retryCounter:0 arguments:nil];
 }
 
-+ (id)selectorTestCaseWithSelector:(SEL)selector arbitraries:(NSArray *)array {
-    return nil;
++ (id)selectorTestCaseWithSelector:(SEL)selector target:(id)target arbitraries:(NSArray *)array {
+    return [[self alloc] initWithExcecuteBlock:^BOOL(NSArray *args) {
+        NSMethodSignature *signature = [target methodSignatureForSelector:selector];
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+        invocation.target = target;
+        invocation.selector = selector;
+        for (NSUInteger i = 0; i < [args count]; i++) {
+            id arg = [args objectAtIndex:i];
+            [invocation setArgument:(void*)&arg atIndex:i+2];
+        }
+        [invocation invoke];
+        BOOL returnValue;
+        [invocation getReturnValue:(void *)&returnValue];
+        return returnValue;
+    } arbitraries:array];
 }
 
 + (id)blocksTestCaseWithBlocksArguments0:(__testCasePropertyBlockArguments0)block {

@@ -38,7 +38,7 @@
     return self;
 }
 
-+ (id)testableWithPropertySelector:(SEL)selector arbitraries:(id)arbitraries, ... {
++ (id)testableWithPropertySelector:(SEL)selector target:(id)target arbitraries:(id)arbitraries, ... {
 
     NSMutableArray *arbitraries_ = [NSMutableArray array];
     va_list arguments;
@@ -50,7 +50,7 @@
     }
     va_end(arguments);
     
-    NLTQTestCase *testCase = [NLTQTestCase selectorTestCaseWithSelector:selector arbitraries:arbitraries_];
+    NLTQTestCase *testCase = [NLTQTestCase selectorTestCaseWithSelector:selector target:target arbitraries:arbitraries_];
     return [[self alloc] initWithTestCase:testCase];
 }
 

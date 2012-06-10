@@ -23,7 +23,7 @@ typedef BOOL(^__testCasePropertyExecuteBlock)(NSArray *args);
 
 @interface NLTQTestCase : NSObject
 
-+ (id)selectorTestCaseWithSelector:(SEL)selector arbitraries:(NSArray*)array;
++ (id)selectorTestCaseWithSelector:(SEL)selector target:(id)target arbitraries:(NSArray*)array;
 + (id)blocksTestCaseWithBlocksArguments0:(__testCasePropertyBlockArguments0)block;
 + (id)blocksTestCaseWithBlocksArguments1:(__testCasePropertyBlockArguments1)block arbitraries:(NSArray*)array;
 + (id)blocksTestCaseWithBlocksArguments2:(__testCasePropertyBlockArguments2)block arbitraries:(NSArray*)array;

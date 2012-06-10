@@ -6,25 +6,19 @@
 //
 
 #import "Kiwi.h"
+#import "NLTQuickCheck.h"
 
 SPEC_BEGIN(KiwiExampleSpec)
 
-describe(@"Example", ^{
-    __block NSString *string;
-    context(@"New", ^{
-        beforeEach(^{
-            string = @"example";
-        });
-        
-        context(@"append 'exsample'", ^{
-            beforeEach(^{
-                string = [string stringByAppendingString:@"example"];
-            });
-            
-            it(@"length = 14", ^{
-                [[theValue([string length]) should] equal:theValue(15)];
-            });
-        });
+describe(@"QuickCheck Exmaple", ^{
+
+    it(@"argA == argA", ^{
+        NLTQTestable *testable = [NLTQTestable testableWithPropertyBlockArguments1:^BOOL(id argA) {
+            return [argA boolValue] == [argA boolValue];
+        } arbitrary:[NSNumber boolArbitrary]];
+        [testable verboseCheck];
+        [[theValue([testable success]) should] beYes];
+        NSLog(@"%@", [testable prettyReport]);
     });
 });
 

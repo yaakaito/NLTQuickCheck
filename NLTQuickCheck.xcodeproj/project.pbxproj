@@ -47,6 +47,7 @@
 		B976DAC01575D03A0076149C /* NLTQReportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DABD1575D0390076149C /* NLTQReportManager.m */; };
 		B976DAC71575D59E0076149C /* NLTQBlocksTestCaseSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DAC61575D59E0076149C /* NLTQBlocksTestCaseSpec.m */; };
 		B976DACA15766D550076149C /* NLTQSelectorTestCaseTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DAC915766D550076149C /* NLTQSelectorTestCaseTest.m */; };
+		B98624F0158518FD00FDDEAC /* KiwiExampleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B98624EF158518FD00FDDEAC /* KiwiExampleSpec.m */; };
 		B9C07809157CC78F00C27314 /* NLTQTestCaseSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C07808157CC78F00C27314 /* NLTQTestCaseSpec.m */; };
 		B9C0780C157CFD2900C27314 /* NLTQReportSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C0780B157CFD2900C27314 /* NLTQReportSpec.m */; };
 		B9C0780E157DAACD00C27314 /* NLTQTestRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C0780D157DAACC00C27314 /* NLTQTestRunnerSpec.m */; };
@@ -97,6 +98,7 @@
 		B976DABD1575D0390076149C /* NLTQReportManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQReportManager.m; sourceTree = "<group>"; };
 		B976DAC61575D59E0076149C /* NLTQBlocksTestCaseSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQBlocksTestCaseSpec.m; sourceTree = "<group>"; };
 		B976DAC915766D550076149C /* NLTQSelectorTestCaseTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQSelectorTestCaseTest.m; sourceTree = "<group>"; };
+		B98624EF158518FD00FDDEAC /* KiwiExampleSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KiwiExampleSpec.m; path = Example/KiwiExampleSpec.m; sourceTree = SOURCE_ROOT; };
 		B9C07808157CC78F00C27314 /* NLTQTestCaseSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQTestCaseSpec.m; sourceTree = "<group>"; };
 		B9C0780B157CFD2900C27314 /* NLTQReportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQReportSpec.m; sourceTree = "<group>"; };
 		B9C0780D157DAACC00C27314 /* NLTQTestRunnerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQTestRunnerSpec.m; sourceTree = "<group>"; };
@@ -215,40 +217,25 @@
 		B971A3A4158041C1009DE97F /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				B971A3AA158043E3009DE97F /* GHUnit */,
-				B971A3A9158043DB009DE97F /* OCUnit */,
-				B971A3A8158043CF009DE97F /* Cedar */,
-				B971A3A5158041D1009DE97F /* Kiwi */,
+				B971A3A5158041D1009DE97F /* BDD */,
+				B971A3A9158043DB009DE97F /* xUnit */,
 			);
 			name = Example;
 			sourceTree = "<group>";
 		};
-		B971A3A5158041D1009DE97F /* Kiwi */ = {
+		B971A3A5158041D1009DE97F /* BDD */ = {
 			isa = PBXGroup;
 			children = (
+				B98624EF158518FD00FDDEAC /* KiwiExampleSpec.m */,
 			);
-			name = Kiwi;
+			name = BDD;
 			sourceTree = "<group>";
 		};
-		B971A3A8158043CF009DE97F /* Cedar */ = {
+		B971A3A9158043DB009DE97F /* xUnit */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Cedar;
-			sourceTree = "<group>";
-		};
-		B971A3A9158043DB009DE97F /* OCUnit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = OCUnit;
-			sourceTree = "<group>";
-		};
-		B971A3AA158043E3009DE97F /* GHUnit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = GHUnit;
+			name = xUnit;
 			sourceTree = "<group>";
 		};
 		B971A3B115821B49009DE97F /* Arbitraries */ = {
@@ -459,6 +446,7 @@
 				B9C0780E157DAACD00C27314 /* NLTQTestRunnerSpec.m in Sources */,
 				B971A39B157E37A5009DE97F /* NLTQReportManagerSpec.m in Sources */,
 				B971A3B015821AB7009DE97F /* NLTQTestableSpec.m in Sources */,
+				B98624F0158518FD00FDDEAC /* KiwiExampleSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

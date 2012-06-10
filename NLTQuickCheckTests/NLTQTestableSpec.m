@@ -30,7 +30,7 @@ describe(@"Testable", ^{
         });
         
         it(@"should failureReports be empty ", ^{
-            [[testable.reportManager.successReports should] beEmpty];
+            [[testable.reportManager.failureReports should] beEmpty];
         });
         
         it(@"should exceptionReports be empty", ^{

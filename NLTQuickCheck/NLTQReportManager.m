@@ -75,7 +75,7 @@
     }
 }
 
-- (NSString *)stringFormat {
-    return @"pending";
+- (NSString *)localizedDescription {
+    return nil;
 }
 @end

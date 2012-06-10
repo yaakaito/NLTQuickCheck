@@ -83,7 +83,7 @@
 		B971A3AF15821AB7009DE97F /* NLTQTestableSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQTestableSpec.m; sourceTree = "<group>"; };
 		B976DA96157537690076149C /* NSNumber+BoolArbitrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNumber+BoolArbitrary.h"; path = "Arbitraries/NSNumber+BoolArbitrary.h"; sourceTree = "<group>"; };
 		B976DA97157537690076149C /* NSNumber+BoolArbitrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+BoolArbitrary.m"; path = "Arbitraries/NSNumber+BoolArbitrary.m"; sourceTree = "<group>"; };
-		B976DA9B157537DF0076149C /* NLTQBoolArbitrarySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; path = NLTQBoolArbitrarySpec.m; sourceTree = "<group>"; };
+		B976DA9B157537DF0076149C /* NLTQBoolArbitrarySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQBoolArbitrarySpec.m; sourceTree = "<group>"; };
 		B976DA9D157537F90076149C /* NLTQArbitrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NLTQArbitrary.h; sourceTree = "<group>"; };
 		B976DAA3157543C80076149C /* NLTQTestable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLTQTestable.h; sourceTree = "<group>"; };
 		B976DAA4157543C80076149C /* NLTQTestable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQTestable.m; sourceTree = "<group>"; };

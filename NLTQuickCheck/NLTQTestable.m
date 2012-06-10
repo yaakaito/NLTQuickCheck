@@ -187,6 +187,10 @@
     [self _check:YES];
 }
 
+- (BOOL)success {
+    return [self.reportManager success];
+}
+
 - (NSString *)prettyReport {
     return [self.reportManager localizedDescription];
 }

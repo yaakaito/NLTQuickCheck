@@ -52,7 +52,7 @@ describe(@"Report Manager", ^{
 Tests: 1\n\
   ✓ Successes\t: 1\n\
   ✗ Failures\t: 0\n\
-  ✷ Exceptions\t:0\n";
+  ✷ Exceptions\t: 0\n";
             [[[reportManager localizedDescription] should] equal:description];
         });
     });
@@ -81,7 +81,7 @@ Tests: 1\n\
   ✓ Successes\t: 0\n\
   ✗ Failures\t: 1\n\
     ✗ Failure : ( )\n\
-  ✷ Exceptions\t:0\n";
+  ✷ Exceptions\t: 0\n";
             [[[reportManager localizedDescription] should] equal:description];
         });
     });
@@ -109,7 +109,7 @@ Tests: 1\n\
 Tests: 1\n\
   ✓ Successes\t: 0\n\
   ✗ Failures\t: 0\n\
-  ✷ Exceptions\t:1\n\
+  ✷ Exceptions\t: 1\n\
     ✷ Exception : ( )\n";
             [[[reportManager localizedDescription] should] equal:description];
         });
@@ -146,7 +146,7 @@ Tests: 6\n\
     ✗ Failure : ( hoge )\n\
     ✗ Failure : ( hoge )\n\
     ✗ Failure : ( hoge )\n\
-  ✷ Exceptions\t:1\n\
+  ✷ Exceptions\t: 1\n\
     ✷ Exception : ( string )\n";
             [[[reportManager localizedDescription] should] equal:description];
         });

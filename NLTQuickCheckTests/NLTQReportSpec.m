@@ -137,7 +137,7 @@ describe(@"Report", ^{
                                           retryCounter:0
                                            isException:YES
                                              arguments:[NSArray arrayWithObjects:[NSString stringWithFormat:@"string"], nil]];
-                [[[report localizedDescription] should] equal:@"✷ Exceptions : ( string )"];
+                [[[report localizedDescription] should] equal:@"✷ Exception : ( string )"];
             });
             
         });

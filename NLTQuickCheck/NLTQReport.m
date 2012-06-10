@@ -77,7 +77,7 @@
     
     NSMutableArray *strings = [NSMutableArray array];
     if(self.isException) {
-        [strings addObject:@"✷ Exceptions : ("];
+        [strings addObject:@"✷ Exception : ("];
     }
     else if(!self.success) {
         [strings addObject:@"✗ Failure : ("];

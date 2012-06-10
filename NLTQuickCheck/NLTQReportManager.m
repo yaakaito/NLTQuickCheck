@@ -44,6 +44,11 @@
     [self.exceptionReports removeAllObjects];
 }
 
+- (BOOL)success {
+    
+    return [self.successReports count] > 0 && [self.failureReports count] == 0 && [self.exceptionReports count] == 0;
+}
+
 - (void)addReport:(NLTQReport *)report {
 
     if(report.isException) {

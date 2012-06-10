@@ -17,6 +17,7 @@
 
 + (id)reportManager;
 - (void)clear;
+- (BOOL)success;
 - (void)addReport:(NLTQReport*)report;
 - (void)addSuccessReport:(NLTQReport*)report;
 - (void)addFailureReport:(NLTQReport*)report;

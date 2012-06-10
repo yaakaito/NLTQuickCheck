@@ -27,6 +27,10 @@ describe(@"Report Manager", ^{
     it(@"should has exceptionReports", ^{
         [[reportManager.exceptionReports should] beKindOfClass:[NSMutableArray class]];
     });
+    
+    it(@"should has no reports, not success", ^{
+        [[theValue([reportManager success]) should] beNo];
+    }); 
 
     context(@"add success report", ^{
         beforeEach(^{
@@ -45,6 +49,10 @@ describe(@"Report Manager", ^{
         it(@"should failureReports and exceptionReports are empty", ^{
             [[theValue([reportManager.failureReports count]) should] beZero];
             [[theValue([reportManager.exceptionReports count]) should] beZero];
+        });
+        
+        it(@"should success", ^{
+            [[theValue([reportManager success]) should] beYes];
         });
         
         it(@"localizedDescription", ^{
@@ -75,6 +83,11 @@ Tests: 1\n\
             [[theValue([reportManager.successReports count]) should] beZero];
             [[theValue([reportManager.exceptionReports count]) should] beZero];
         });
+        
+        it(@"should not success", ^{
+            [[theValue([reportManager success]) shouldNot] beYes];
+        });
+        
         it(@"localizedDescription", ^{
             NSString *description = @"\
 Tests: 1\n\
@@ -104,6 +117,11 @@ Tests: 1\n\
             [[theValue([reportManager.successReports count]) should] beZero];
             [[theValue([reportManager.failureReports count]) should] beZero];
         });
+        
+        it(@"should not success", ^{
+            [[theValue([reportManager success]) shouldNot] beYes];
+        });
+        
         it(@"localizedDescription", ^{
             NSString *description = @"\
 Tests: 1\n\
@@ -136,6 +154,10 @@ Tests: 1\n\
         
         it(@"should exceptionReports has 1 reports objects", ^{
             [[theValue([reportManager.exceptionReports count]) should] equal:theValue(1)];
+        });
+        
+        it(@"should not success", ^{
+            [[theValue([reportManager success]) shouldNot] beYes];
         });
         
         it(@"localizeDescription", ^{

@@ -46,6 +46,15 @@ describe(@"Report Manager", ^{
             [[theValue([reportManager.failureReports count]) should] beZero];
             [[theValue([reportManager.exceptionReports count]) should] beZero];
         });
+        
+        it(@"localizedDescription", ^{
+            NSString *description = @"\
+Tests: 1\n\
+  ✓ Successes\t: 1\n\
+  ✗ Failures\t: 0\n\
+  ✷ Exceptions\t:0\n";
+            [[[reportManager localizedDescription] should] equal:description];
+        });
     });
 
     context(@"add failure report", ^{
@@ -65,6 +74,15 @@ describe(@"Report Manager", ^{
         it(@"should successReports and exceptionReports are empty", ^{
             [[theValue([reportManager.successReports count]) should] beZero];
             [[theValue([reportManager.exceptionReports count]) should] beZero];
+        });
+        it(@"localizedDescription", ^{
+            NSString *description = @"\
+Tests: 1\n\
+  ✓ Successes\t: 0\n\
+  ✗ Failures\t: 1\n\
+    ✗ Failure : ( )\n\
+  ✷ Exceptions\t:0\n";
+            [[[reportManager localizedDescription] should] equal:description];
         });
     });
 
@@ -86,16 +104,25 @@ describe(@"Report Manager", ^{
             [[theValue([reportManager.successReports count]) should] beZero];
             [[theValue([reportManager.failureReports count]) should] beZero];
         });
+        it(@"localizedDescription", ^{
+            NSString *description = @"\
+Tests: 1\n\
+  ✓ Successes\t: 0\n\
+  ✗ Failures\t: 0\n\
+  ✷ Exceptions\t:1\n\
+    ✷ Exception : ( )\n";
+            [[[reportManager localizedDescription] should] equal:description];
+        });
     });
     
     context(@"add reports from array", ^{
         beforeEach(^{
-            NLTQReport *success1 = [NLTQReport reportWithSuccess:YES needsRetry:NO retryCounter:0 isException:NO arguments:nil];
-            NLTQReport *success2 = [NLTQReport reportWithSuccess:YES needsRetry:NO retryCounter:0 isException:NO arguments:nil];
-            NLTQReport *failure1 = [NLTQReport reportWithSuccess:NO needsRetry:YES retryCounter:0 isException:NO arguments:nil];
-            NLTQReport *failure2 = [NLTQReport reportWithSuccess:NO needsRetry:YES retryCounter:1 isException:NO arguments:nil];
-            NLTQReport *failure3 = [NLTQReport reportWithSuccess:NO needsRetry:NO retryCounter:2 isException:NO arguments:nil];
-            NLTQReport *exception = [NLTQReport reportWithSuccess:NO needsRetry:NO retryCounter:0 isException:YES arguments:nil];
+            NLTQReport *success1 = [NLTQReport reportWithSuccess:YES needsRetry:NO retryCounter:0 isException:NO arguments:[NSArray arrayWithObject:@"hoge"]];
+            NLTQReport *success2 = [NLTQReport reportWithSuccess:YES needsRetry:NO retryCounter:0 isException:NO arguments:[NSArray arrayWithObject:@"hoge"]];
+            NLTQReport *failure1 = [NLTQReport reportWithSuccess:NO needsRetry:YES retryCounter:0 isException:NO arguments:[NSArray arrayWithObject:@"hoge"]];
+            NLTQReport *failure2 = [NLTQReport reportWithSuccess:NO needsRetry:YES retryCounter:1 isException:NO arguments:[NSArray arrayWithObject:@"hoge"]];
+            NLTQReport *failure3 = [NLTQReport reportWithSuccess:NO needsRetry:NO retryCounter:2 isException:NO arguments:[NSArray arrayWithObject:@"hoge"]];
+            NLTQReport *exception = [NLTQReport reportWithSuccess:NO needsRetry:NO retryCounter:0 isException:YES arguments:[NSArray arrayWithObject:@"hoge"]];
             [reportManager addReportsFromArray:[NSArray arrayWithObjects:success1, success2, failure1, failure2, failure3, exception, nil]];
         });
         
@@ -109,6 +136,19 @@ describe(@"Report Manager", ^{
         
         it(@"should exceptionReports has 1 reports objects", ^{
             [[theValue([reportManager.exceptionReports count]) should] equal:theValue(1)];
+        });
+        
+        it(@"localizeDescription", ^{
+            NSString *description = @"\
+Tests: 6\n\
+  ✓ Successes\t: 2\n\
+  ✗ Failures\t: 3\n\
+    ✗ Failure : ( hoge )\n\
+    ✗ Failure : ( hoge )\n\
+    ✗ Failure : ( hoge )\n\
+  ✷ Exceptions\t:1\n\
+    ✷ Exception : ( string )\n";
+            [[[reportManager localizedDescription] should] equal:description];
         });
     });
 });

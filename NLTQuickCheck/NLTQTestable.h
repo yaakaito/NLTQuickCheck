@@ -35,4 +35,5 @@
                               arbitraries:(id)arbitraries, ... NS_REQUIRES_NIL_TERMINATION;
 - (void)check;
 - (void)verboseCheck;
+- (NSString*)prettyReport;
 @end

@@ -174,7 +174,7 @@
 
 - (void)_check:(BOOL)verbose {
     
-     NSArray *reports = [_runner runWithVerbose:verbose];
+    [self.reportManager addReportsFromArray:[_runner runWithVerbose:verbose]];
 }
 
 - (void)check {
@@ -185,6 +185,10 @@
 - (void)verboseCheck {
     
     [self _check:YES];
+}
+
+- (NSString *)prettyReport {
+    return [self.reportManager localizedDescription];
 }
 
 @end

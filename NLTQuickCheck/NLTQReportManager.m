@@ -76,6 +76,11 @@
 }
 
 - (NSString *)localizedDescription {
-    return nil;
+    NSMutableArray *strings = [NSMutableArray array];
+    [strings addObject:[NSString stringWithFormat:@"Tests: %d", [self.successReports count] + [self.failureReports count] + [self.exceptionReports count]]];
+    [strings addObject:[NSString stringWithFormat:@"  ✓ Successes\t: %d", [self.successReports count]]];
+    [strings addObject:[NSString stringWithFormat:@"  ✗ Failures\t: %d", [self.failureReports count]]];
+    [strings addObject:[NSString stringWithFormat:@"  ✷ Exceptions\t: %d", [self.exceptionReports count]]];
+    return [strings componentsJoinedByString:@"\n"];
 }
 @end

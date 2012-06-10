@@ -36,8 +36,7 @@
     return [[self alloc] initWithTestCase:testCase];
 }
 
-// TODO:ここreportsそのまま返す仕様でもいいかな
-- (void)runWithVerbose:(BOOL)isVerbose reports:(NSArray *__autoreleasing *)reports {
+- (NSArray*)runWithVerbose:(BOOL)isVerbose {
     
     NSMutableArray *mutableReports = [NSMutableArray array];
     NLTQReport *report;
@@ -54,11 +53,7 @@
         }
 
     }
-    
-    if(reports) {
-        *reports = [NSArray arrayWithArray:mutableReports];
-    }
-    
+    return mutableReports;
 }
 
 - (void)setTestLength:(int)length {

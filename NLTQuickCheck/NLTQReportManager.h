@@ -21,5 +21,6 @@
 - (void)addSuccessReport:(NLTQReport*)report;
 - (void)addFailureReport:(NLTQReport*)report;
 - (void)addExceptionReport:(NLTQReport*)report;
+- (void)addReportsFromArray:(NSArray*)reports;
 - (NSString*)stringFormat;
 @end

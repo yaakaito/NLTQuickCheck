@@ -69,6 +69,12 @@
     [self.exceptionReports addObject:report];
 }
 
+- (void)addReportsFromArray:(NSArray *)reports {
+    for (id report in reports) {
+        [self addReport:report];
+    }
+}
+
 - (NSString *)stringFormat {
     return @"pending";
 }

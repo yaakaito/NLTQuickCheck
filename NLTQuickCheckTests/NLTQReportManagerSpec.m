@@ -147,7 +147,7 @@ Tests: 6\n\
     ✗ Failure : ( hoge )\n\
     ✗ Failure : ( hoge )\n\
   ✷ Exceptions\t: 1\n\
-    ✷ Exception : ( string )";
+    ✷ Exception : ( hoge )";
             [[[reportManager localizedDescription] should] equal:description];
         });
     });

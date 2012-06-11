@@ -7,45 +7,174 @@
 //
 
 #import "NLTQTestable.h"
-#import "NLTQTestCase.h"
 #import "NLTQTestRunner.h"
+#import "NLTQReportManager.h"
 
-@implementation NLTQTestable {
-    NSString* _testName;
-    NLTQTestRunner *_runner;
-    NSArray *_reports;
-}
+@interface NLTQTestable()
+@property(nonatomic, strong) NLTQTestRunner *runner;
+@property(nonatomic, strong) NLTQReportManager *reportManager;
+@end
 
-- (id)initWithName:(NSString *)testName propSelector:(SEL)selector arbitraries:(NSArray*)arbitraries {
+@implementation NLTQTestable
+@synthesize runner = _runner;
+@synthesize reportManager = _reportManager;
+
+- (id)initWithTestCase:(NLTQTestCase*)testCase {
     self = [super init];
     if(self) {
-        _testName = testName;
-        NLTQTestCase *testCase = [NLTQTestCase selectorTestCaseWithSelector:selector arbitraries:arbitraries];
-        _runner = [NLTQTestRunner testRunnerWithTestCase:testCase];
+        self.runner = [NLTQTestRunner testRunnerWithTestCase:testCase];
+        self.reportManager = [NLTQReportManager reportManager];
     }
     
     return self;
 }
 
-+ (id)testableWithName:(NSString *)testName propSelector:(SEL)selector arbitraries:(id)arbitraries, ... {
-    
+- (id)initWithTestCase:(NLTQTestCase*)testCase testLength:(int)length {
+
+    self = [self initWithTestCase:testCase];
+    if(self) {
+        [self.runner setTestLength:length];
+    }
+    return self;
+}
+
++ (id)testableWithPropertySelector:(SEL)selector target:(id)target arbitraries:(id)arbitraries, ... {
+
     NSMutableArray *arbitraries_ = [NSMutableArray array];
     va_list arguments;
     va_start(arguments, arbitraries);
-    id value = arbitraries_;
+    id value = arbitraries;
     while (value) {
         [arbitraries_ addObject:value];
         value = va_arg(arguments, typeof(id));
     }
     va_end(arguments);
     
-    return [[self alloc] initWithName:testName propSelector:selector arbitraries:arbitraries_];
+    NLTQTestCase *testCase = [NLTQTestCase selectorTestCaseWithSelector:selector target:target arbitraries:arbitraries_];
+    return [[self alloc] initWithTestCase:testCase];
+}
+
+
++ (id)testableWithPropertyBlock:(__testCasePropertyBlockArguments0)block {
+    
+    NLTQTestCase *testCase = [NLTQTestCase blocksTestCaseWithBlocksArguments0:block];
+    return [[self alloc] initWithTestCase:testCase testLength:1];
+}
+
++ (id)testableWithPropertyBlockArguments1:(__testCasePropertyBlockArguments1)block arbitrary:(id)arbitrary {
+    
+    NLTQTestCase *testCase = [NLTQTestCase blocksTestCaseWithBlocksArguments1:block arbitraries:[NSArray arrayWithObject:arbitrary]];
+    return [[self alloc] initWithTestCase:testCase];
+}
+
++ (id)testableWithPropertyBlockArguments2:(__testCasePropertyBlockArguments2)block arbitraries:(id)arbitraries, ... {
+    
+    NSMutableArray *arbitraries_ = [NSMutableArray array];
+    va_list arguments;
+    va_start(arguments, arbitraries);
+    id value = arbitraries;
+    while (value) {
+        [arbitraries_ addObject:value];
+        value = va_arg(arguments, typeof(id));
+    }
+    va_end(arguments);
+    NLTQTestCase *testCase = [NLTQTestCase blocksTestCaseWithBlocksArguments2:block arbitraries:arbitraries_];
+    return [[self alloc] initWithTestCase:testCase];
+}
+
++ (id)testableWithPropertyBlockArguments3:(__testCasePropertyBlockArguments3)block arbitraries:(id)arbitraries, ... {
+    
+    NSMutableArray *arbitraries_ = [NSMutableArray array];
+    va_list arguments;
+    va_start(arguments, arbitraries);
+    id value = arbitraries;
+    while (value) {
+        [arbitraries_ addObject:value];
+        value = va_arg(arguments, typeof(id));
+    }
+    va_end(arguments);
+    NLTQTestCase *testCase = [NLTQTestCase blocksTestCaseWithBlocksArguments3:block arbitraries:arbitraries_];
+    return [[self alloc] initWithTestCase:testCase];
+}
+
++ (id)testableWithPropertyBlockArguments4:(__testCasePropertyBlockArguments4)block arbitraries:(id)arbitraries, ... {
+    
+    NSMutableArray *arbitraries_ = [NSMutableArray array];
+    va_list arguments;
+    va_start(arguments, arbitraries);
+    id value = arbitraries;
+    while (value) {
+        [arbitraries_ addObject:value];
+        value = va_arg(arguments, typeof(id));
+    }
+    va_end(arguments);
+    NLTQTestCase *testCase = [NLTQTestCase blocksTestCaseWithBlocksArguments4:block arbitraries:arbitraries_];
+    return [[self alloc] initWithTestCase:testCase];
+}
+
++ (id)testableWithPropertyBlockArguments5:(__testCasePropertyBlockArguments5)block arbitraries:(id)arbitraries, ... {
+    
+    NSMutableArray *arbitraries_ = [NSMutableArray array];
+    va_list arguments;
+    va_start(arguments, arbitraries);
+    id value = arbitraries;
+    while (value) {
+        [arbitraries_ addObject:value];
+        value = va_arg(arguments, typeof(id));
+    }
+    va_end(arguments);
+    NLTQTestCase *testCase = [NLTQTestCase blocksTestCaseWithBlocksArguments5:block arbitraries:arbitraries_];
+    return [[self alloc] initWithTestCase:testCase];
+}
+
++ (id)testableWithPropertyBlockArguments6:(__testCasePropertyBlockArguments6)block arbitraries:(id)arbitraries, ... {
+    
+    NSMutableArray *arbitraries_ = [NSMutableArray array];
+    va_list arguments;
+    va_start(arguments, arbitraries);
+    id value = arbitraries;
+    while (value) {
+        [arbitraries_ addObject:value];
+        value = va_arg(arguments, typeof(id));
+    }
+    va_end(arguments);
+    NLTQTestCase *testCase = [NLTQTestCase blocksTestCaseWithBlocksArguments6:block arbitraries:arbitraries_];
+    return [[self alloc] initWithTestCase:testCase];
+}
+
++ (id)testableWithPropertyBlockArguments7:(__testCasePropertyBlockArguments7)block arbitraries:(id)arbitraries, ... {
+    
+    NSMutableArray *arbitraries_ = [NSMutableArray array];
+    va_list arguments;
+    va_start(arguments, arbitraries);
+    id value = arbitraries;
+    while (value) {
+        [arbitraries_ addObject:value];
+        value = va_arg(arguments, typeof(id));
+    }
+    va_end(arguments);
+    NLTQTestCase *testCase = [NLTQTestCase blocksTestCaseWithBlocksArguments7:block arbitraries:arbitraries_];
+    return [[self alloc] initWithTestCase:testCase];
+}
+
++ (id)testableWithPropertyBlockArguments8:(__testCasePropertyBlockArguments8)block arbitraries:(id)arbitraries, ... {
+    
+    NSMutableArray *arbitraries_ = [NSMutableArray array];
+    va_list arguments;
+    va_start(arguments, arbitraries);
+    id value = arbitraries;
+    while (value) {
+        [arbitraries_ addObject:value];
+        value = va_arg(arguments, typeof(id));
+    }
+    va_end(arguments);
+    NLTQTestCase *testCase = [NLTQTestCase blocksTestCaseWithBlocksArguments8:block arbitraries:arbitraries_];
+    return [[self alloc] initWithTestCase:testCase];
 }
 
 - (void)_check:(BOOL)verbose {
     
-    NSArray *reports;
-    [_runner runWithVerbose:verbose reports:&reports];
+    [self.reportManager addReportsFromArray:[_runner runWithVerbose:verbose]];
 }
 
 - (void)check {
@@ -56,6 +185,14 @@
 - (void)verboseCheck {
     
     [self _check:YES];
+}
+
+- (BOOL)success {
+    return [self.reportManager success];
+}
+
+- (NSString *)prettyReport {
+    return [self.reportManager localizedDescription];
 }
 
 @end

@@ -49,7 +49,7 @@
 
 - (id)generateNext {
     
-    return [NLTQStandardGen standardGenWithMinimumSeed:10 maximumSeed:50];
+    return [NLTQStandardGen standardGenWithMinimumSeed:_minimumSeed maximumSeed:_maximumSeed];
 }
 
 @end

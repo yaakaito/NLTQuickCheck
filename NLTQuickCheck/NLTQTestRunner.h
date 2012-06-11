@@ -12,5 +12,6 @@
 @interface NLTQTestRunner : NSObject
 
 + (id)testRunnerWithTestCase:(NLTQTestCase*)testCase;
-- (void)runWithVerbose:(BOOL)isVerbose reports:(NSArray**)reports;
+- (NSArray*)runWithVerbose:(BOOL)isVerbose;
+- (void)setTestLength:(int)length;
 @end

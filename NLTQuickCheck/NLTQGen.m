@@ -51,7 +51,7 @@
 
 - (id)valueWithProgress:(double)progress {
     
-    int random = _standardGen.currentGeneratedValue;
+    int random = _standardGen.currentGeneratedValue; _standardGen = [_standardGen generateNext];
     if(_bindingGen) {
         random = [[_bindingGen valueWithProgress:progress] intValue];
     }
@@ -114,5 +114,11 @@
         return [NSNumber numberWithInt:random];
     }];
     
+}
+
++ (id)quadraticGenWithA :(int)a b:(int)b c:(int)c {
+    return [self genWithGenerateBlock:^id(double progress, int random) {
+        return [NSNumber numberWithInt:(a * (progress * progress)) + (b * progress) + c];
+    }];
 }
 @end

@@ -28,15 +28,15 @@ describe(@"blocks test case", ^{
             }];
         });
         
-        it(@"when NLTQTestCase object", ^{
+        it(@"should be NLTQTestCase object", ^{
             [[testCase should] beKindOfClass:[NLTQTestCase class]];
         });
         
-        it(@"when reports must success", ^{
+        it(@"should all reports success", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
-                [[theValue([report successs]) should] beYes];
+                [[theValue([report success]) should] beYes];
                 [[theValue([report needsRetry]) should] beNo];
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
@@ -54,15 +54,15 @@ describe(@"blocks test case", ^{
             } arbitraries:[NSArray arrayWithObjects:gen, nil]];
         });
         
-        it(@"when NLTQTestCase object", ^{
+        it(@"should be NLTQTestCase object", ^{
             [[testCase should] beKindOfClass:[NLTQTestCase class]];
         });
         
-        it(@"when reports must success", ^{
+        it(@"should all reports success", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
-                [[theValue([report successs]) should] beYes];
+                [[theValue([report success]) should] beYes];
                 [[theValue([report needsRetry]) should] beNo];
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
@@ -79,15 +79,15 @@ describe(@"blocks test case", ^{
             } arbitraries:[NSArray arrayWithObjects:gen, gen, nil]];
         });
         
-        it(@"when NLTQTestCase object", ^{
+        it(@"should be NLTQTestCase object", ^{
             [[testCase should] beKindOfClass:[NLTQTestCase class]];
         });
         
-        it(@"when reports must success", ^{
+        it(@"should all reports success", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
-                [[theValue([report successs]) should] beYes];
+                [[theValue([report success]) should] beYes];
                 [[theValue([report needsRetry]) should] beNo];
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
@@ -104,15 +104,15 @@ describe(@"blocks test case", ^{
             } arbitraries:[NSArray arrayWithObjects:gen, gen, gen, nil]];
         });
         
-        it(@"when NLTQTestCase object", ^{
+        it(@"should be NLTQTestCase object", ^{
             [[testCase should] beKindOfClass:[NLTQTestCase class]];
         });
         
-        it(@"when reports must success", ^{
+        it(@"should all reports success", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
-                [[theValue([report successs]) should] beYes];
+                [[theValue([report success]) should] beYes];
                 [[theValue([report needsRetry]) should] beNo];
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
@@ -129,15 +129,15 @@ describe(@"blocks test case", ^{
             } arbitraries:[NSArray arrayWithObjects:gen, gen, gen, gen, nil]];
         });
         
-        it(@"when NLTQTestCase object", ^{
+        it(@"should be NLTQTestCase object", ^{
             [[testCase should] beKindOfClass:[NLTQTestCase class]];
         });
         
-        it(@"when reports must success", ^{
+        it(@"should all reports success", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
-                [[theValue([report successs]) should] beYes];
+                [[theValue([report success]) should] beYes];
                 [[theValue([report needsRetry]) should] beNo];
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
@@ -154,15 +154,15 @@ describe(@"blocks test case", ^{
             } arbitraries:[NSArray arrayWithObjects:gen, gen, gen, gen, gen, nil]];
         });
         
-        it(@"when NLTQTestCase object", ^{
+        it(@"should be NLTQTestCase object", ^{
             [[testCase should] beKindOfClass:[NLTQTestCase class]];
         });
         
-        it(@"when reports must success", ^{
+        it(@"should all reports success", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
-                [[theValue([report successs]) should] beYes];
+                [[theValue([report success]) should] beYes];
                 [[theValue([report needsRetry]) should] beNo];
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
@@ -179,15 +179,15 @@ describe(@"blocks test case", ^{
             } arbitraries:[NSArray arrayWithObjects:gen, gen, gen, gen, gen, gen, nil]];
         });
         
-        it(@"when NLTQTestCase object", ^{
+        it(@"should be NLTQTestCase object", ^{
             [[testCase should] beKindOfClass:[NLTQTestCase class]];
         });
         
-        it(@"when reports must success", ^{
+        it(@"should all reports success", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
-                [[theValue([report successs]) should] beYes];
+                [[theValue([report success]) should] beYes];
                 [[theValue([report needsRetry]) should] beNo];
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
@@ -204,15 +204,15 @@ describe(@"blocks test case", ^{
             } arbitraries:[NSArray arrayWithObjects:gen, gen, gen, gen, gen, gen, gen, nil]];
         });
         
-        it(@"when NLTQTestCase object", ^{
+        it(@"should be NLTQTestCase object", ^{
             [[testCase should] beKindOfClass:[NLTQTestCase class]];
         });
         
-        it(@"when reports must success", ^{
+        it(@"should all reports success", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
-                [[theValue([report successs]) should] beYes];
+                [[theValue([report success]) should] beYes];
                 [[theValue([report needsRetry]) should] beNo];
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];
@@ -229,15 +229,15 @@ describe(@"blocks test case", ^{
             } arbitraries:[NSArray arrayWithObjects:gen, gen, gen, gen, gen, gen, gen, gen, nil]];
         });
         
-        it(@"when NLTQTestCase object", ^{
+        it(@"should be NLTQTestCase object", ^{
             [[testCase should] beKindOfClass:[NLTQTestCase class]];
         });
         
-        it(@"when reports must success", ^{
+        it(@"should all reports success", ^{
             for(int i = 0; i < 100; i++) {
                 NLTQReport *report = [testCase checkWithTestCount:i testLength:100];
                 [[report should] beKindOfClass:[NLTQReport class]];
-                [[theValue([report successs]) should] beYes];
+                [[theValue([report success]) should] beYes];
                 [[theValue([report needsRetry]) should] beNo];
                 [[theValue([report retryCounter]) should] equal:theValue(0)];
                 [[theValue([report isException]) should] beNo];

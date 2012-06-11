@@ -6,8 +6,17 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#ifndef NLTQuickCheck_h
+#define NLTQuickCheck_h
 
-@interface NLTQuickCheck : NSObject
+#import "NLTQStandardGen.h"
+#import "NLTQGen.h"
+#import "NLTQArbitrary.h"
+#import "NSNumber+Arbitrary.h"
+#import "NLTQTestable.h"
+#import "NLTQTestRunner.h"
+#import "NLTQTestCase.h"
+#import "NLTQReport.h"
+#import "NLTQReportManager.h"
 
-@end
+#endif

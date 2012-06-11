@@ -8,39 +8,55 @@
 
 #import "NLTQTestCase.h"
 #import "NLTQGen.h"
+#import <objc/objc-runtime.h>
+
+@interface NLTQTestCase()
+@property(nonatomic, strong) __testCasePropertyExecuteBlock block;
+@property(nonatomic, strong) NSArray *arbitraries;
+@end
 
 @implementation NLTQTestCase {
     __testCasePropertyExecuteBlock _block;
     NSArray *_arbitraries;
 }
 
+@synthesize block = _block;
+@synthesize arbitraries = _arbitraries;
+
 - (id)initWithExcecuteBlock:(__testCasePropertyExecuteBlock)block arbitraries:(NSArray*)array {
     self = [super init];
     if(self) {
-        _block = block;
-        _arbitraries = array;
+        self.block = block;
+        self.arbitraries = array;
     }
     return self;
 }
 
-- (NLTQReport *)checkWithTestCount:(int)testCount testLength:(int)testLength {
-    
-    NLTQReport *report = [[NLTQReport alloc] init];
-    
+- (NSArray *)gensRealize:(double)progress {
     NSMutableArray *args = [NSMutableArray array];
-    double progress = testCount / testLength;
-    for (NSUInteger i = 0; i < [_arbitraries count]; i++) {
-        NLTQGen *gen = [_arbitraries objectAtIndex:i];
+    for (NSUInteger i = 0; i < [self.arbitraries count]; i++) {
+        NLTQGen *gen = [self.arbitraries objectAtIndex:i];
         [args addObject:[gen valueWithProgress:progress]];
     }
+    return args;
+}
+
+- (NLTQReport *)checkWithTestCount:(int)testCount testLength:(int)testLength retryCounter:(int)retryCounter arguments:(NSArray *)arguments {
     
-    BOOL success, isException, needsRetry;
-    int retryCounter;
+    double progress = (double)testCount / (double)testLength;
+    BOOL success = NO, needsRetry = NO, isException = NO;
+    if(!arguments) {
+        arguments = [self gensRealize:progress];
+    }
+    
     @try {
-        report.successs = success = _block(args);
+        success = self.block(arguments);
         if(!success) {
-            if(++retryCounter < 3) {
+            if(retryCounter < 2){
                 needsRetry = YES;
+            }
+            else {
+                needsRetry = NO;
             }
         }
     }
@@ -48,11 +64,29 @@
         isException = YES;
     }
     
-    return report;
+    return [NLTQReport reportWithSuccess:success needsRetry:needsRetry retryCounter:retryCounter isException:isException arguments:arguments];
 }
 
-+ (id)selectorTestCaseWithSelector:(SEL)selector arbitraries:(NSArray *)array {
+- (NLTQReport *)checkWithTestCount:(int)testCount testLength:(int)testLength {
     
+    return [self checkWithTestCount:testCount testLength:testLength retryCounter:0 arguments:nil];
+}
+
++ (id)selectorTestCaseWithSelector:(SEL)selector target:(id)target arbitraries:(NSArray *)array {
+    return [[self alloc] initWithExcecuteBlock:^BOOL(NSArray *args) {
+        NSMethodSignature *signature = [target methodSignatureForSelector:selector];
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+        invocation.target = target;
+        invocation.selector = selector;
+        for (NSUInteger i = 0; i < [args count]; i++) {
+            id arg = [args objectAtIndex:i];
+            [invocation setArgument:(void*)&arg atIndex:i+2];
+        }
+        [invocation invoke];
+        BOOL returnValue;
+        [invocation getReturnValue:(void *)&returnValue];
+        return returnValue;
+    } arbitraries:array];
 }
 
 + (id)blocksTestCaseWithBlocksArguments0:(__testCasePropertyBlockArguments0)block {

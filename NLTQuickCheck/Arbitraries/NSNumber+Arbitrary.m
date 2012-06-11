@@ -34,6 +34,16 @@
 }
 
 + (id)intArbitrary {
-    return nil;
+    NLTQGen *quadratic = [NLTQGen quadraticGenWithA:1<<16 b:0 c:0];
+    NLTQGen *doubleGen = [NLTQGen genWithGenerateBlock:^id(double progress, int random) {
+        NLTQGen *chooser = [NLTQGen randomGen];
+        [chooser resizeWithMinimumSeed:-random maximumSeed:+random];
+        return [chooser valueWithProgress:progress];
+        
+    }];
+    [doubleGen bindingGen:quadratic];
+    return doubleGen;
 }
+
+
 @end

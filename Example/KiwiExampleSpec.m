@@ -8,6 +8,16 @@
 #import "Kiwi.h"
 #import "NLTQuickCheck.h"
 
+@interface Math : NSObject
++ (int)add:(int)a b:(int)b;
+@end
+
+@implementation Math
++ (int)add:(int)a b:(int)b {
+    return a + b;
+}
+@end
+
 SPEC_BEGIN(KiwiExampleSpec)
 
 describe(@"QuickCheck Exmaple", ^{
@@ -21,12 +31,24 @@ describe(@"QuickCheck Exmaple", ^{
         NSLog(@"%@", [testable prettyReport]);
     });
 
-    it(@"double", ^{
+    it(@"add", ^{
         NLTQTestable *testable = [NLTQTestable testableWithPropertyBlockArguments2:^BOOL(id argA, id argB) {
-            return YES;
-        } arbitraries:[NSNumber nonZeroIntArbitrary],[NSNumber nonZeroIntArbitrary], nil];
+            return [Math add:[argA intValue] b:[argB intValue]] == [argA intValue] + [argB intValue];
+        } arbitraries:[NSNumber intArbitrary], [NSNumber intArbitrary], nil];
         [testable verboseCheck];
+        [[theValue([testable success]) should] beYes];
     });
+    
+    it(@"string", ^{
+        NLTQTestable *testable = [NLTQTestable testableWithPropertyBlockArguments1:^BOOL(id argA) {
+            return [argA isEqualToString:argA];
+        } arbitrary:[NSString alphabetStringArbitrary]];
+        [testable verboseCheck];
+        [[theValue([testable success]) should] beYes];
+        NSLog(@"%@", [testable prettyReport]);
+    });
+     
+
 });
 
 SPEC_END

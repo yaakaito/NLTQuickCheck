@@ -24,6 +24,7 @@ typedef id(^__generateBlock)(double progress, int random);
 + (id)chooseGenWithLow:(int)low high:(int)high;
 + (id)elementsGenWithArray:(NSArray*)array;
 + (id)elementsGenWithObjects:(id)objects, ... NS_REQUIRES_NIL_TERMINATION; 
++ (id)oneOfGenWithGens:(id)firstGen, ... NS_REQUIRES_NIL_TERMINATION;
 + (id)randomGen;
 + (id)quadraticGenWithA:(int)a b:(int)b c:(int)c;
 /*

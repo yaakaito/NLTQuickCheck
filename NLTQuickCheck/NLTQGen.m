@@ -116,6 +116,25 @@
     
 }
 
++ (id)oneOfGenWithGens:(id)firstGen, ... {
+    NSMutableArray *objects_ = [NSMutableArray array];
+    va_list arguments;
+    va_start(arguments, firstGen);
+    id value = firstGen;
+    while (value) {
+        [objects_ addObject:value];
+        value = va_arg(arguments, typeof(id));
+    }
+    va_end(arguments);
+    
+    NLTQGen *choose = [NLTQGen chooseGenWithLow:0 high:[objects_ count]-1];
+    NLTQGen *oneof = [NLTQGen genWithGenerateBlock:^id(double progress, int random) {
+        return [objects_ objectAtIndex:(NSUInteger)random];
+    }];
+    [oneof bindingGen:choose];
+    return oneof;
+}
+
 + (id)quadraticGenWithA :(int)a b:(int)b c:(int)c {
     return [self genWithGenerateBlock:^id(double progress, int random) {
         return [NSNumber numberWithInt:(a * (progress * progress)) + (b * progress) + c];

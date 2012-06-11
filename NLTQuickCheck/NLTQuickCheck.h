@@ -12,7 +12,7 @@
 #import "NLTQStandardGen.h"
 #import "NLTQGen.h"
 #import "NLTQArbitrary.h"
-#import "NSNumber+BoolArbitrary.h"
+#import "NSNumber+Arbitrary.h"
 #import "NLTQTestable.h"
 #import "NLTQTestRunner.h"
 #import "NLTQTestCase.h"

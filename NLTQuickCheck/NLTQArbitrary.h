@@ -9,6 +9,6 @@
 #ifndef NLTQuickCheck_NLTQArbitrary_h
 #define NLTQuickCheck_NLTQArbitrary_h
 
-#import "NSNumber+BoolArbitrary.h"
+#import "NSNumber+Arbitrary.h"
 
 #endif

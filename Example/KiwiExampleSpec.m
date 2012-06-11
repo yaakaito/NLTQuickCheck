@@ -20,6 +20,14 @@ describe(@"QuickCheck Exmaple", ^{
         [[theValue([testable success]) should] beYes];
         NSLog(@"%@", [testable prettyReport]);
     });
+
+    it(@"double", ^{
+        [NSNumber intArbitrary];
+        NLTQTestable *testable = [NLTQTestable testableWithPropertyBlockArguments2:^BOOL(id argA, id argB) {
+            return YES;
+        } arbitraries:[NSNumber doubleArbitrary],[NSNumber doubleArbitrary], nil];
+        [testable verboseCheck];
+    });
 });
 
 SPEC_END

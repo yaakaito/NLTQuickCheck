@@ -12,5 +12,5 @@
 + (id)boolArbitrary;
 + (id)doubleArbitrary;
 + (id)intArbitrary;
-
++ (id)nonZeroIntArbitrary;
 @end

@@ -14,8 +14,9 @@
 + (id)boolArbitrary {
     return [NLTQGen elementsGenWithArray:[NSArray arrayWithObjects:[NSNumber numberWithBool:YES],[NSNumber numberWithBool:NO], nil]];
 }
+
 + (id)doubleArbitrary {
-    NLTQGen *quadratic = [NLTQGen quadraticGenWithA:1<<22 b:0 c:0];
+    NLTQGen *quadratic = [NLTQGen quadraticGenWithA:1<<22 b:1 c:0];
     NLTQGen *doubleGen = [NLTQGen genWithGenerateBlock:^id(double progress, int random) {
         NLTQGen *chooser = [NLTQGen randomGen];
         [chooser resizeWithMinimumSeed:-random maximumSeed:+random];
@@ -34,7 +35,7 @@
 }
 
 + (id)intArbitrary {
-    NLTQGen *quadratic = [NLTQGen quadraticGenWithA:1<<16 b:0 c:0];
+    NLTQGen *quadratic = [NLTQGen quadraticGenWithA:1<<16 b:1 c:0];
     NLTQGen *doubleGen = [NLTQGen genWithGenerateBlock:^id(double progress, int random) {
         NLTQGen *chooser = [NLTQGen randomGen];
         [chooser resizeWithMinimumSeed:-random maximumSeed:+random];
@@ -45,5 +46,18 @@
     return doubleGen;
 }
 
+
++ (id)nonZeroIntArbitrary {
+    NLTQGen *quadratic = [NLTQGen quadraticGenWithA:1<<16 b:1 c:0];
+    NLTQGen *doubleGen = [NLTQGen genWithGenerateBlock:^id(double progress, int random) {
+        NLTQGen *chooser = [NLTQGen randomGen];
+        [chooser resizeWithMinimumSeed:-random maximumSeed:+random];
+        NSNumber *value = [chooser valueWithProgress:progress];
+        return  [value intValue] == 0 ? [NSNumber numberWithInt:[value intValue] + 1] : value;
+        
+    }];
+    [doubleGen bindingGen:quadratic];
+    return doubleGen;
+}
 
 @end

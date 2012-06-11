@@ -24,7 +24,7 @@ describe(@"QuickCheck Exmaple", ^{
     it(@"double", ^{
         NLTQTestable *testable = [NLTQTestable testableWithPropertyBlockArguments2:^BOOL(id argA, id argB) {
             return YES;
-        } arbitraries:[NSNumber intArbitrary],[NSNumber intArbitrary], nil];
+        } arbitraries:[NSNumber nonZeroIntArbitrary],[NSNumber nonZeroIntArbitrary], nil];
         [testable verboseCheck];
     });
 });

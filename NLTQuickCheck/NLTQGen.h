@@ -25,8 +25,7 @@ typedef id(^__generateBlock)(double progress, int random);
 + (id)elementsGenWithArray:(NSArray*)array;
 + (id)elementsGenWithObjects:(id)objects, ... NS_REQUIRES_NIL_TERMINATION; 
 + (id)randomGen;
-
-
++ (id)quadraticGenWithA:(int)a b:(int)b c:(int)c;
 /*
  
  -- 外部入力やリソースから読み込んだジェネレーターを、テストに利用できるようにする

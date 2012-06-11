@@ -115,4 +115,10 @@
     }];
     
 }
+
++ (id)quadraticGenWithA :(int)a b:(int)b c:(int)c {
+    return [self genWithGenerateBlock:^id(double progress, int random) {
+        return [NSNumber numberWithInt:(a * (progress * progress)) + (b * progress) + c];
+    }];
+}
 @end

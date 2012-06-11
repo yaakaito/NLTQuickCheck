@@ -54,6 +54,7 @@
 		B9F254B5158652D600115C56 /* NSString+Arbitrary.h in Headers */ = {isa = PBXBuildFile; fileRef = B9F254B3158652D600115C56 /* NSString+Arbitrary.h */; };
 		B9F254B6158652D600115C56 /* NSString+Arbitrary.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F254B4158652D600115C56 /* NSString+Arbitrary.m */; };
 		B9F254B7158652D600115C56 /* NSString+Arbitrary.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F254B4158652D600115C56 /* NSString+Arbitrary.m */; };
+		B9F254BA158654D900115C56 /* NLTQStringArbitrarySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F254B8158654D900115C56 /* NLTQStringArbitrarySpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		B9C0780D157DAACC00C27314 /* NLTQTestRunnerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQTestRunnerSpec.m; sourceTree = "<group>"; };
 		B9F254B3158652D600115C56 /* NSString+Arbitrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Arbitrary.h"; path = "Arbitraries/NSString+Arbitrary.h"; sourceTree = "<group>"; };
 		B9F254B4158652D600115C56 /* NSString+Arbitrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Arbitrary.m"; path = "Arbitraries/NSString+Arbitrary.m"; sourceTree = "<group>"; };
+		B9F254B8158654D900115C56 /* NLTQStringArbitrarySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQStringArbitrarySpec.m; sourceTree = "<group>"; };
 		CACABB68EAAE45D38A8F3AF4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB5749ADAD414AF0B31ABA9A /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -247,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				B976DA9B157537DF0076149C /* NLTQBoolArbitrarySpec.m */,
+				B9F254B8158654D900115C56 /* NLTQStringArbitrarySpec.m */,
 			);
 			name = Arbitraries;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				B971A3B015821AB7009DE97F /* NLTQTestableSpec.m in Sources */,
 				B98624F0158518FD00FDDEAC /* KiwiExampleSpec.m in Sources */,
 				B9F254B7158652D600115C56 /* NSString+Arbitrary.m in Sources */,
+				B9F254BA158654D900115C56 /* NLTQStringArbitrarySpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

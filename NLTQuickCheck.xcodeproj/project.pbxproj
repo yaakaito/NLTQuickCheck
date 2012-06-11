@@ -48,12 +48,12 @@
 		B976DAC71575D59E0076149C /* NLTQBlocksTestCaseSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DAC61575D59E0076149C /* NLTQBlocksTestCaseSpec.m */; };
 		B976DACA15766D550076149C /* NLTQSelectorTestCaseTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B976DAC915766D550076149C /* NLTQSelectorTestCaseTest.m */; };
 		B98624F0158518FD00FDDEAC /* KiwiExampleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B98624EF158518FD00FDDEAC /* KiwiExampleSpec.m */; };
-		B98624F715861F7E00FDDEAC /* NSString+Arbitrary.h in Headers */ = {isa = PBXBuildFile; fileRef = B98624F515861F7E00FDDEAC /* NSString+Arbitrary.h */; };
-		B98624F815861F7E00FDDEAC /* NSString+Arbitrary.m in Sources */ = {isa = PBXBuildFile; fileRef = B98624F615861F7E00FDDEAC /* NSString+Arbitrary.m */; };
-		B98624F915861F7E00FDDEAC /* NSString+Arbitrary.m in Sources */ = {isa = PBXBuildFile; fileRef = B98624F615861F7E00FDDEAC /* NSString+Arbitrary.m */; };
 		B9C07809157CC78F00C27314 /* NLTQTestCaseSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C07808157CC78F00C27314 /* NLTQTestCaseSpec.m */; };
 		B9C0780C157CFD2900C27314 /* NLTQReportSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C0780B157CFD2900C27314 /* NLTQReportSpec.m */; };
 		B9C0780E157DAACD00C27314 /* NLTQTestRunnerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C0780D157DAACC00C27314 /* NLTQTestRunnerSpec.m */; };
+		B9F254B5158652D600115C56 /* NSString+Arbitrary.h in Headers */ = {isa = PBXBuildFile; fileRef = B9F254B3158652D600115C56 /* NSString+Arbitrary.h */; };
+		B9F254B6158652D600115C56 /* NSString+Arbitrary.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F254B4158652D600115C56 /* NSString+Arbitrary.m */; };
+		B9F254B7158652D600115C56 /* NSString+Arbitrary.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F254B4158652D600115C56 /* NSString+Arbitrary.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,11 +102,11 @@
 		B976DAC61575D59E0076149C /* NLTQBlocksTestCaseSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQBlocksTestCaseSpec.m; sourceTree = "<group>"; };
 		B976DAC915766D550076149C /* NLTQSelectorTestCaseTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQSelectorTestCaseTest.m; sourceTree = "<group>"; };
 		B98624EF158518FD00FDDEAC /* KiwiExampleSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KiwiExampleSpec.m; path = Example/KiwiExampleSpec.m; sourceTree = SOURCE_ROOT; };
-		B98624F515861F7E00FDDEAC /* NSString+Arbitrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Arbitrary.h"; sourceTree = "<group>"; };
-		B98624F615861F7E00FDDEAC /* NSString+Arbitrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Arbitrary.m"; sourceTree = "<group>"; };
 		B9C07808157CC78F00C27314 /* NLTQTestCaseSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQTestCaseSpec.m; sourceTree = "<group>"; };
 		B9C0780B157CFD2900C27314 /* NLTQReportSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQReportSpec.m; sourceTree = "<group>"; };
 		B9C0780D157DAACC00C27314 /* NLTQTestRunnerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQTestRunnerSpec.m; sourceTree = "<group>"; };
+		B9F254B3158652D600115C56 /* NSString+Arbitrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Arbitrary.h"; path = "Arbitraries/NSString+Arbitrary.h"; sourceTree = "<group>"; };
+		B9F254B4158652D600115C56 /* NSString+Arbitrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Arbitrary.m"; path = "Arbitraries/NSString+Arbitrary.m"; sourceTree = "<group>"; };
 		CACABB68EAAE45D38A8F3AF4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB5749ADAD414AF0B31ABA9A /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -254,10 +254,10 @@
 		B976DA94157537330076149C /* Arbitraries */ = {
 			isa = PBXGroup;
 			children = (
+				B9F254B3158652D600115C56 /* NSString+Arbitrary.h */,
+				B9F254B4158652D600115C56 /* NSString+Arbitrary.m */,
 				B976DA96157537690076149C /* NSNumber+Arbitrary.h */,
 				B976DA97157537690076149C /* NSNumber+Arbitrary.m */,
-				B98624F515861F7E00FDDEAC /* NSString+Arbitrary.h */,
-				B98624F615861F7E00FDDEAC /* NSString+Arbitrary.m */,
 			);
 			name = Arbitraries;
 			sourceTree = "<group>";
@@ -302,7 +302,7 @@
 				B976DAAF157543ED0076149C /* NLTQTestCase.h in Headers */,
 				B976DAB41575441D0076149C /* NLTQReport.h in Headers */,
 				B976DABE1575D03A0076149C /* NLTQReportManager.h in Headers */,
-				B98624F715861F7E00FDDEAC /* NSString+Arbitrary.h in Headers */,
+				B9F254B5158652D600115C56 /* NSString+Arbitrary.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,7 +428,7 @@
 				B976DAB0157543ED0076149C /* NLTQTestCase.m in Sources */,
 				B976DAB51575441D0076149C /* NLTQReport.m in Sources */,
 				B976DABF1575D03A0076149C /* NLTQReportManager.m in Sources */,
-				B98624F815861F7E00FDDEAC /* NSString+Arbitrary.m in Sources */,
+				B9F254B6158652D600115C56 /* NSString+Arbitrary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,7 +456,7 @@
 				B971A39B157E37A5009DE97F /* NLTQReportManagerSpec.m in Sources */,
 				B971A3B015821AB7009DE97F /* NLTQTestableSpec.m in Sources */,
 				B98624F0158518FD00FDDEAC /* KiwiExampleSpec.m in Sources */,
-				B98624F915861F7E00FDDEAC /* NSString+Arbitrary.m in Sources */,
+				B9F254B7158652D600115C56 /* NSString+Arbitrary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

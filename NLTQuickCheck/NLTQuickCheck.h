@@ -13,6 +13,7 @@
 #import "NLTQGen.h"
 #import "NLTQArbitrary.h"
 #import "NSNumber+Arbitrary.h"
+#import "NSString+Arbitrary.h"
 #import "NLTQTestable.h"
 #import "NLTQTestRunner.h"
 #import "NLTQTestCase.h"

@@ -24,6 +24,8 @@
 		B94192D9156C05AB0074A059 /* NLTQGen.m in Sources */ = {isa = PBXBuildFile; fileRef = B94192D6156C05AB0074A059 /* NLTQGen.m */; };
 		B94192E6156E95630074A059 /* NLTQGenCombinatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B94192E5156E95630074A059 /* NLTQGenCombinatorSpec.m */; };
 		B94192E7156E95630074A059 /* NLTQGenCombinatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B94192E5156E95630074A059 /* NLTQGenCombinatorSpec.m */; };
+		B970CD1A158848B000167539 /* OCUnitExample.m in Sources */ = {isa = PBXBuildFile; fileRef = B970CD19158848B000167539 /* OCUnitExample.m */; };
+		B970CD1D15884AEF00167539 /* Math.m in Sources */ = {isa = PBXBuildFile; fileRef = B970CD1C15884AEF00167539 /* Math.m */; };
 		B971A39B157E37A5009DE97F /* NLTQReportManagerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B971A39A157E37A5009DE97F /* NLTQReportManagerSpec.m */; };
 		B971A3B015821AB7009DE97F /* NLTQTestableSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B971A3AF15821AB7009DE97F /* NLTQTestableSpec.m */; };
 		B976DA98157537690076149C /* NSNumber+Arbitrary.h in Headers */ = {isa = PBXBuildFile; fileRef = B976DA96157537690076149C /* NSNumber+Arbitrary.h */; };
@@ -84,6 +86,11 @@
 		B94192D5156C05AB0074A059 /* NLTQGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLTQGen.h; sourceTree = "<group>"; };
 		B94192D6156C05AB0074A059 /* NLTQGen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQGen.m; sourceTree = "<group>"; };
 		B94192E5156E95630074A059 /* NLTQGenCombinatorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQGenCombinatorSpec.m; sourceTree = "<group>"; };
+		B970CD161588456C00167539 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		B970CD18158848B000167539 /* OCUnitExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCUnitExample.h; path = Example/OCUnitExample.h; sourceTree = SOURCE_ROOT; };
+		B970CD19158848B000167539 /* OCUnitExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCUnitExample.m; path = Example/OCUnitExample.m; sourceTree = SOURCE_ROOT; };
+		B970CD1B15884AEF00167539 /* Math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Math.h; path = Example/Math.h; sourceTree = SOURCE_ROOT; };
+		B970CD1C15884AEF00167539 /* Math.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Math.m; path = Example/Math.m; sourceTree = SOURCE_ROOT; };
 		B971A39A157E37A5009DE97F /* NLTQReportManagerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQReportManagerSpec.m; sourceTree = "<group>"; };
 		B971A3AF15821AB7009DE97F /* NLTQTestableSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQTestableSpec.m; sourceTree = "<group>"; };
 		B976DA96157537690076149C /* NSNumber+Arbitrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNumber+Arbitrary.h"; path = "Arbitraries/NSNumber+Arbitrary.h"; sourceTree = "<group>"; };
@@ -145,6 +152,7 @@
 				B941926B1565760D0074A059 /* Frameworks */,
 				B941926A1565760D0074A059 /* Products */,
 				EB5749ADAD414AF0B31ABA9A /* Pods.xcconfig */,
+				B970CD161588456C00167539 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -226,6 +234,8 @@
 			children = (
 				B971A3A5158041D1009DE97F /* BDD */,
 				B971A3A9158043DB009DE97F /* xUnit */,
+				B970CD1B15884AEF00167539 /* Math.h */,
+				B970CD1C15884AEF00167539 /* Math.m */,
 			);
 			name = Example;
 			sourceTree = "<group>";
@@ -241,6 +251,8 @@
 		B971A3A9158043DB009DE97F /* xUnit */ = {
 			isa = PBXGroup;
 			children = (
+				B970CD18158848B000167539 /* OCUnitExample.h */,
+				B970CD19158848B000167539 /* OCUnitExample.m */,
 			);
 			name = xUnit;
 			sourceTree = "<group>";
@@ -461,6 +473,8 @@
 				B98624F0158518FD00FDDEAC /* KiwiExampleSpec.m in Sources */,
 				B9F254B7158652D600115C56 /* NSString+Arbitrary.m in Sources */,
 				B9F254BA158654D900115C56 /* NLTQStringArbitrarySpec.m in Sources */,
+				B970CD1A158848B000167539 /* OCUnitExample.m in Sources */,
+				B970CD1D15884AEF00167539 /* Math.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

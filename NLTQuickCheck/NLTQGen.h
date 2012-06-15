@@ -8,9 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define kNLTQGenDefaultMiniumSee
-
-d   (0)
+#define kNLTQGenDefaultMiniumSeed   (0)
 #define kNLTQGenDefaultMaxiumSeed   (1000)
 
 typedef id(^__generateBlock)(double progress, int random);

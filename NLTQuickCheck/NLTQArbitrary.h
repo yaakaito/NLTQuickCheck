@@ -10,5 +10,6 @@
 #define NLTQuickCheck_NLTQArbitrary_h
 
 #import "NSNumber+Arbitrary.h"
+#import "NSString+Arbitrary.h"
 
 #endif

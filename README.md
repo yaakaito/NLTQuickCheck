@@ -7,7 +7,7 @@ It generate random values, and run many test cases with the values.
 Let's start Data Driven Testing.
 
 ## How to install 
-CocoaPods](https://github.com/CocoaPods/)
+[CocoaPods](https://github.com/CocoaPods/)
 ```ruby
 dependency 'NLTQuickCheck'
 ```

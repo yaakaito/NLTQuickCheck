@@ -8,12 +8,12 @@
 
 #import "OCUnitExample.h"
 #import "NLTQuickCheck.h"
-#import "Math.h"
+#import "EXMath.h"
 
 @implementation OCUnitExample
 
 - (BOOL)propAdd:(NSNumber*)a b:(NSNumber*)b {
-    return [Math add:[a intValue] b:[b intValue]] == [a intValue] + [b intValue];
+    return [EXMath add:[a intValue] b:[b intValue]] == [a intValue] + [b intValue];
 }
 - (void)testQuickCheckXUnitStyleExample {
     NLTQTestable *testable = [NLTQTestable testableWithPropertySelector:@selector(propAdd:b:) 

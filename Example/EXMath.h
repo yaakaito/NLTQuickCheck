@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Math : NSObject
+@interface EXMath : NSObject
 
 + (int)add:(int)a b:(int)b;
 @end

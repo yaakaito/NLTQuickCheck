@@ -6,9 +6,9 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "Math.h"
+#import "EXMath.h"
 
-@implementation Math
+@implementation EXMath
 
 + (int)add:(int)a b:(int)b {
     return a + b;

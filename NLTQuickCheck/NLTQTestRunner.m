@@ -47,9 +47,11 @@
         else {
             report = [self.testCase checkWithTestCount:i testLength:self.testLength];
         }
-        [mutableReports addObject:report];
-        if(isVerbose) {
-            NSLog(@"%@", [report localizedDescription]);
+        if(!report.skip) {
+            [mutableReports addObject:report];
+            if(isVerbose) {
+                NSLog(@"%@", [report localizedDescription]);
+            }
         }
 
     }

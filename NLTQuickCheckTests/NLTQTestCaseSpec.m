@@ -18,8 +18,14 @@ SPEC_BEGIN(NLTQTestCaseSpec)
 
 describe(@"TestCaseSpec", ^{
     __block NLTQGen *gen;
+    __block NLTQGen *skipGen;
     beforeAll(^{
         gen = [NLTQGen elementsGenWithArray:[NSArray arrayWithObject:[NSNumber numberWithBool:YES]]];
+        skipGen = [[NLTQGen genWithGenerateBlock:^id(double progress, int random) {
+            return nil;
+        }] andSkipCaseBlock:^BOOL(id value) {
+            return YES;
+        }];
     });
     
     context(@"checkWithTestCount:testLength: with return YES(fixed) gen", ^{
@@ -41,11 +47,6 @@ describe(@"TestCaseSpec", ^{
             
             context(@"when contains skip gen", ^{
                 beforeEach(^{
-                    NLTQGen *skipGen = [[NLTQGen genWithGenerateBlock:^id(double progress, int random) {
-                        return nil;
-                    }] andSkipCaseBlock:^BOOL(id value) {
-                        return YES;
-                    }];
                     testCase = [NLTQTestCase blocksTestCaseWithBlocksArguments2:^BOOL(id argA, id argB) {
                         return YES;
                     } arbitraries:[NSArray arrayWithObjects:gen,skipGen, nil]];

@@ -30,6 +30,17 @@ describe(@"QuickCheck Exmaple", ^{
         [[theValue([testable success]) should] beYes];
     });
     
+    it(@"div", ^{
+        NLTQTestable *testable = [NLTQTestable testableWithPropertyBlockArguments2:^BOOL(id argA, id argB) {
+            return [argA intValue] / [argB intValue] == [argA intValue] / [argB intValue];
+        } arbitraries:[NSNumber intArbitrary], [[NSNumber intArbitrary] andSkipCaseBlock:^BOOL(id value) {
+            return [value intValue] == 0;
+        }], nil];
+        [testable verboseCheck];
+        [[theValue([testable success]) should] beYes];
+        NSLog(@"%@", [testable prettyReport]);
+    });
+    
     it(@"string", ^{
         NLTQTestable *testable = [NLTQTestable testableWithPropertyBlockArguments1:^BOOL(id argA) {
             return [argA isEqualToString:argA];

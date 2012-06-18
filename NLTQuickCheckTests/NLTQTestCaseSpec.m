@@ -41,10 +41,9 @@ describe(@"TestCaseSpec", ^{
             
             context(@"when contains skip gen", ^{
                 beforeEach(^{
-                    NLTQGen *skipGen = [NLTQGen genWithGenerateBlock:^id(double progress, int random) {
+                    NLTQGen *skipGen = [[NLTQGen genWithGenerateBlock:^id(double progress, int random) {
                         return nil;
-                    }];
-                    [skipGen skipCaseWithBlock:^BOOL(id value) {
+                    }] andSkipCaseBlock:^BOOL(id value) {
                         return YES;
                     }];
                     testCase = [NLTQTestCase blocksTestCaseWithBlocksArguments2:^BOOL(id argA, id argB) {

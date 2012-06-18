@@ -109,7 +109,7 @@ describe(@"Gen(erator)", ^{
                 gen = [NLTQGen genWithGenerateBlock:^id(double progress, int random) {
                     return [NSNumber numberWithInt:10];
                 }];
-                [gen skipCaseWithBlock:^BOOL(id value) {
+                [gen andSkipCaseBlock:^BOOL(id value) {
                     if([value intValue] == 10) {
                         return YES;
                     }

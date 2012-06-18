@@ -86,9 +86,10 @@
     self.bindingGen = gen;
 }
 
-- (void)skipCaseWithBlock:(__skipCaseBlock)block {
+- (id)andSkipCaseBlock:(__skipCaseBlock)block {
     
     self.skipCaseBlock = block;
+    return self;
 }
 
 + (NSArray*)numbersArrayWithLow:(int)low high:(int)high {

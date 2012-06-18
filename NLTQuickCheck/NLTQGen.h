@@ -20,7 +20,7 @@ typedef BOOL(^__skipCaseBlock)(id value);
 - (id)valueWithProgress:(double)progress;
 - (void)resizeWithMinimumSeed:(int)minimumSeed maximumSeed:(int)maximumSeed;
 - (void)bindingGen:(NLTQGen*)gen;
-- (void)skipCaseWithBlock:(__skipCaseBlock)block;
+- (id)andSkipCaseBlock:(__skipCaseBlock)block;
 
 // Combinators
 + (id)chooseGenWithLow:(int)low high:(int)high;

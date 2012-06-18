@@ -36,7 +36,11 @@
     NSMutableArray *args = [NSMutableArray array];
     for (NSUInteger i = 0; i < [self.arbitraries count]; i++) {
         NLTQGen *gen = [self.arbitraries objectAtIndex:i];
-        [args addObject:[gen valueWithProgress:progress]];
+        id value = [gen valueWithProgress:progress];
+        if(value == nil) {
+            return nil;
+        }
+        [args addObject:value];
     }
     return args;
 }

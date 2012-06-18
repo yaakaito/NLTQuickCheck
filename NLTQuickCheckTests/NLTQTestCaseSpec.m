@@ -11,6 +11,7 @@
 
 @interface NLTQTestCase(Privates)
 - (NSArray*)gensRealize:(double)progress;
+- (BOOL)isSkipCase:(NSArray*)gens;
 @end
 
 SPEC_BEGIN(NLTQTestCaseSpec)
@@ -36,6 +37,25 @@ describe(@"TestCaseSpec", ^{
                 [[theValue([args count]) should] equal:theValue(1)];
                 NSNumber *argA = [args objectAtIndex:0];
                 [[theValue([argA boolValue]) should] beYes];
+            });
+            
+            context(@"when contains skip gen", ^{
+                beforeEach(^{
+                    NLTQGen *skipGen = [NLTQGen genWithGenerateBlock:^id(double progress, int random) {
+                        return nil;
+                    }];
+                    [skipGen skipCaseWithBlock:^BOOL(id value) {
+                        return YES;
+                    }];
+                    testCase = [NLTQTestCase blocksTestCaseWithBlocksArguments2:^BOOL(id argA, id argB) {
+                        return YES;
+                    } arbitraries:[NSArray arrayWithObjects:gen,skipGen, nil]];
+                });
+                
+                it(@"should return nil", ^{
+                    NSArray *args = [testCase gensRealize:0.0];
+                    [[theValue(args == nil) should] beYes];
+                });
             });
         });
         

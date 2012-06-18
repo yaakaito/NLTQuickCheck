@@ -36,6 +36,17 @@ describe(@"Report", ^{
         it(@"should has arguments", ^{
             [[report.arguments should] beKindOfClass:[NSArray class]];
         });
+        
+        it(@"should has skip", ^{
+            [[theValue(report.skip) should] beNo];
+        });
+    });
+    
+    context(@"skip report", ^{
+        it(@"should skip = YES", ^{
+            NLTQReport *report = [NLTQReport skipReport];
+            [[theValue(report.skip) should] beYes]; 
+        });
     });
     
     context(@"localizedDescription", ^{
@@ -141,6 +152,7 @@ describe(@"Report", ^{
             });
             
         });
+        
 
     });
 });

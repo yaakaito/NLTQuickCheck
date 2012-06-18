@@ -57,8 +57,7 @@ describe(@"TestCaseSpec", ^{
                     [[theValue(args == nil) should] beYes];
                 });
             });
-        });
-        
+        });        
         it(@"should report success flag = YES", ^{
             NLTQReport *report = [testCase checkWithTestCount:0 testLength:100];
             [[theValue(report.success) should] beYes];

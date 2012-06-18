@@ -79,6 +79,20 @@ describe(@"TestCaseSpec", ^{
         });
     });
     
+    context(@"checkWithTestcount:testLength: with skip gen", ^{
+        __block NLTQTestCase *testCase;
+        beforeEach(^{
+            testCase = [NLTQTestCase blocksTestCaseWithBlocksArguments1:^BOOL(id argA) {
+                return NO;
+            } arbitraries:[NSArray arrayWithObjects:skipGen, nil]];
+        });
+        
+        it(@"should report skip flag = YES", ^{
+            NLTQReport *report = [testCase checkWithTestCount:0 testLength:100];
+            [[theValue(report.skip) should] beYes];
+        });
+    });
+    
     context(@"checkWithTestCount:testLength: with return NO(fixed) gen", ^{
         __block NLTQTestCase *testCase;
         beforeEach(^{

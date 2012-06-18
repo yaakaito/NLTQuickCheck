@@ -51,6 +51,9 @@
     BOOL success = NO, needsRetry = NO, isException = NO;
     if(!arguments) {
         arguments = [self gensRealize:progress];
+        if(arguments == nil) {
+            return [NLTQReport skipReport];
+        }
     }
     
     @try {

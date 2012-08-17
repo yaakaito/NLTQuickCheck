@@ -87,3 +87,6 @@ it(@"failure case", ^{
 * `[NSNumber nonZeroIntArbitrary]`
 * `[NSNumber doubleArbitrary]`
 * `[NSNumber boolArbitrary]`
+
+## License
+MIT

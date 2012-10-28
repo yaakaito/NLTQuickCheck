@@ -12,6 +12,7 @@
 #define kNLTQGenDefaultMaxiumSeed   (1000)
 
 typedef id(^__generateBlock)(double progress, int random);
+typedef BOOL(^__skipCaseBlock)(id value);
 
 @interface NLTQGen : NSObject
 + (id)genWithGenerateBlock:(__generateBlock)block;
@@ -19,6 +20,7 @@ typedef id(^__generateBlock)(double progress, int random);
 - (id)valueWithProgress:(double)progress;
 - (void)resizeWithMinimumSeed:(int)minimumSeed maximumSeed:(int)maximumSeed;
 - (void)bindingGen:(NLTQGen*)gen;
+- (id)andSkipCaseBlock:(__skipCaseBlock)block;
 
 // Combinators
 + (id)chooseGenWithLow:(int)low high:(int)high;

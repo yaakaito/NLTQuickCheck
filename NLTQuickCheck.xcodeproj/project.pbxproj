@@ -25,7 +25,7 @@
 		B94192E6156E95630074A059 /* NLTQGenCombinatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B94192E5156E95630074A059 /* NLTQGenCombinatorSpec.m */; };
 		B94192E7156E95630074A059 /* NLTQGenCombinatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B94192E5156E95630074A059 /* NLTQGenCombinatorSpec.m */; };
 		B970CD1A158848B000167539 /* OCUnitExample.m in Sources */ = {isa = PBXBuildFile; fileRef = B970CD19158848B000167539 /* OCUnitExample.m */; };
-		B970CD1D15884AEF00167539 /* Math.m in Sources */ = {isa = PBXBuildFile; fileRef = B970CD1C15884AEF00167539 /* Math.m */; };
+		B970CD1D15884AEF00167539 /* EXMath.m in Sources */ = {isa = PBXBuildFile; fileRef = B970CD1C15884AEF00167539 /* EXMath.m */; };
 		B971A39B157E37A5009DE97F /* NLTQReportManagerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B971A39A157E37A5009DE97F /* NLTQReportManagerSpec.m */; };
 		B971A3B015821AB7009DE97F /* NLTQTestableSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B971A3AF15821AB7009DE97F /* NLTQTestableSpec.m */; };
 		B976DA98157537690076149C /* NSNumber+Arbitrary.h in Headers */ = {isa = PBXBuildFile; fileRef = B976DA96157537690076149C /* NSNumber+Arbitrary.h */; };
@@ -89,8 +89,8 @@
 		B970CD161588456C00167539 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		B970CD18158848B000167539 /* OCUnitExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCUnitExample.h; path = Example/OCUnitExample.h; sourceTree = SOURCE_ROOT; };
 		B970CD19158848B000167539 /* OCUnitExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCUnitExample.m; path = Example/OCUnitExample.m; sourceTree = SOURCE_ROOT; };
-		B970CD1B15884AEF00167539 /* Math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Math.h; path = Example/Math.h; sourceTree = SOURCE_ROOT; };
-		B970CD1C15884AEF00167539 /* Math.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Math.m; path = Example/Math.m; sourceTree = SOURCE_ROOT; };
+		B970CD1B15884AEF00167539 /* EXMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXMath.h; path = Example/EXMath.h; sourceTree = SOURCE_ROOT; };
+		B970CD1C15884AEF00167539 /* EXMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXMath.m; path = Example/EXMath.m; sourceTree = SOURCE_ROOT; };
 		B971A39A157E37A5009DE97F /* NLTQReportManagerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQReportManagerSpec.m; sourceTree = "<group>"; };
 		B971A3AF15821AB7009DE97F /* NLTQTestableSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTQTestableSpec.m; sourceTree = "<group>"; };
 		B976DA96157537690076149C /* NSNumber+Arbitrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNumber+Arbitrary.h"; path = "Arbitraries/NSNumber+Arbitrary.h"; sourceTree = "<group>"; };
@@ -234,8 +234,8 @@
 			children = (
 				B971A3A5158041D1009DE97F /* BDD */,
 				B971A3A9158043DB009DE97F /* xUnit */,
-				B970CD1B15884AEF00167539 /* Math.h */,
-				B970CD1C15884AEF00167539 /* Math.m */,
+				B970CD1B15884AEF00167539 /* EXMath.h */,
+				B970CD1C15884AEF00167539 /* EXMath.m */,
 			);
 			name = Example;
 			sourceTree = "<group>";
@@ -474,7 +474,7 @@
 				B9F254B7158652D600115C56 /* NSString+Arbitrary.m in Sources */,
 				B9F254BA158654D900115C56 /* NLTQStringArbitrarySpec.m in Sources */,
 				B970CD1A158848B000167539 /* OCUnitExample.m in Sources */,
-				B970CD1D15884AEF00167539 /* Math.m in Sources */,
+				B970CD1D15884AEF00167539 /* EXMath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

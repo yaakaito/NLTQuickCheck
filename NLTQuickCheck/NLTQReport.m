@@ -13,6 +13,7 @@
 @property(nonatomic) BOOL needsRetry;
 @property(nonatomic) int  retryCounter;
 @property(nonatomic) BOOL isException;
+@property(nonatomic) BOOL skip;
 @property(nonatomic, strong) NSArray *arguments;
 @end
 
@@ -29,6 +30,7 @@
 @synthesize retryCounter = _retryCounter;
 @synthesize isException = _isException;
 @synthesize arguments = _arguments;
+@synthesize skip = _skipl;
 
 - (id)initWithSuccess:(BOOL)success
            needsRetry:(BOOL)needsRetry
@@ -47,6 +49,14 @@
     return self;
 }
 
+- (id)initWithSkip {
+    self = [super init];
+    if(self) {
+        self.skip = YES;
+    }
+    return self;
+}
+
 + (id)reportWithSuccess:(BOOL)success
              needsRetry:(BOOL)needsRetry
            retryCounter:(int)retryCounter
@@ -58,6 +68,10 @@
                             retryCounter:retryCounter
                              isException:isException
                                arguments:arguments];
+}
+
++ (id)skipReport {
+    return [[self alloc] initWithSkip];
 }
 
 - (NSString *)localizeNSNumber:(NSNumber *)arg {

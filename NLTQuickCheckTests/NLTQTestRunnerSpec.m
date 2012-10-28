@@ -63,6 +63,41 @@ describe(@"Test Runner", ^{
         
     });
     
+    context(@"skip at 3rd test case", ^{
+        __block NLTQTestRunner *testRunner;
+        __block int runCounter;
+        beforeAll(^{
+            runCounter = 0;
+            NLTQTestCase *testCase = [NLTQTestCase blocksTestCaseWithBlocksArguments2:^BOOL(id argA, id argB) {
+                return YES;
+            } arbitraries:[NSArray arrayWithObjects:[[NLTQGen chooseGenWithLow:0 high:10] andSkipCaseBlock:^BOOL(id value) {
+                runCounter++;
+                if(runCounter == 3) {
+                    return YES;
+                }
+                return NO;
+            }], [NLTQGen chooseGenWithLow:0 high:10], nil]];
+            testRunner = [NLTQTestRunner testRunnerWithTestCase:testCase];
+        });
+        
+        context(@"and run 6 cases ", ^{
+            __block NSArray *reports;
+            beforeAll(^{
+                [testRunner setTestLength:6];
+                reports = [testRunner runWithVerbose:NO];
+            });
+            
+            it(@"should 6 executed", ^{
+                [[theValue(runCounter) should] equal:theValue(6)];
+            });
+            
+            it(@"should has 5 reports", ^{
+                [[theValue([reports count]) should] equal:theValue(5)];
+            });
+         });
+    });
+
+    
     context(@"failure at 3rd , 4th and 5th test case", ^{
         __block NLTQTestRunner *testRunner;
         __block int runCounter;

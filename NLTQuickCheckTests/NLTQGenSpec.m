@@ -100,8 +100,29 @@ describe(@"Gen(erator)", ^{
                 [[theValue(v) should] equal:theValue(100)];
             });
         });
-        
-
+    });
+    
+    context(@"skip case", ^{
+        __block NLTQGen *gen;
+        context(@"when fixble return NSNumber 10 and Skip NSNumber 10", ^{
+            beforeEach(^{
+                gen = [NLTQGen genWithGenerateBlock:^id(double progress, int random) {
+                    return [NSNumber numberWithInt:10];
+                }];
+                [gen andSkipCaseBlock:^BOOL(id value) {
+                    if([value intValue] == 10) {
+                        return YES;
+                    }
+                    return NO;
+                }];
+            });
+            
+            it(@"should value is nil", ^{
+                id value = [gen valueWithProgress:0];
+                [[theValue(value == nil) should] beYes]; // Kiwis Bug? :( [[nil should] beNil] -> Failure
+            });
+            
+        });
     });
 
 });

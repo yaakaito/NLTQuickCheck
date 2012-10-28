@@ -7,7 +7,7 @@
 
 #import "Kiwi.h"
 #import "NLTQuickCheck.h"
-#import "Math.h"
+#import "EXMath.h"
 
 SPEC_BEGIN(KiwiExampleSpec)
 
@@ -24,10 +24,21 @@ describe(@"QuickCheck Exmaple", ^{
 
     it(@"add", ^{
         NLTQTestable *testable = [NLTQTestable testableWithPropertyBlockArguments2:^BOOL(id argA, id argB) {
-            return [Math add:[argA intValue] b:[argB intValue]] == [argA intValue] + [argB intValue];
+            return [EXMath add:[argA intValue] b:[argB intValue]] == [argA intValue] + [argB intValue];
         } arbitraries:[NSNumber intArbitrary], [NSNumber intArbitrary], nil];
         [testable verboseCheck];
         [[theValue([testable success]) should] beYes];
+    });
+    
+    it(@"div", ^{
+        NLTQTestable *testable = [NLTQTestable testableWithPropertyBlockArguments2:^BOOL(id argA, id argB) {
+            return [argA intValue] / [argB intValue] == [argA intValue] / [argB intValue];
+        } arbitraries:[NSNumber intArbitrary], [[NSNumber intArbitrary] andSkipCaseBlock:^BOOL(id value) {
+            return [value intValue] == 0;
+        }], nil];
+        [testable verboseCheck];
+        [[theValue([testable success]) should] beYes];
+        NSLog(@"%@", [testable prettyReport]);
     });
     
     it(@"string", ^{
@@ -44,7 +55,7 @@ describe(@"QuickCheck Exmaple", ^{
             return [argA intValue] - [argB intValue] > 0;
         } arbitraries:[NSNumber intArbitrary], [NSNumber intArbitrary], nil];
         [testable verboseCheck];
-        [[theValue([testable success]) should] beYes];
+        [[theValue([testable success]) should] beNo];
         NSLog(@"%@", [testable prettyReport]);  
     });
      

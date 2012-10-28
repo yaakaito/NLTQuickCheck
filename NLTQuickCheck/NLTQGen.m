@@ -9,20 +9,26 @@
 #import "NLTQGen.h"
 #import "NLTQStandardGen.h"
 
-@implementation NLTQGen {
-    
-    NLTQStandardGen *_standardGen;
-    __generateBlock _block;
-    NLTQGen *_bindingGen;
-    
-}
+@interface NLTQGen()
+@property(nonatomic,strong) NLTQStandardGen *standardGen;
+@property(nonatomic,strong) __generateBlock generateBlock;
+@property(nonatomic,strong) NLTQGen *bindingGen;
+@property(nonatomic,strong) __skipCaseBlock skipCaseBlock;
+@end
+
+@implementation NLTQGen
+
+@synthesize standardGen = _standardGen;
+@synthesize generateBlock = _generateBlock;
+@synthesize bindingGen = _bindingGen;
+@synthesize skipCaseBlock = _skipCaseBlock;
 
 - (id)initWithGenerateBlock:(__generateBlock)block {
     
     self = [super init];
     if(self) {
-        _block = block;
-        _standardGen = [NLTQStandardGen standardGenWithMinimumSeed:kNLTQGenDefaultMiniumSeed
+        self.generateBlock = block;
+        self.standardGen = [NLTQStandardGen standardGenWithMinimumSeed:kNLTQGenDefaultMiniumSeed
                                                        maximumSeed:kNLTQGenDefaultMaxiumSeed];
     }
     return self;
@@ -32,8 +38,8 @@
 
     self = [super init];
     if(self) {
-        _block = block;
-        _standardGen = [NLTQStandardGen standardGenWithMinimumSeed:minimumSeed
+        self.generateBlock = block;
+        self.standardGen = [NLTQStandardGen standardGenWithMinimumSeed:minimumSeed
                                                        maximumSeed:maximumSeed];
     }
     return self;
@@ -51,23 +57,39 @@
 
 - (id)valueWithProgress:(double)progress {
     
-    int random = _standardGen.currentGeneratedValue; _standardGen = [_standardGen generateNext];
-    if(_bindingGen) {
-        random = [[_bindingGen valueWithProgress:progress] intValue];
+    int random = self.standardGen.currentGeneratedValue;
+    self.standardGen = [_standardGen generateNext];
+    if(self.bindingGen) {
+        random = [[self.bindingGen valueWithProgress:progress] intValue];
     }
-    return _block(progress, random);
+    
+    id value = self.generateBlock(progress, random);
+
+    if(!self.skipCaseBlock) {
+        return value;
+    }
+    
+    BOOL skip = self.skipCaseBlock(value);
+    
+    return skip ? nil : value;
 }
 
 - (void)resizeWithMinimumSeed:(int)minimumSeed maximumSeed:(int)maximumSeed {
     
-    _standardGen = [NLTQStandardGen standardGenWithMinimumSeed:minimumSeed
+    self.standardGen = [NLTQStandardGen standardGenWithMinimumSeed:minimumSeed
                                                    maximumSeed:maximumSeed];
 }
 
 - (void)bindingGen:(NLTQGen *)gen {
     
     NSAssert([[gen valueWithProgress:0] isKindOfClass:[NSNumber class]], @"this bind gen not return NSNumber object");
-    _bindingGen = gen;
+    self.bindingGen = gen;
+}
+
+- (id)andSkipCaseBlock:(__skipCaseBlock)block {
+    
+    self.skipCaseBlock = block;
+    return self;
 }
 
 + (NSArray*)numbersArrayWithLow:(int)low high:(int)high {

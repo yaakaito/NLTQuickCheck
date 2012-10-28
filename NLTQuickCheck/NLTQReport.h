@@ -14,6 +14,7 @@
 @property(nonatomic, readonly) BOOL needsRetry;
 @property(nonatomic, readonly) int retryCounter;
 @property(nonatomic, readonly) BOOL isException;
+@property(nonatomic, readonly) BOOL skip; 
 @property(nonatomic, strong, readonly) NSArray *arguments;
 
 + (id)reportWithSuccess:(BOOL)success
@@ -21,6 +22,6 @@
            retryCounter:(int)retryCounter
             isException:(BOOL)isException
               arguments:(NSArray*)arguments;
-
++ (id)skipReport;
 - (NSString*)localizedDescription;
 @end

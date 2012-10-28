@@ -11,14 +11,21 @@
 
 @interface NLTQTestCase(Privates)
 - (NSArray*)gensRealize:(double)progress;
+- (BOOL)isSkipCase:(NSArray*)gens;
 @end
 
 SPEC_BEGIN(NLTQTestCaseSpec)
 
 describe(@"TestCaseSpec", ^{
     __block NLTQGen *gen;
+    __block NLTQGen *skipGen;
     beforeAll(^{
         gen = [NLTQGen elementsGenWithArray:[NSArray arrayWithObject:[NSNumber numberWithBool:YES]]];
+        skipGen = [[NLTQGen genWithGenerateBlock:^id(double progress, int random) {
+            return nil;
+        }] andSkipCaseBlock:^BOOL(id value) {
+            return YES;
+        }];
     });
     
     context(@"checkWithTestCount:testLength: with return YES(fixed) gen", ^{
@@ -37,8 +44,20 @@ describe(@"TestCaseSpec", ^{
                 NSNumber *argA = [args objectAtIndex:0];
                 [[theValue([argA boolValue]) should] beYes];
             });
-        });
-        
+            
+            context(@"when contains skip gen", ^{
+                beforeEach(^{
+                    testCase = [NLTQTestCase blocksTestCaseWithBlocksArguments2:^BOOL(id argA, id argB) {
+                        return YES;
+                    } arbitraries:[NSArray arrayWithObjects:gen,skipGen, nil]];
+                });
+                
+                it(@"should return nil", ^{
+                    NSArray *args = [testCase gensRealize:0.0];
+                    [[theValue(args == nil) should] beYes];
+                });
+            });
+        });        
         it(@"should report success flag = YES", ^{
             NLTQReport *report = [testCase checkWithTestCount:0 testLength:100];
             [[theValue(report.success) should] beYes];
@@ -57,6 +76,20 @@ describe(@"TestCaseSpec", ^{
         it(@"should report exception flag = NO", ^{
             NLTQReport *report = [testCase checkWithTestCount:0 testLength:100];
             [[theValue(report.isException) should] beNo];
+        });
+    });
+    
+    context(@"checkWithTestcount:testLength: with skip gen", ^{
+        __block NLTQTestCase *testCase;
+        beforeEach(^{
+            testCase = [NLTQTestCase blocksTestCaseWithBlocksArguments1:^BOOL(id argA) {
+                return NO;
+            } arbitraries:[NSArray arrayWithObjects:skipGen, nil]];
+        });
+        
+        it(@"should report skip flag = YES", ^{
+            NLTQReport *report = [testCase checkWithTestCount:0 testLength:100];
+            [[theValue(report.skip) should] beYes];
         });
     });
     

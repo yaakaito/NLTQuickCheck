@@ -1,4 +1,4 @@
-# NLTQucikCheck
+# NLTQuickCheck
 like Haskell QuickCheck in Objective-C.
 
 ## Feature
@@ -9,7 +9,7 @@ Let's start Data Driven Testing.
 ## How to install 
 [CocoaPods](https://github.com/CocoaPods/)
 ```ruby
-dependency 'NLTQuickCheck'
+pod 'NLTQuickCheck'
 ```
 
 ## Usage

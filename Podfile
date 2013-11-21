@@ -1,2 +1,2 @@
-platform :ios
-dependency 'Kiwi'
+platform :ios, '5.0'
+pod 'Kiwi'

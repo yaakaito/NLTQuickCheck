@@ -15,7 +15,7 @@ describe(@"blocks test case", ^{
     __block NLTQGen *gen;
     __block NLTQTestCase *testCase;
     __block int counter;
-    beforeAll(^{
+    beforeEach(^{
         gen = [NLTQGen elementsGenWithArray:[NSArray arrayWithObject:[NSNumber numberWithBool:YES]]];
         counter = 0;
     });

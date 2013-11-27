@@ -8,7 +8,6 @@
 
 #import "NLTQTestCase.h"
 #import "NLTQGen.h"
-#import <objc/objc-runtime.h>
 
 @interface NLTQTestCase()
 @property(nonatomic, strong) __testCasePropertyExecuteBlock block;
